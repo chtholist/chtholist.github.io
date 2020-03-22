@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>博客改造计划 | Chtholist</title>
+<meta name="description" content="The Warehouse">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://chtholist.gitee.io/favicon.ico?v=1584840910816">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://chtholist.gitee.io/styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  
+  <div class="nav-brand">
+    <h3><a href="https://chtholist.gitee.io">Chtholist</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="http://chtholist.gitee.io/wallpaper/" class="menu">
+                墨鱼壁纸
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://libnet.chtholly.moe:2333/" class="menu">
+                中珂院图库
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>博客改造计划</h1>
+            <p class="article-meta">
+              2020-03-21
+              
+            </p>
+            
+            <div class="post-content">
+              <ul>
+<li>引用链接</li>
+</ul>
+<blockquote>
+<p>https://www.cnblogs.com/ECJTUACM-873284962/p/7628894.html<br>
+https://www.cnblogs.com/jajian/p/9763946.html</p>
+</blockquote>
+<h2 id="背景-鼠标图案">背景 + 鼠标图案</h2>
+<ul>
+<li>自定义css</li>
+</ul>
+<pre><code class="language-css">body {
+color: #000;
+background: url(https://i0.hdslb.com/bfs/album/93e37f6ab9db6785595e4dbec4dff9984cce98d0.png
+) fixed;
+background-size: 100%;
+background-repeat: no-repeat;
+font-family: &quot;Helvetica Neue&quot;,Helvetica,Verdana,Arial,sans-serif;
+min-height: 101%;
+cursor: url(https://files.cnblogs.com/files/wkfvawl/cursor.ico),auto;  //鼠标图案
+}
+</code></pre>
+<h2 id="鼠标点击特效">鼠标点击特效</h2>
+<ul>
+<li>theme —&gt; paper —&gt; templates —&gt; index.ejs</li>
+</ul>
+<h3 id="爱心特效">爱心特效</h3>
+<pre><code class="language-js">&lt;script type=&quot;text/javascript&quot;&gt;
+
+(function(window,document,undefined){
+        var hearts = [];
+        window.requestAnimationFrame = (function(){
+                return window.requestAnimationFrame || 
+                           window.webkitRequestAnimationFrame ||
+                           window.mozRequestAnimationFrame ||
+                           window.oRequestAnimationFrame ||
+                           window.msRequestAnimationFrame ||
+                           function (callback){
+                                   setTimeout(callback,1000/60);
+                           }
+        })();
+        init();
+        function init(){
+                css(&quot;.heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}&quot;);
+                attachEvent();
+                gameloop();
+        }
+        function gameloop(){
+                for(var i=0;i&lt;hearts.length;i++){
+                    if(hearts[i].alpha &lt;=0){
+                            document.body.removeChild(hearts[i].el);
+                            hearts.splice(i,1);
+                            continue;
+                    }
+                    hearts[i].y--;
+                    hearts[i].scale += 0.004;
+                    hearts[i].alpha -= 0.013;
+                    hearts[i].el.style.cssText = &quot;left:&quot;+hearts[i].x+&quot;px;top:&quot;+hearts[i].y+&quot;px;opacity:&quot;+hearts[i].alpha+&quot;;transform:scale(&quot;+hearts[i].scale+&quot;,&quot;+hearts[i].scale+&quot;) rotate(45deg);background:&quot;+hearts[i].color;
+            }
+            requestAnimationFrame(gameloop);
+        }
+        function attachEvent(){
+                var old = typeof window.onclick===&quot;function&quot; &amp;&amp; window.onclick;
+                window.onclick = function(event){
+                        old &amp;&amp; old();
+                        createHeart(event);
+                }
+        }
+        function createHeart(event){
+            var d = document.createElement(&quot;div&quot;);
+            d.className = &quot;heart&quot;;
+            hearts.push({
+                    el : d,
+                    x : event.clientX - 5,
+                    y : event.clientY - 5,
+                    scale : 1,
+                    alpha : 1,
+                    color : randomColor()
+            });
+            document.body.appendChild(d);
+    }
+    function css(css){
+            var style = document.createElement(&quot;style&quot;);
+                style.type=&quot;text/css&quot;;
+                try{
+                    style.appendChild(document.createTextNode(css));
+                }catch(ex){
+                    style.styleSheet.cssText = css;
+                }
+                document.getElementsByTagName('head')[0].appendChild(style);
+    }
+        function randomColor(){
+                return &quot;rgb(&quot;+(~~(Math.random()*255))+&quot;,&quot;+(~~(Math.random()*255))+&quot;,&quot;+(~~(Math.random()*255))+&quot;)&quot;;
+        }
+})(window,document);
+&lt;/script&gt;
+</code></pre>
+<h3 id="烟花特效">烟花特效</h3>
+<pre><code class="language-js">/* 鼠标特效——烟花 */
+        var a_idx = 0;
+        jQuery(document).ready(function($) {
+            $(&quot;body&quot;).click(function(e) {
+                var a = new Array(&quot;❤富强❤&quot;,&quot;❤民主❤&quot;,&quot;❤文明❤&quot;,&quot;❤和谐❤&quot;,&quot;❤自由❤&quot;,&quot;❤平等❤&quot;,&quot;❤公正❤&quot;,&quot;❤法治❤&quot;,&quot;❤爱国❤&quot;,&quot;❤敬业❤&quot;,&quot;❤诚信❤&quot;,&quot;❤友善❤&quot;);
+                var $i = $(&quot;&lt;span&gt;&lt;/span&gt;&quot;).text(a[a_idx]);
+                a_idx = (a_idx + 1) % a.length;
+                var x = e.pageX,
+                y = e.pageY;
+                $i.css({
+                    &quot;z-index&quot;: 999999999999999999999999999999999999999999999999999999999999999999999,
+                    &quot;top&quot;: y - 20,
+                    &quot;left&quot;: x,
+                    &quot;position&quot;: &quot;absolute&quot;,
+                    &quot;font-weight&quot;: &quot;bold&quot;,
+                    &quot;color&quot;: &quot;rgb(&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;)&quot;
+                });
+                $(&quot;body&quot;).append($i);
+                $i.animate({
+                    &quot;top&quot;: y - 180,
+                    &quot;opacity&quot;: 0
+                },
+                1500,
+                function() {
+                    $i.remove();
+                });
+            });
+        });
+        &lt;/script&gt;
+        &lt;script src=&quot;https://files.cnblogs.com/files/wkfvawl/mouse-click.js&quot;&gt;&lt;/script&gt;
+        &lt;canvas width=&quot;1777&quot; height=&quot;841&quot; style=&quot;position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;&quot;&gt;&lt;/canvas&gt;
+</code></pre>
+<h2 id="返回顶部">返回顶部</h2>
+<h3 id="1-图片">1. 图片</h3>
+<ul>
+<li>.ejs</li>
+</ul>
+<pre><code class="language-css">    &lt;span id=&quot;back-to-top&quot;&gt;
+      &lt;a href=&quot;#top&quot;&gt;
+      &lt;img  src=&quot;https://i0.hdslb.com/bfs/album/97d27ecfd428ce7a275ef2053efe20d90665e908.jpg&quot; 
+        alt=&quot;BACK TO TOP&quot; width=&quot;80&quot; height=&quot;55&quot;/&gt;
+      &lt;/a&gt;
+    &lt;/span&gt;
+    ```
+    - _blocks —&gt; main.less
+ ```css
+    // 返回顶部 
+    #back-to-top {
+ 
+        bottom: 0;
+        color: #444444;
+        padding: 0px 0px;
+        position: fixed;
+        left: 5px;
+        cursor: pointer;
+    }
+</code></pre>
+<h3 id="2-b站小火箭">2. b站小火箭</h3>
+<ul>
+<li>直接从b站上扒下来</li>
+<li>有很多缺陷：直接copy下来的代码没法回到顶部，只能自己加个<code>a href=&quot;#top&quot;</code></li>
+</ul>
+<ol>
+<li>.ejs  .</li>
+</ol>
+<pre><code class="language-js">&lt;!-- 返回顶部  --&gt;
+&lt;a href=&quot;#top&quot;&gt;&lt;div data-v-3682a700 data-v-4e808e30 class=&quot;back-top&quot; style=&quot;right: 0px; &quot;&gt;&lt;/div&gt;&lt;/a&gt;
+</code></pre>
+<ol start="2">
+<li>main.less</li>
+</ol>
+<pre><code class="language-css">.back-top {}
+.back-top[data-v-3682a700]:hover {
+  background-image: url(//s2.hdslb.com/bfs/static/blive/blfe-dynamic-web/static/img/rocket_frame.f7563b84.png);
+  -webkit-animation: rocket-data-v-3682a700 steps(1, start) 0.5s infinite;
+          animation: rocket-data-v-3682a700 steps(1, start) 0.5s infinite;
+}
+.rocket-fade-enter-active[data-v-3682a700],
+.rocket-fade-leave-active[data-v-3682a700] {
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.rocket-fade-enter[data-v-3682a700],
+.rocket-fade-leave-to[data-v-3682a700] {
+  opacity: 0;
+}
+@-webkit-keyframes rocket-data-v-3682a700 {
+0% {
+    background-position: 0 0;
+}
+25% {
+    background-position: -150px 0;
+}
+50% {
+    background-position: -300px 0;
+}
+75% {
+    background-position: -450px 0;
+}
+100% {
+    background-position: -600px 0;
+}
+}
+@keyframes rocket-data-v-3682a700 {
+0% {
+    background-position: 0 0;
+}
+25% {
+    background-position: -150px 0;
+}
+50% {
+    background-position: -300px 0;
+}
+75% {
+    background-position: -450px 0;
+}
+100% {
+    background-position: -600px 0;
+}
+}
+
+.back-top[data-v-3682a700] {
+  position: fixed;
+  bottom: 50px;
+  width: 150px;
+  height: 174px;
+  cursor: pointer;
+  z-index: 998;
+  background-position: 0 0;
+  text-align: center;
+  background-image: url(//s2.hdslb.com/bfs/static/blive/blfe-dynamic-web/static/img/rocket_top.bcc748c3.png);
+  background-repeat: no-repeat;
+}
+.back-top[data-v-3682a700]:hover {
+  background-image: url(//s2.hdslb.com/bfs/static/blive/blfe-dynamic-web/static/img/rocket_frame.f7563b84.png);
+  -webkit-animation: rocket-data-v-3682a700 steps(1, start) 0.5s infinite;
+          animation: rocket-data-v-3682a700 steps(1, start) 0.5s infinite;
+}
+.rocket-fade-enter-active[data-v-3682a700],
+.rocket-fade-leave-active[data-v-3682a700] {
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.rocket-fade-enter[data-v-3682a700],
+.rocket-fade-leave-to[data-v-3682a700] {
+  opacity: 0;
+}
+@-webkit-keyframes rocket-data-v-3682a700 {
+0% {
+    background-position: 0 0;
+}
+25% {
+    background-position: -150px 0;
+}
+50% {
+    background-position: -300px 0;
+}
+75% {
+    background-position: -450px 0;
+}
+100% {
+    background-position: -600px 0;
+}
+}
+@keyframes rocket-data-v-3682a700 {
+0% {
+    background-position: 0 0;
+}
+25% {
+    background-position: -150px 0;
+}
+50% {
+    background-position: -300px 0;
+}
+75% {
+    background-position: -450px 0;
+}
+100% {
+    background-position: -600px 0;
+}
+}
+</code></pre>
+<h2 id="页脚走马灯">页脚走马灯</h2>
+<ul>
+<li>theme —&gt; paper —&gt; templates —&gt; .ejs</li>
+</ul>
+<pre><code class="language-css">    &lt;!-- 页尾的走马灯--&gt;
+    &lt;div id=&quot;i1&quot; style=&quot;color:rgb(10, 8, 8);font-size:20px;padding:50px;text-align:center;&quot;&gt;
+        What&amp;nbsp;do&amp;nbsp;you&amp;nbsp;do&amp;nbsp;at&amp;nbsp;the&amp;nbsp;end&amp;nbsp;of&amp;nbsp;the&amp;nbsp;world? 
+        Are&amp;nbsp;you&amp;nbsp;busy?&amp;nbsp;Will&amp;nbsp;you&amp;nbsp;save&amp;nbsp;us?&amp;nbsp;&amp;nbsp;&amp;nbsp;
+        &lt;/div&gt;
+    &lt;script&gt;
+       function func(){
+           var tag = document.getElementById('i1');
+           var content = tag.innerText;
+           var f = content.charAt(0);
+           var l = content.substring(1,content.length);
+           var new_content = l + f;
+           tag.innerText = new_content;
+       }
+       setInterval('func()',500);
+    &lt;/script&gt;
+</code></pre>
+<h2 id="live2d">Live2D</h2>
+<ul>
+<li>.ejs</li>
+</ul>
+<pre><code class="language-js">&lt;!-- 右下角live2d效果 --&gt;
+&lt;script src=&quot;https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    L2Dwidget.init({
+        &quot;model&quot;: {
+            jsonPath: &quot;https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json&quot;,
+            &quot;scale&quot;: 1
+        },
+        &quot;display&quot;: {
+            &quot;position&quot;: &quot;left&quot;,
+            &quot;width&quot;: 150,
+            &quot;height&quot;: 300,
+            &quot;hOffset&quot;: 0,
+            &quot;vOffset&quot;: -20
+        },
+        &quot;mobile&quot;: {
+            &quot;show&quot;: true,
+            &quot;scale&quot;: 0.5
+        },
+        &quot;react&quot;: {
+            &quot;opacityDefault&quot;: 0.7,
+            &quot;opacityOnHover&quot;: 0.2
+        }
+    });
+&lt;/script&gt;
+
+&lt;!--
+其他可选的模型：
+黑猫：https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json
+萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json
+白猫：https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json
+狗狗：https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
+小可爱：https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json
+小可爱：https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json
+--&gt;
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://chtholist.gitee.io/post/hello-gridea/">
+                <h3 class="post-title">
+                  Hello Gridea
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    
+    <img src="https://chtholist.gitee.io/images/avatar.png?v=1584840910816" class="no-responsive avatar">
+    <div class="text-muted">The Warehouse</div>
+    <div class="social-container">
+      
+        
+          <a href="https://github.com/chtholist" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/gridea-shi-yong-zhi-bei/"> Gridea使用指北 </a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/hexo-cai-keng-ji-lu/">Hexo 踩坑记录</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/bo-ke-gai-zao-ji-hua/">博客改造计划</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/about/">关于</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/hello-gridea/">Hello Gridea</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://chtholist.gitee.io/tag/szaMc4Z1R/" class="badge secondary">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Producted by <b> TIAT'S DREAMS <b/> | <a class="rss" href="https://chtholist.gitee.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+
+    <!-- 右下角live2d效果 -->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 120,
+            "height": 280,
+            "hOffset": 0,
+            "vOffset": -20
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.7,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+
+<!-- 返回顶部  -->
+<a href="#top"><div data-v-3682a700 data-v-4e808e30 class="back-top" style="left: 0px; "></div></a>
+
+    
+    <!-- 页尾的走马灯-->
+    <div id="i1" style="color:rgb(10, 8, 8);font-size:20px;padding:50px;text-align:center;">
+      What&nbsp;do&nbsp;you&nbsp;do&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;world? 
+      Are&nbsp;you&nbsp;busy?&nbsp;Will&nbsp;you&nbsp;save&nbsp;us?&nbsp;&nbsp;&nbsp;
+      </div>
+  <script>
+     function func(){
+         var tag = document.getElementById('i1');
+         var content = tag.innerText;
+         var f = content.charAt(0);
+         var l = content.substring(1,content.length);
+         var new_content = l + f;
+         tag.innerText = new_content;
+     }
+     setInterval('func()',500);
+  </script>
+
+
+        <!-- 爱心点击特效-->
+        <script type="text/javascript">
+
+          (function(window,document,undefined){
+                  var hearts = [];
+                  window.requestAnimationFrame = (function(){
+                          return window.requestAnimationFrame || 
+                                     window.webkitRequestAnimationFrame ||
+                                     window.mozRequestAnimationFrame ||
+                                     window.oRequestAnimationFrame ||
+                                     window.msRequestAnimationFrame ||
+                                     function (callback){
+                                             setTimeout(callback,1000/60);
+                                     }
+                  })();
+                  init();
+                  function init(){
+                          css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                          attachEvent();
+                          gameloop();
+                  }
+                  function gameloop(){
+                          for(var i=0;i<hearts.length;i++){
+                              if(hearts[i].alpha <=0){
+                                      document.body.removeChild(hearts[i].el);
+                                      hearts.splice(i,1);
+                                      continue;
+                              }
+                              hearts[i].y--;
+                              hearts[i].scale += 0.004;
+                              hearts[i].alpha -= 0.013;
+                              hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+                      }
+                      requestAnimationFrame(gameloop);
+                  }
+                  function attachEvent(){
+                          var old = typeof window.onclick==="function" && window.onclick;
+                          window.onclick = function(event){
+                                  old && old();
+                                  createHeart(event);
+                          }
+                  }
+                  function createHeart(event){
+                      var d = document.createElement("div");
+                      d.className = "heart";
+                      hearts.push({
+                              el : d,
+                              x : event.clientX - 5,
+                              y : event.clientY - 5,
+                              scale : 1,
+                              alpha : 1,
+                              color : randomColor()
+                      });
+                      document.body.appendChild(d);
+              }
+              function css(css){
+                      var style = document.createElement("style");
+                          style.type="text/css";
+                          try{
+                              style.appendChild(document.createTextNode(css));
+                          }catch(ex){
+                              style.styleSheet.cssText = css;
+                          }
+                          document.getElementsByTagName('head')[0].appendChild(style);
+              }
+                  function randomColor(){
+                          return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+                  }
+          })(window,document);
+          
+          </script>
+  </body>
+</html>
