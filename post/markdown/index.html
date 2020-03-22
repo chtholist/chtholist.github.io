@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title> Gridea使用指北  | Chtholist</title>
+<title>Markdown学习笔记 | Chtholist</title>
 <meta name="description" content="&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
 &lt;b&gt; 末红褪去春意来 &lt;/b&gt;">
 
@@ -100,79 +100,228 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1> Gridea使用指北 </h1>
+            <h1>Markdown学习笔记</h1>
             <p class="article-meta">
               2020-03-22
+              
+                <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge warning">
+                  git
+                </a>
               
             </p>
             
             <div class="post-content">
-              <h3 id="大佬博客集合">大佬博客集合</h3>
-<li><a href="https://chiperman.github.io/" title="Pan">Pan</a></li>
-<li><a href="https://shanbu.fun/" title="Anatale">Anatale</a></li>
-<li><a href="https://blog.blinkstar.cn/" title="bitcron-pro">bitcron-pro</a></li>
-<li><a href="https://zhangajian.com/" title="Space">Space</a></li>
-<li><a href="https://kveln.cn/" title="Clean">Clean</a></li>
-<li><a href="https://i.immmmm.com/">Break</a></li>
-<li><a href="https://yeming.site/">NextT</a><br>
-<h3 id="theme下载注意">theme下载注意：</h3>
+              <hr>
+<h2 id="title-markdown-笔记date-2020-02-26-174147tags-学习published-truehideinlist-falsefeature-post-imagesmarkdownlearningjpgistop-false">title: 'Markdown 笔记'<br>
+date: 2020-02-26 17:41:47<br>
+tags: [学习]<br>
+published: true<br>
+hideInList: false<br>
+feature: /post-images/MARKDOWNlearning.jpg<br>
+isTop: false</h2>
+<h1 id="一级标题">一级标题</h1>
+<h2 id="二级标题">二级标题</h2>
+<h1 id="一级标题-2">一级标题</h1>
+<h2 id="二级标题-2">二级标题</h2>
+<h3 id="三级标题">三级标题</h3>
+<h4 id="四级标题">四级标题</h4>
+<h5 id="五级标题">五级标题</h5>
+<h6 id="六级标题">六级标题</h6>
+<p>（没有七级标题，#后面要有一个空格）</p>
+<h1 id="文本形式">文本形式</h1>
+<p><em>斜体文本</em><br>
+<em>斜体文本</em><br>
+<strong>粗体文本</strong><br>
+<strong>粗体文本</strong><br>
+<em><strong>粗斜体文本</strong></em><br>
+<em><strong>粗斜体文本</strong></em><br>
+（空两格再回车 = 换行）</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<p>（三个以上星号/减号/底线建立分割线，行内不能有其他东西）</p>
+<p><s>删除线</s></p>
+<p><u>下划线</u> (HTML文本)</p>
+<p>创建[^脚注]<br>
+[^脚注]：这里写着脚注<br>
+（存疑）</p>
+<h1 id="列表">列表</h1>
+<p>无序列表</p>
+<ul>
+<li>第一项 （星号*</li>
+<li>第二项</li>
+</ul>
+<ul>
+<li>第三项 （加号+</li>
+<li>第四项</li>
+</ul>
+<ul>
+<li>第五项 （减号-</li>
+<li>第六项<br>
+（注意空格）</li>
+</ul>
+<p>有序列表</p>
 <ol>
-<li>
-<ol>
-<li>推荐使用 git clone 的方式下载到 Gridea 客户端的 theme 目录。方便后期更新升级。</li>
-<li>打开 theme 目录：~/Documents/gridea/themes</li>
-<li>在当前目录执行 https://github.com/Mrcxt/gridea-theme-lemon.git</li>
-<li>重启 Gridea 客户端查看效果</li>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项<br>
+（注意空格</li>
 </ol>
+<p>列表嵌套</p>
+<ol>
+<li>第一项
+<ul>
+<li>第一项中的第一个嵌套</li>
+</ul>
 </li>
-<li>
-<ol>
-<li>克隆项目到本地</li>
-<li>复制「 gridea-theme-xxx」目录到「 Gridea 」主题文件中<br>
-<strong>要点进去看下里面是否就是参数的文件了，不然要把真正的theme package拿出来</strong></li>
-<li>重启「 Gridea 」客户端
-<ol>
-<li>在主题中选择「  gridea-theme-xxx 」主题，点击保存</li>
-<li>
-<ol start="5">
-<li>预览查看效果</li>
-</ol>
+<li>第二项
+<ul>
+<li>第二项中的第一个嵌套<br>
+（在嵌套项前加<strong>四个空格</strong>）</li>
+</ul>
 </li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="gridea使用注意">Gridea使用注意</h3>
-<ol>
-<li>用Github pages搭一个博客时，名字不用user name也行，就是输域名的时候长点</li>
 </ol>
 <blockquote>
-<p><strong>Gridea客户端只是一个框架，将写的md转换成html，然后所有的放在Gridea文件夹中的output，同步的时候整个文件夹推到GitHub上</strong>  ，<em><strong>所以备份的时候不用从Github上clone下来，直接把output文件复制一个就行了</strong></em></p>
-</blockquote>
-<h3 id="gridea推送到本地服务器">Gridea推送到本地服务器</h3>
-<ol>
-<li>将远程的域名改成自家的域名，name和密钥改成nas的，然后同步，output中的文件就能设置好了。之后用软件把output同步到服务器上。</li>
-</ol>
+<p>区块引用<br>
+注意空格</p>
 <blockquote>
-<p>Gridea根据远程的设置，把相关域名参数保存在output中，同步时将整个文件夹推送给远程的域名</p>
+<p>第一层嵌套</p>
+<blockquote>
+<p>第二层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>区块中使用列表</p>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+</ol>
+<ul>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第四项</li>
+</ul>
+<ul>
+<li>第五项</li>
+</ul>
 </blockquote>
 <ul>
-<li>2020.3.8
+<li>列表中使用区块
+<blockquote>
+<p>添加四个空格的缩进</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="代码块">代码块</h1>
+<ol>
+<li>
+<p>行内代码片段——键盘左上方反引号<br>
+<code>int main()</code></p>
+</li>
+<li>
+<p>自定义语法</p>
+</li>
+</ol>
+<pre><code class="language-c++">int main()
+{
+    printf(&quot;sojf&quot;);
+}
+</code></pre>
+<h1 id="链接">链接</h1>
+<blockquote>
 <ul>
-<li>Gridea的主题设置老是没法保存就很奇怪……去看了下洛谷上的巨佬们，都是用Gridea在GitHub上搭的博客，莫非全都是受那篇洛谷日报的影响？？？</li>
-<li>突然发现洛谷和博客园都可以搭个人博客，也可以弄得花里胡哨的🉐</li>
+<li>
+<p>[链接名称]（链接地址）<br>
+这是菜鸟教程的链接<a href="https://www.runoob.com/markdown/md-link.html">Markdown链接</a></p>
+</li>
+<li>
+<p>直接使用链接网址   &lt; xxx &gt;<br>
+<a href="https://www.runoob.com/markdown/md-link.html">https://www.runoob.com/markdown/md-link.html</a></p>
+</li>
+<li>
+<p>高级链接，用变量代替，文档末尾附带变量地址<br>
+菜鸟教程<a href="https://www.runoob.com/markdown/md-link.html">RunooB</a></p>
+</li>
+</ul>
+</blockquote>
+<h1 id="图片">图片</h1>
+<p><img src="%E5%9B%BE%E7%89%87%E7%BD%91%E5%9D%80" alt="属性文本/图片替代文字" title="图片标题" loading="lazy"><br>
+<img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标" title="RUNOOB" loading="lazy"><br>
+（无法指定图片的高度和宽度）</p>
+<h1 id="表格">表格</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:right">右对齐</th>
+<th style="text-align:center">居中对齐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">单元格1</td>
+<td style="text-align:right">单元格2</td>
+<td style="text-align:center">单元格3</td>
+</tr>
+<tr>
+<td style="text-align:left">单元格4</td>
+<td style="text-align:right">单元格5</td>
+<td style="text-align:center">单元格6</td>
+</tr>
+</tbody>
+</table>
+<h1 id="任务列表">任务列表</h1>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-772026"><label class="task-list-item-label" for="task-item-772026"> 选项一</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2092175"> 选项二<br>
+(方框中间要有x或<strong>空格</strong><label class="task-list-item-label" for="task-item-2092175"> 选项二  
+(方框中间要有x或**空格**)</label></li>
+</ul>
+<h1 id="空格">空格</h1>
+<p>在HTML中，如果你用空格键产生此空格，空格是不会累加的（只算1个）。要使用html实体表示才可累加<br>
+<u><strong>注意分号</strong></u></p>
+<ul>
+<li>不换行空格     &amp;nbsp;</li>
+<li>半角空格         &amp;ensp;</li>
+<li>全角空格       &amp;emsp;</li>
+</ul>
+<h1 id="其他">其他</h1>
+<ul>
+<li>
+<p>支持HTML元素<br>
+添加<kbd>方框</kbd></p>
+</li>
+<li>
+<p>转义</p>
+<ul>
+<li>
+<ul>
+<li>三级序号<br>
+<strong>加粗文本</strong><br>
+**正常显示星号**</li>
 </ul>
 </li>
 </ul>
-<h2 id="后续">后续</h2>
-<h3 id="2020322">20203.22</h3>
-<ul>
-<li>破案了，就只有用Next主题没法保存，不知道为什么。而且网站兼容性极差（gitee、Github），有几个版面可以正常显示，但是看不出端倪</li>
-<li>之前用Next的时候，推流后网站没法跳转，原来仓库里的链接代码<code>chtholist.gitee.io/xxx</code>，在页面部署后变成<code>gitee.com/chtholist/chtholist.gitee.io/xxx</code>，奇怪的是部署完后过了半天到一天就正常了？</li>
-<li>改用Paper主题，无法显示封面图，<strong>无法显示MD文档的侧边栏导航</strong>（这是坠要命的，以后看看怎么改）</li>
-<li>发现博客园的代码可以挪过来用，于是做了搬运工，小改了主题，增加了 1.鼠标点击特效 2.鼠标图案更改 3.回到顶部 4.Live2D</li>
+</li>
+<li>
+<p>公式<br>
+（使用$$包裹TeX或LaTeX格式数学公式）</p>
+</li>
+<li>
+<p>x<sup>上标</sup></p>
+</li>
+<li>
+<p>x<sub>下标</sub></p>
+</li>
 </ul>
+<h1 id="快捷键">快捷键</h1>
+<ul>
+<li>右键Markdown Preview Enhanced 查看pdf预览</li>
+</ul>
+<p>https://chtholist.github.io/</p>
 
             </div>
           </article>
@@ -183,9 +332,9 @@
               <div class="next">
                 下一篇
               </div>
-              <a href="https://chtholist.gitee.io/post/hexo-cai-keng-ji-lu/">
+              <a href="https://chtholist.gitee.io/post/Cstudy4/">
                 <h3 class="post-title">
-                  Hexo 踩坑记录
+                  C++学习笔记 —— 运算&amp;表达式
                 </h3>
               </a>
             </div>
@@ -316,19 +465,19 @@
           学习
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge ">
+        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge secondary">
           编程
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge success">
+        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge secondary">
           java
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge secondary">
+        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge ">
           git
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge warning">
+        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge ">
           c
         </a>
       

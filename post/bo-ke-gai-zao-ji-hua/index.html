@@ -4,10 +4,11 @@
     <meta charset="utf-8" >
 
 <title>博客改造计划 | Chtholist</title>
-<meta name="description" content="The Warehouse">
+<meta name="description" content="&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
+&lt;b&gt; 末红褪去春意来 &lt;/b&gt;">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://chtholist.gitee.io/favicon.ico?v=1584840910816">
+<link rel="shortcut icon" href="https://chtholist.gitee.io/favicon.ico?v=1584848943381">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -69,7 +70,7 @@
           <li>
             
               <a href="/post/about" class="menu">
-                关于
+                Who am I
               </a>
             
           </li>
@@ -111,7 +112,8 @@
 </ul>
 <blockquote>
 <p>https://www.cnblogs.com/ECJTUACM-873284962/p/7628894.html<br>
-https://www.cnblogs.com/jajian/p/9763946.html</p>
+https://www.cnblogs.com/jajian/p/9763946.html<br>
+https://www.cnblogs.com/ButterflyEffect/p/10839613.html</p>
 </blockquote>
 <h2 id="背景-鼠标图案">背景 + 鼠标图案</h2>
 <ul>
@@ -446,7 +448,63 @@ cursor: url(https://files.cnblogs.com/files/wkfvawl/cursor.ico),auto;  //鼠标�
 狗狗：https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
 小可爱：https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json
 小可爱：https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json
+chitose / epsilon2_1 / gf  
+haru/01 (use npm install --save live2d-widget-model-haru)  
+haru/02 (use npm install --save live2d-widget-model-haru)  
+haruto / hibiki / hijiki / izumi / koharu / miku / ni-j / nico / nietzsche / nipsilon   / nito / shizuku / tororo / tsumiki / unitychan / wanko / z16
 --&gt;
+</code></pre>
+<h2 id="小电视图标">小电视图标</h2>
+<ul>
+<li>没啥用，背景是白色的</li>
+<li>耳朵处理不好，要鼠标放上去才出现</li>
+</ul>
+<ol>
+<li>main.less</li>
+</ol>
+<pre><code class="language-css">/*  小电视图标  */
+.mascot{position:fixed;bottom:10px;left:10px;z-index:100;width:110px;height:200px;cursor:pointer;transition:transform .6s;transform-origin:left bottom}.mascot:hover .ear{background-image:url(//s1.hdslb.com/bfs/static/jinkela/international-home/asserts/ear.gif)}.mascot:hover .body{background-image:url(//s1.hdslb.com/bfs/static/jinkela/international-home/asserts/body.gif)}.mascot .ear{height:26px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAA0CAMAAADWk6ZcAAAAt1BMVEX///8VFRX9/f0dHR3v7+/19fXFxcWSkpJCQkI+Pj46OjoqKiolJSUgICAbGxvo6Ojl5eXU1NS9vb24uLizs7Ovr6+BgYFwcHBgYGBbW1tISEgYGBjY2NjQ0NDJycmrq6ukpKSEhIR8fHx5eXllZWVTU1NPT081NTUvLy/6+vr5+fny8vLq6urh4eHa2trBwcG1tbWPj4+Ojo6Hh4d1dXVsbGxMTEzr6+vc3NzKysqdnZ2ampqYmJiReY9kAAACR0lEQVRo3u3XiW6yQBAA4JldEAFRQFHEG6TerWfv93+uPyZ/E9PKlMMsNtnvATbM7OzMAJIkSZIkSZIkSZIk/TlLe7j1hgrcgDL0tkN7CXdCdbxdJ9aNeNdnUBDr72JDjzs7z1GhdGrfO/iGhWdm520BhSzeOiaeWYZ/8PqlxsfWrjY1OH6x/Eqh6JYV38Iv3Jhq7ppBOZjdCoMaXuLdCitwYKXL8VItCFt2KeEpbqTX8Rt+6kNu/RPHb+p65CogGnvVAo4/mdoKclppJv7EA+2VgVDMieZ41fMT5PT0jFfNI0dsdI1JDa+z2mvIZd228LrapAFC0Fk+qzZz5Zk1q4hIVIM4IwOT1KNceW5EdUxijECk0QwT6S0GmbGWjolmYoMjagjrYSPHxYV1JCodRBp0MVl1C5ltq5isOwCRlDaRaB6+QEYvISdKoa2ASIx6dBi4kJEbIPXkGAjl+JjMmmRMtTKxMJnvgFjqnvqchwpkUnmgUrVXQSi6X2Jtr2bLVA3vplee2Z0e2d9u1nt7HRtEY+8mJjM/lpDa8oM86p2BcMMYCdNHSO1xioR4CMLRow5n49T5ZuMZ3s+Q+88zqJdytCEl+0i9XsODMtDVVG1m6rt0fYunalQD5xMl7QDn1FDRVCiFGyA5yDMNcHqTE69x7NE5L37/vWMDysHGcyy8Ejo+EuZjBiUZdFN+GJ2g+/mTu7Q6cHJv2sCvNuQWxw8rKE1LR4LeuuEJ4m1OSOBt5fc1hyPhtIHyLD5NehoUmwPm5wKK+AfzHCrIg0ondgAAAABJRU5ErkJggg==)}.mascot .body,.mascot .ear{width:110px;background-repeat:no-repeat;background-size:cover}.mascot .body{position:relative;height:174px;background-image:url(//s1.hdslb.com/bfs/static/jinkela/international-home/asserts/body2.png)}.mascot .zzz{width:85px;height:50px;position:absolute;left:12px;top:40px;border-radius:20px;background-image:url(//s1.hdslb.com/bfs/static/jinkela/international-home/asserts/zzz.gif);background-repeat:no-repeat;background-size:cover}.mascot .ran-gif{position:absolute;width:72px;height:42px;left:19px;top:44px;text-align:center;border-radius:6px;overflow:hidden}.mascot .ran-gif img{width:100%;transition:opacity .5s}@media screen and (max-width:1714px){.mascot{transform:scale(.8)}}@media screen and (max-width:1454px){.mascot{transform:scale(.7)}}@media screen and (max-width:1233px){.mascot{transform:scale(0);opacity:0}}  
+.mascot {
+  position: fixed;
+  bottom: 10px;
+  left: 100px;
+  z-index: 100;
+  width: 110px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform .6s;
+  transform-origin: left bottom;
+}
+.mascot .ear {
+  height: 26px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAA0CAMAAADWk6ZcAAAAt1BMV…LeuuEJ4m1OSOBt5fc1hyPhtIHyLD5NehoUmwPm5wKK+AfzHCrIg0ondgAAAABJRU5ErkJggg==);
+}
+.mascot .body, .mascot .ear {
+  width: 110px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mascot .ran-gif {
+  position: absolute;
+  width: 72px;
+  height: 42px;
+  left: 19px;
+  top: 44px;
+  text-align: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+</code></pre>
+<ol start="2">
+<li>.ejs</li>
+</ol>
+<pre><code class="language-js"> &lt;div class=&quot;mascot&quot;&gt;
+        &lt;div class=&quot;ear&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;body&quot;&gt;&lt;/div&gt;
+        &lt;a href=&quot;http://search.bilibili.com/all?keyword=%E7%BE%8E%E7%90%B4&amp;amp;from_source=gif_recommend&quot; target=&quot;_blank&quot; title=&quot;美琴&quot; class=&quot;ran-gif&quot;&gt;
+            &lt;img src=&quot;https://i0.hdslb.com/bfs/active/f8514c2a7f3dc94a71f7feacc746f78ccae970c3.gif&quot; style=&quot;opacity: 1;&quot;&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
 </code></pre>
 
             </div>
@@ -458,9 +516,9 @@ cursor: url(https://files.cnblogs.com/files/wkfvawl/cursor.ico),auto;  //鼠标�
               <div class="next">
                 下一篇
               </div>
-              <a href="https://chtholist.gitee.io/post/hello-gridea/">
+              <a href="https://chtholist.gitee.io/post/about/">
                 <h3 class="post-title">
-                  Hello Gridea
+                  关于
                 </h3>
               </a>
             </div>
@@ -472,8 +530,9 @@ cursor: url(https://files.cnblogs.com/files/wkfvawl/cursor.ico),auto;  //鼠标�
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     
-    <img src="https://chtholist.gitee.io/images/avatar.png?v=1584840910816" class="no-responsive avatar">
-    <div class="text-muted">The Warehouse</div>
+    <img src="https://chtholist.gitee.io/images/avatar.png?v=1584848943381" class="no-responsive avatar">
+    <div class="text-muted"><b> 终焉虽至曲未尽 </b> <br/>
+<b> 末红褪去春意来 </b></div>
     <div class="social-container">
       
         
@@ -501,32 +560,76 @@ cursor: url(https://files.cnblogs.com/files/wkfvawl/cursor.ico),auto;  //鼠标�
         
           
             <li>
-              <a href="https://chtholist.gitee.io/post/gridea-shi-yong-zhi-bei/"> Gridea使用指北 </a>
+              <a href="https://chtholist.gitee.io/post/HTMLstudy1/">HTML学习笔记 1</a>
             </li>
           
         
           
             <li>
-              <a href="https://chtholist.gitee.io/post/hexo-cai-keng-ji-lu/">Hexo 踩坑记录</a>
+              <a href="https://chtholist.gitee.io/post/JAVAstudy0/">Java&amp;后端 学习路径</a>
             </li>
           
         
           
             <li>
-              <a href="https://chtholist.gitee.io/post/bo-ke-gai-zao-ji-hua/">博客改造计划</a>
+              <a href="https://chtholist.gitee.io/post/JAVAstudy1/">Java —— 最基础</a>
             </li>
           
         
           
             <li>
-              <a href="https://chtholist.gitee.io/post/about/">关于</a>
+              <a href="https://chtholist.gitee.io/post/windows-kuai-jie-jian/">Windows快捷键</a>
             </li>
           
         
           
             <li>
-              <a href="https://chtholist.gitee.io/post/hello-gridea/">Hello Gridea</a>
+              <a href="https://chtholist.gitee.io/post/windows/">Windows快捷键</a>
             </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/markdown/">Markdown学习笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy4/">C++学习笔记 —— 运算&amp;表达式</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy_array/">C++学习笔记 —— 数组</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy2/">C++学习笔记 —— 输入输出</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy/">C++学习笔记 —— 函数</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
       </ul>
@@ -538,14 +641,34 @@ cursor: url(https://files.cnblogs.com/files/wkfvawl/cursor.ico),auto;  //鼠标�
     </div>
     <div class="row">
       
-        <a href="https://chtholist.gitee.io/tag/szaMc4Z1R/" class="badge secondary">
-          Gridea
+        <a href="https://chtholist.gitee.io/tag/sT3HnA4VM/" class="badge ">
+          html
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge success">
+          学习
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge secondary">
+          编程
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge success">
+          java
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge secondary">
+          git
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge ">
+          c
         </a>
       
     </div>
   </div>
   <div class="paper">
-    Producted by <b> TIAT'S DREAMS <b/> | <a class="rss" href="https://chtholist.gitee.io/atom.xml" target="_blank">RSS</a>
+    Producted by <b><a href="https://gitee.com/chtholist"> TIAT'S DREAMS </a><b/> | <a class="rss" href="https://chtholist.gitee.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
 
@@ -579,15 +702,15 @@ hljs.initHighlightingOnLoad()
             "width": 120,
             "height": 280,
             "hOffset": 0,
-            "vOffset": -20
+            "vOffset": -10
         },
         "mobile": {
             "show": true,
             "scale": 0.5
         },
         "react": {
-            "opacityDefault": 0.7,
-            "opacityOnHover": 0.2
+            "opacityDefault": 0.8,
+            "opacityOnHover": 0.4
         }
     });
 </script>

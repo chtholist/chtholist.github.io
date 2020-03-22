@@ -190,6 +190,39 @@ body {
     background-position: -600px 0;
   }
 }
+/*  小电视图标（美琴）  
+.mascot{position:fixed;bottom:10px;left:10px;z-index:100;width:110px;height:200px;cursor:pointer;transition:transform .6s;transform-origin:left bottom}.mascot:hover .ear{background-image:url(//s1.hdslb.com/bfs/static/jinkela/international-home/asserts/ear.gif)}.mascot:hover .body{background-image:url(//s1.hdslb.com/bfs/static/jinkela/international-home/asserts/body.gif)}.mascot .ear{height:26px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAA0CAMAAADWk6ZcAAAAt1BMVEX///8VFRX9/f0dHR3v7+/19fXFxcWSkpJCQkI+Pj46OjoqKiolJSUgICAbGxvo6Ojl5eXU1NS9vb24uLizs7Ovr6+BgYFwcHBgYGBbW1tISEgYGBjY2NjQ0NDJycmrq6ukpKSEhIR8fHx5eXllZWVTU1NPT081NTUvLy/6+vr5+fny8vLq6urh4eHa2trBwcG1tbWPj4+Ojo6Hh4d1dXVsbGxMTEzr6+vc3NzKysqdnZ2ampqYmJiReY9kAAACR0lEQVRo3u3XiW6yQBAA4JldEAFRQFHEG6TerWfv93+uPyZ/E9PKlMMsNtnvATbM7OzMAJIkSZIkSZIkSZIk/TlLe7j1hgrcgDL0tkN7CXdCdbxdJ9aNeNdnUBDr72JDjzs7z1GhdGrfO/iGhWdm520BhSzeOiaeWYZ/8PqlxsfWrjY1OH6x/Eqh6JYV38Iv3Jhq7ppBOZjdCoMaXuLdCitwYKXL8VItCFt2KeEpbqTX8Rt+6kNu/RPHb+p65CogGnvVAo4/mdoKclppJv7EA+2VgVDMieZ41fMT5PT0jFfNI0dsdI1JDa+z2mvIZd228LrapAFC0Fk+qzZz5Zk1q4hIVIM4IwOT1KNceW5EdUxijECk0QwT6S0GmbGWjolmYoMjagjrYSPHxYV1JCodRBp0MVl1C5ltq5isOwCRlDaRaB6+QEYvISdKoa2ASIx6dBi4kJEbIPXkGAjl+JjMmmRMtTKxMJnvgFjqnvqchwpkUnmgUrVXQSi6X2Jtr2bLVA3vplee2Z0e2d9u1nt7HRtEY+8mJjM/lpDa8oM86p2BcMMYCdNHSO1xioR4CMLRow5n49T5ZuMZ3s+Q+88zqJdytCEl+0i9XsODMtDVVG1m6rt0fYunalQD5xMl7QDn1FDRVCiFGyA5yDMNcHqTE69x7NE5L37/vWMDysHGcyy8Ejo+EuZjBiUZdFN+GJ2g+/mTu7Q6cHJv2sCvNuQWxw8rKE1LR4LeuuEJ4m1OSOBt5fc1hyPhtIHyLD5NehoUmwPm5wKK+AfzHCrIg0ondgAAAABJRU5ErkJggg==)}.mascot .body,.mascot .ear{width:110px;background-repeat:no-repeat;background-size:cover}.mascot .body{position:relative;height:174px;background-image:url(//s1.hdslb.com/bfs/static/jinkela/international-home/asserts/body2.png)}.mascot .zzz{width:85px;height:50px;position:absolute;left:12px;top:40px;border-radius:20px;background-image:url(//s1.hdslb.com/bfs/static/jinkela/international-home/asserts/zzz.gif);background-repeat:no-repeat;background-size:cover}.mascot .ran-gif{position:absolute;width:72px;height:42px;left:19px;top:44px;text-align:center;border-radius:6px;overflow:hidden}.mascot .ran-gif img{width:100%;transition:opacity .5s}@media screen and (max-width:1714px){.mascot{transform:scale(.8)}}@media screen and (max-width:1454px){.mascot{transform:scale(.7)}}@media screen and (max-width:1233px){.mascot{transform:scale(0);opacity:0}}  
+.mascot {
+  position: fixed;
+  bottom: 10px;
+  left: 100px;
+  z-index: 100;
+  width: 110px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform .6s;
+  transform-origin: left bottom;
+}
+.mascot .ear {
+  height: 26px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAAA0CAMAAADWk6ZcAAAAt1BMV…LeuuEJ4m1OSOBt5fc1hyPhtIHyLD5NehoUmwPm5wKK+AfzHCrIg0ondgAAAABJRU5ErkJggg==);
+}
+.mascot .body, .mascot .ear {
+  width: 110px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mascot .ran-gif {
+  position: absolute;
+  width: 72px;
+  height: 42px;
+  left: 19px;
+  top: 44px;
+  text-align: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+*/
 #back-to-top {
   bottom: 0;
   color: #444444;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title> Gridea使用指北  | Chtholist</title>
+<title>Git 学习笔记 | Chtholist</title>
 <meta name="description" content="&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
 &lt;b&gt; 末红褪去春意来 &lt;/b&gt;">
 
@@ -100,79 +100,223 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1> Gridea使用指北 </h1>
+            <h1>Git 学习笔记</h1>
             <p class="article-meta">
               2020-03-22
+              
+                <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge warning">
+                  git
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge warning">
+                  学习
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge success">
+                  编程
+                </a>
               
             </p>
             
             <div class="post-content">
-              <h3 id="大佬博客集合">大佬博客集合</h3>
-<li><a href="https://chiperman.github.io/" title="Pan">Pan</a></li>
-<li><a href="https://shanbu.fun/" title="Anatale">Anatale</a></li>
-<li><a href="https://blog.blinkstar.cn/" title="bitcron-pro">bitcron-pro</a></li>
-<li><a href="https://zhangajian.com/" title="Space">Space</a></li>
-<li><a href="https://kveln.cn/" title="Clean">Clean</a></li>
-<li><a href="https://i.immmmm.com/">Break</a></li>
-<li><a href="https://yeming.site/">NextT</a><br>
-<h3 id="theme下载注意">theme下载注意：</h3>
+              <h1 id="git">Git</h1>
+<p>最先进的分布式版本控制系统，底层是c语言<br>
+git在本地保存着完整的历史版本，可以脱机查看开发的历史版本</p>
+<h2 id="git-配置">Git 配置</h2>
+<p>有工具 git config ，专门用来配置或读取相应的工作环境变量。</p>
+<ol>
+<li>/etc/gitconfig 文件：<br>
+系统中对所有用户都普遍适用的配置。<br>
+若使用 git config 时用 --system 选项，读写的就是这个文件。</li>
+<li>~/.gitconfig 文件：<br>
+用户目录下的配置文件只适用于该用户。<br>
+若使用 git config 时用 --global 选项，读写的就是这个文件。</li>
+<li>当前项目的 Git 目录中的配置文件（也就是工作目录中的 .git/config 文件）：<br>
+这里的配置仅仅针对当前项目有效。</li>
+</ol>
+<ul>
+<li>每一个级别的配置都会覆盖上层的相同配置，所以 .git/config 里的配置会覆盖 /etc/gitconfig 中的同名变量。</li>
+<li>在 Windows 系统上，Git 会找寻用户主目录下的 .gitconfig 文件。主目录即 $HOME 变量指定的目录，一般都是 C:\Documents and Settings$USER。</li>
+</ul>
+<h4 id="用户信息">用户信息</h4>
+<p>$ git config --global user.name &quot;chthollist&quot;<br>
+$ git config --global user.email 1957897821@qqq.com</p>
+<ul>
+<li>用了 --global 选项，那么更改的配置文件就是位于你用户主目录下的那个，以后你所有的项目都会默认使用这里配置的用户信息。</li>
+<li><em><strong>要在某个特定的项目中使用其他名字或者电邮，只要去掉 --global 选项重新配置即可，新的设定保存在当前项目的 .git/config 文件里。</strong></em></li>
+</ul>
+<h4 id="添加远程地址">添加远程地址</h4>
+<ul>
+<li><code>git remote add origin [url]</code>，加完之后进入.git，打开config，这里会多出一个remote &quot;origin&quot;内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。</li>
+</ul>
+<p>此外，Git 还会尝试找寻 /etc/gitconfig 文件，只不过看当初 Git 装在什么目录，就以此作为根目录来定位。</p>
+<h4 id="工作流">工作流</h4>
+<p>本地仓库由 git 维护的三棵&quot;树&quot;组成。</p>
+<ol>
+<li>工作目录working dir / working tree ： 持有实际文件</li>
+<li>暂存区Index : 临时保存改动</li>
+<li>HEAD ： 指向最后一次提交的结果<br>
+<strong>working dir</strong> —<em>add</em>—&gt; <strong>Index</strong> —<em>commit</em>—&gt; <strong>HEAD</strong></li>
+</ol>
+<hr>
+<p>在文件夹中右键 Git bash —&gt; 以此目录作为当前目录进入命令行状态</p>
 <ol>
 <li>
+<p><strong>新建仓库</strong><br>
+<code>git init</code>   当前目录下会出现.git目录，跟踪版本库，存放Git的数据和资源<br>
+( 版本库 = 仓库 = repository )</p>
+</li>
+<li>
+<p><strong>添加文件到本地库</strong><br>
+<code>git add [filename]</code>  ( + <code>git add *</code> —&gt; 将文件添加到暂存区 )<br>
+<code>git add .</code>添加所有文件</p>
+</li>
+<li>
+<p><strong>提交文件到本地库</strong><br>
+<code>git commit -m &quot;提交说明&quot;</code> —&gt; 将文件提交到本地仓库的HEAD中，但还没提交到远端仓库<br>
+<code>git commit -a -m &quot;提交说明&quot;</code>  —&gt; 自动提交本地修改<br>
+( -a 可将所有被修改or已删除的且已被git管理的文档提交到仓库，但不会提交新文件 )</p>
+<ul>
+<li>可以多次add不同的文件，然后再一次性commit很多文件</li>
+<li><code>git add</code> 把工作区的修改提交暂存区，<code>git commit</code> 把暂存区的修改保存到本地库，<code>git push</code> 把本地库的记录推送到远程库</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><code>git status</code> 查看当前本地库的状态 (是否有修改)<br>
+<code>git diff</code> 查看前后的改动
+<ul>
+<li>a(---)改动前，b(+++)改动后 / index后接git哈希值</li>
+<li>在commit后git diff 不会显示任何东西</li>
+</ul>
+</li>
+</ul>
 <ol>
-<li>推荐使用 git clone 的方式下载到 Gridea 客户端的 theme 目录。方便后期更新升级。</li>
-<li>打开 theme 目录：~/Documents/gridea/themes</li>
-<li>在当前目录执行 https://github.com/Mrcxt/gridea-theme-lemon.git</li>
-<li>重启 Gridea 客户端查看效果</li>
+<li><strong>发布版本</strong><br>
+<code>git clone ssh://……………….git</code> —&gt; 从服务器克隆一个库并上传<br>
+<code>git push ssh://……………….git(分支)</code> —&gt; 修改后推送到服务器(远端仓库)<br>
+<code>git remote add origin server</code> —&gt; 未克隆仓库时，将仓库连接到远程服务器</li>
+</ol>
+<ul>
+<li>
+<p><strong>克隆仓库</strong></p>
+<ol>
+<li><strong>创建一个本地仓库的克隆版本</strong><br>
+<code>git clone /path/to/repository</code></li>
+<li><strong>远端服务器上的仓库</strong><br>
+<code>git clone username@host:/path/to/repository</code></li>
 </ol>
 </li>
 <li>
-<ol>
-<li>克隆项目到本地</li>
-<li>复制「 gridea-theme-xxx」目录到「 Gridea 」主题文件中<br>
-<strong>要点进去看下里面是否就是参数的文件了，不然要把真正的theme package拿出来</strong></li>
-<li>重启「 Gridea 」客户端
-<ol>
-<li>在主题中选择「  gridea-theme-xxx 」主题，点击保存</li>
+<p><strong>取回 &amp; 更新</strong><br>
+<code>git pull</code> —&gt; 将当前分支自动与唯一一个追踪分支进行合并<br>
+<code>git pull http://……………….git</code> —&gt; 从非默认位置更新到指定的url</p>
+</li>
 <li>
-<ol start="5">
-<li>预览查看效果</li>
-</ol>
+<p><strong>替换本地改动</strong><br>
+<code>git checkout --&lt;filename&gt;</code> —&gt; 使用HEAD中最新内容替换掉工作目录中的文件，已添加到暂存区的改动以及新文件都不会受到影响<br>
+<code>git fetch origin</code> + <code>git rest --hard origin/master</code> —&gt; 丢弃在本地的所有改动和提交，可以到服务器上获取最新的版本历史，并将本地主分支指向它</p>
 </li>
-</ol>
+<li>
+<p><strong>删除</strong><br>
+<code>git rm file</code></p>
 </li>
-</ol>
+<li>
+<p><strong>分支branch &amp; 合并merge</strong><br>
+分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是&quot;默认的&quot;分支。在其他分支上进行开发，完成后再将它们合并到主分支上。<br>
+<code>git branch test</code> —&gt; 创建一个新的分支 test<br>
+<code>git checkout test</code> —&gt; 更改分支  ( 主分支 / 第一个分支 ： master )<br>
+<code>git checkout -b test</code> —&gt; 创建分支并切换过去<br>
+<code>git merge test</code> —&gt; 合并其他分支到当前分支<br>
+<code>git branch -d test</code> —&gt; 删除分支<br>
+<code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code> —&gt; 预览差异(git自动合并改动时可能出现冲突conflicts)</p>
 </li>
-</ol>
-<h3 id="gridea使用注意">Gridea使用注意</h3>
+<li>
+<p><strong>标签</strong><br>
+<code>git log</code> —&gt; 获取ID<br>
+<code>git tag 1.0.0 &lt;log_10&gt;(要标记的ID的前10位)</code> —&gt; 创建标签1.0.0</p>
+</li>
+<li>
+<p><code>gitk</code> —&gt; 内建图形化git</p>
+</li>
+<li>
+<p><code>git config color.ui true</code> —&gt; 彩色的git输出</p>
+</li>
+<li>
+<p><code>git config format.pretty oneline</code> —&gt; 显示历史记录时，每个提交的信息只显示一行</p>
+</li>
+<li>
+<p><code>git add -i</code> —&gt; 交互式添加文件到暂存区</p>
+</li>
+</ul>
+<hr>
+<h3 id="上传到远程版本库">上传到远程版本库</h3>
 <ol>
-<li>用Github pages搭一个博客时，名字不用user name也行，就是输域名的时候长点</li>
+<li>初始化git版本库 <code>git init</code><br>
+（当前目录下会出现.git目录，跟踪版本库，存放Git的数据和资源）</li>
+<li><em>添加</em>文件到本地库 <code>git add .</code>（添加所有文件）</li>
+<li><em>提交</em>文件到本地库 <code>git commit -m &quot;msg(提交日志)&quot;</code><br>
+(2.3.可合并 —&gt; <code>git commit -am &quot;&quot;</code> )</li>
+<li>关联远程库 <code>git remote add branch_Name(master) [url]</code><br>
+可以用 <code>git remote -v</code> 来检查是否关联成功</li>
+<li><code>git pull origin master</code></li>
 </ol>
+<h4 id="同步github-pages-在git-bash-中">同步GitHub Pages  （在git bash 中）</h4>
+<ol>
+<li>clone 项目<br>
+$ git clone https://GitHub.com/chtholist/chtholist.github.io<br>
+<strong>// 输入上面这个（完整的网址）</strong><br>
+Cloning into 'chtholist.github.io'...<br>
+remote: Enumerating objects: 17, done.<br>
+remote: Counting objects: 100% (17/17), done.<br>
+remote: Compressing objects: 100% (16/16), done.<br>
+remote: Total 17 (delta 5), reused 0 (delta 0), pack-reused 0<br>
+Unpacking objects: 100% (17/17), 4.67 KiB | 88.00 KiB/s, done.</li>
+<li>进入项目的文件中，创作文章</li>
+</ol>
+<h2 id="问题">问题</h2>
+<ul>
+<li>出问题没法解决就<code>git remote rm master</code> &amp; <code>git remote rm origin</code></li>
+</ul>
+<ol>
+<li>
+<p>无法回到Git Bash中开头为$的操作界面<br>
+<em>按下Esc，接着输入wq保存退出（连按两次大写Z）</em></p>
+</li>
+<li>
 <blockquote>
-<p><strong>Gridea客户端只是一个框架，将写的md转换成html，然后所有的放在Gridea文件夹中的output，同步的时候整个文件夹推到GitHub上</strong>  ，<em><strong>所以备份的时候不用从Github上clone下来，直接把output文件复制一个就行了</strong></em></p>
+<p>warning: LF will be replaced by CRLF</p>
 </blockquote>
-<h3 id="gridea推送到本地服务器">Gridea推送到本地服务器</h3>
-<ol>
-<li>将远程的域名改成自家的域名，name和密钥改成nas的，然后同步，output中的文件就能设置好了。之后用软件把output同步到服务器上。</li>
-</ol>
-<blockquote>
-<p>Gridea根据远程的设置，把相关域名参数保存在output中，同步时将整个文件夹推送给远程的域名</p>
-</blockquote>
-<ul>
-<li>2020.3.8
-<ul>
-<li>Gridea的主题设置老是没法保存就很奇怪……去看了下洛谷上的巨佬们，都是用Gridea在GitHub上搭的博客，莫非全都是受那篇洛谷日报的影响？？？</li>
-<li>突然发现洛谷和博客园都可以搭个人博客，也可以弄得花里胡哨的🉐</li>
-</ul>
 </li>
-</ul>
-<h2 id="后续">后续</h2>
-<h3 id="2020322">20203.22</h3>
-<ul>
-<li>破案了，就只有用Next主题没法保存，不知道为什么。而且网站兼容性极差（gitee、Github），有几个版面可以正常显示，但是看不出端倪</li>
-<li>之前用Next的时候，推流后网站没法跳转，原来仓库里的链接代码<code>chtholist.gitee.io/xxx</code>，在页面部署后变成<code>gitee.com/chtholist/chtholist.gitee.io/xxx</code>，奇怪的是部署完后过了半天到一天就正常了？</li>
-<li>改用Paper主题，无法显示封面图，<strong>无法显示MD文档的侧边栏导航</strong>（这是坠要命的，以后看看怎么改）</li>
-<li>发现博客园的代码可以挪过来用，于是做了搬运工，小改了主题，增加了 1.鼠标点击特效 2.鼠标图案更改 3.回到顶部 4.Live2D</li>
-</ul>
+</ol>
+<p>Git Bash模拟linux环境，会默认把Windows下的回车CRLF替换成linux下的换行LF，让git忽略这个换行符： <code>git config core.autocrlf false</code></p>
+<ol start="3">
+<li>
+<blockquote>
+<p>git push后出现错误 ![rejected] master -&gt; master(non-fast-forward) error:failed to push some refs to XXX</p>
+</blockquote>
+<ol>
+<li>在添加远程仓库<code>git remote add origin [url]</code>后先<code>git push origin master</code>再<code>get add .</code></li>
+<li>先 <code>git pull --rebase origin master</code> 再 <code>git push -u origin master</code></li>
+<li>把远程仓库和本地同步消除差异<code>git pull origin master --allow-unrelated-histories</code> ，再重新add &amp; commit</li>
+<li>强制上传（<strong>慎用</strong>）： <code>git push -f origin master</code></li>
+</ol>
+</li>
+<li>
+<blockquote>
+<p>Authentication failed for</p>
+</blockquote>
+</li>
+</ol>
+<p>git的账号密码有问题，先查看用户信息<code>git config --list</code>，不行就重新配置<code>git config --global user.name [username]</code> &amp; <code>git config --global uer.email [email]</code></p>
+<ol start="3">
+<li>
+<blockquote>
+<p>fatal: remote origin already exists</p>
+</blockquote>
+</li>
+</ol>
+<p>先<code>git remote rm origin</code>，再重输<code>git remote add origin [url]</code></p>
 
             </div>
           </article>
@@ -183,9 +327,9 @@
               <div class="next">
                 下一篇
               </div>
-              <a href="https://chtholist.gitee.io/post/hexo-cai-keng-ji-lu/">
+              <a href="https://chtholist.gitee.io/post/gridea-shi-yong-zhi-bei/">
                 <h3 class="post-title">
-                  Hexo 踩坑记录
+                   Gridea使用指北 
                 </h3>
               </a>
             </div>
@@ -312,23 +456,23 @@
           html
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge secondary">
+        <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge warning">
           学习
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge ">
+        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge success">
           编程
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge success">
+        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge warning">
           java
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge secondary">
+        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge warning">
           git
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge warning">
+        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge ">
           c
         </a>
       

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title> Gridea使用指北  | Chtholist</title>
+<title>C++学习笔记 —— 数组 | Chtholist</title>
 <meta name="description" content="&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
 &lt;b&gt; 末红褪去春意来 &lt;/b&gt;">
 
@@ -100,78 +100,266 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1> Gridea使用指北 </h1>
+            <h1>C++学习笔记 —— 数组</h1>
             <p class="article-meta">
               2020-03-22
+              
+                <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge secondary">
+                  c
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge warning">
+                  学习
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge secondary">
+                  编程
+                </a>
               
             </p>
             
             <div class="post-content">
-              <h3 id="大佬博客集合">大佬博客集合</h3>
-<li><a href="https://chiperman.github.io/" title="Pan">Pan</a></li>
-<li><a href="https://shanbu.fun/" title="Anatale">Anatale</a></li>
-<li><a href="https://blog.blinkstar.cn/" title="bitcron-pro">bitcron-pro</a></li>
-<li><a href="https://zhangajian.com/" title="Space">Space</a></li>
-<li><a href="https://kveln.cn/" title="Clean">Clean</a></li>
-<li><a href="https://i.immmmm.com/">Break</a></li>
-<li><a href="https://yeming.site/">NextT</a><br>
-<h3 id="theme下载注意">theme下载注意：</h3>
-<ol>
-<li>
-<ol>
-<li>推荐使用 git clone 的方式下载到 Gridea 客户端的 theme 目录。方便后期更新升级。</li>
-<li>打开 theme 目录：~/Documents/gridea/themes</li>
-<li>在当前目录执行 https://github.com/Mrcxt/gridea-theme-lemon.git</li>
-<li>重启 Gridea 客户端查看效果</li>
-</ol>
-</li>
-<li>
-<ol>
-<li>克隆项目到本地</li>
-<li>复制「 gridea-theme-xxx」目录到「 Gridea 」主题文件中<br>
-<strong>要点进去看下里面是否就是参数的文件了，不然要把真正的theme package拿出来</strong></li>
-<li>重启「 Gridea 」客户端
-<ol>
-<li>在主题中选择「  gridea-theme-xxx 」主题，点击保存</li>
-<li>
-<ol start="5">
-<li>预览查看效果</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="gridea使用注意">Gridea使用注意</h3>
-<ol>
-<li>用Github pages搭一个博客时，名字不用user name也行，就是输域名的时候长点</li>
-</ol>
-<blockquote>
-<p><strong>Gridea客户端只是一个框架，将写的md转换成html，然后所有的放在Gridea文件夹中的output，同步的时候整个文件夹推到GitHub上</strong>  ，<em><strong>所以备份的时候不用从Github上clone下来，直接把output文件复制一个就行了</strong></em></p>
-</blockquote>
-<h3 id="gridea推送到本地服务器">Gridea推送到本地服务器</h3>
-<ol>
-<li>将远程的域名改成自家的域名，name和密钥改成nas的，然后同步，output中的文件就能设置好了。之后用软件把output同步到服务器上。</li>
-</ol>
-<blockquote>
-<p>Gridea根据远程的设置，把相关域名参数保存在output中，同步时将整个文件夹推送给远程的域名</p>
-</blockquote>
+              <h1 id="数组">数组</h1>
+<h2 id="基本概念">基本概念</h2>
 <ul>
-<li>2020.3.8
-<ul>
-<li>Gridea的主题设置老是没法保存就很奇怪……去看了下洛谷上的巨佬们，都是用Gridea在GitHub上搭的博客，莫非全都是受那篇洛谷日报的影响？？？</li>
-<li>突然发现洛谷和博客园都可以搭个人博客，也可以弄得花里胡哨的🉐</li>
+<li>在内存中占一片连续的存储单元，系统会根据数据总个数分配存储空间</li>
+<li>不允许对数组的大小作动态定义，即数组的大小不依赖于程序中变量的值</li>
+<li>只能逐个引用数组元素的值而不能一次引用整个数组中的全部元素的值。</li>
 </ul>
-</li>
-</ul>
-<h2 id="后续">后续</h2>
-<h3 id="2020322">20203.22</h3>
+<ol>
+<li>可以只给部分元素赋值，当 { } 中值的个数少于元素个数时，只给前面部分元素赋值。<br>
+当赋值的元素少于数组总体元素的时候，不同类型剩余的元素自动初始化值不同：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">short、int、long</td>
+<td style="text-align:center">整数 0</td>
+</tr>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">字符 '\0'</td>
+</tr>
+<tr>
+<td style="text-align:center">float、double</td>
+<td style="text-align:center">小数 0.0</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>只能给元素逐个赋值，不能给数组整体赋值。<br>
+所有的数组都是以 0 作为它们第一个元素的索引，也被称为基索引</li>
+<li>如果对全部元素都赋初值，则定义数组时第一维的长度可以不指定，但第二维的长度不能省。<br>
+int a[ ][4]={1，2，3，4，5，6，7，8，9，10，11，12};</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数组长度</th>
+<th style="text-align:center">(64位系统中)</th>
+<th style="text-align:center">数组长度</th>
+<th style="text-align:center">(64位系统中)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">1个字节</td>
+<td style="text-align:center"><strong>*</strong> (指针变量/地址)</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">short int</td>
+<td style="text-align:center">2个字节</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">4个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">4个字节</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">8个字节</td>
+<td style="text-align:center">long long</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+</tbody>
+</table>
+<h2 id="整型数组">整型数组</h2>
+<p><strong>int a[ ] = {1,2,3,4};</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sizeof(a)</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">单独一个数组名表示整个数组，4*4</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(*&amp;a)</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">/&amp;a为整个数组地址，再指针为整个数组</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">&amp;a为整个数组地址，是地址就是8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(a+0)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">（a+0）表示第一个元素地址，地址的大小为8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a[0])</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">第一个元素地址</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(*a)</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">*a表示数组第一个元素,一个int型变量4个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">izeof(a[1])</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">第一个元素的大小</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a+1)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">整个数组后的下一个地址，即最后一个元素后下一个元素的地址</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a[0]+1)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li>破案了，就只有用Next主题没法保存，不知道为什么。而且网站兼容性极差（gitee、Github），有几个版面可以正常显示，但是看不出端倪</li>
-<li>之前用Next的时候，推流后网站没法跳转，原来仓库里的链接代码<code>chtholist.gitee.io/xxx</code>，在页面部署后变成<code>gitee.com/chtholist/chtholist.gitee.io/xxx</code>，奇怪的是部署完后过了半天到一天就正常了？</li>
-<li>改用Paper主题，无法显示封面图，<strong>无法显示MD文档的侧边栏导航</strong>（这是坠要命的，以后看看怎么改）</li>
-<li>发现博客园的代码可以挪过来用，于是做了搬运工，小改了主题，增加了 1.鼠标点击特效 2.鼠标图案更改 3.回到顶部 4.Live2D</li>
+<li><strong>sizeof(a)/sizeof(a[0]) —&gt; 数组单元个数（数组长度）</strong></li>
+<li><strong>sizeof(a) —&gt; 数组a的大小（数组总内存）</strong></li>
+<li><strong>sizeof(a[n]) —&gt; 数组 a 中单个元素占空间的大小		（数组类型占的字节）</strong></li>
+</ul>
+<hr>
+<h2 id="字符数组">字符数组</h2>
+<p>默认为空字符(‘ ’)</p>
+<ul>
+<li>定义后赋值只能逐个赋值</li>
+<li>整体赋值要在定义时赋初值</li>
+</ul>
+<ol>
+<li><code>char str[ ]={″happy″};</code></li>
+<li><code>char str[ ]=″happy″;</code></li>
+<li><code>char str[ ]={′′h′,′a′,′p′,′p′,′y′,′\0′};</code><br>
+字符数组并不要求它的最后一个字符为'＼0′，甚至可以不包含′\0′<br>
+在程序中依靠检测′\0′的位置来判定字符串是否结束</li>
+</ol>
+<pre><code class="language-c++">char x[ ]=&quot;abcd&quot;;   //字符串整体赋值会在结尾自动加上'\0'作为结尾  
+char y[ ]={'a', 'b', 'c', 'd'};         //系统不会加上'\0'  
+cout&lt;&lt;sizeof(x)/sizeof(x[0])&lt;&lt;endl;     //5
+cout&lt;&lt;sizeof(y)/sizeof(y[0])&lt;&lt;endl;     //4  
+cout&lt;&lt;sizeof(x)&lt;&lt;endl;                  //5
+cout&lt;&lt;sizeof(x+0)&lt;&lt;endl ;               //8
+cout&lt;&lt;sizeof(y)&lt;&lt;endl;                  //4
+cout&lt;&lt;sizeof(y+0)&lt;&lt;endl ;               //8
+</code></pre>
+<p>字符数组在最后一位默认有一个\0的空字符作为结束符，字符数+1<br>
+如果数组长度大于字符串实际长度，也只输出到遇′\0′结束。<br>
+如果一个字符数组中包含一个以上′\0′，则遇第一个′\0′时输出就结束。</p>
+<h2 id="字符串处理函数">字符串处理函数</h2>
+<ul>
+<li>头文件：string.h或string</li>
+</ul>
+<h3 id="字符串连接函数-strcat">字符串连接函数 strcat</h3>
+<pre><code class="language-c++">strcat(char[ ],const char[ ]);
+char str1[30]=″People′s Republic of ″;
+char str2[ ]=″China″;
+cout&lt;&lt;strcat(str1，str2);
+</code></pre>
+<h3 id="字符串复制函数strcpy">字符串复制函数strcpy</h3>
+<p>strcpy(char[ ],const char[ ]);</p>
+<ul>
+<li>strcpy()为char *类型，它返回的是第一个参数的地址。</li>
+<li>第一个参数必须是数组名，第二个参数可以是字符数组名，也可以是一个字符串常量。</li>
+<li>第一个参数不需要指向数组的开始。</li>
+</ul>
+<pre><code class="language-c++">char str1[10]，str2[ ]=&quot;China&quot;;
+strcpy(str1，str2);
+strcpy(str1, &quot;China&quot;);
+strncpy(str1,str2,2);   //用strncpy将前n个字符复制
+str1=&quot;China&quot;;    str1=str2;    //错误，不能直接赋值
+</code></pre>
+<h3 id="字符串比较函数strcmp">字符串比较函数strcmp</h3>
+<p>strcmp(const char[ ],const char[ ]);</p>
+<ol>
+<li>字符串1=字符串2，函数值为0。</li>
+<li>字符串1&gt;字符串2，函数值为一正整数。</li>
+<li>字符串1&lt;字符串2，函数值为一负整数。<br>
+两个字符串自左至右逐个字符相比(<em>按ASCII码值大小比较</em>)，直到出现不同的字符或遇到′\0′为止。如全部字符相同，则认为相等；若出现不相同的字符，则以第一个不相同的字符的比较结果为准。</li>
+</ol>
+<h3 id="字符串长度函数strlen">字符串长度函数strlen</h3>
+<p>strlen(const char[ ]);<br>
+测试字符串长度。其函数的值为字符串中的实际长度，<strong>不包括′\0′在内。</strong></p>
+<h2 id="字符串数组">字符串数组</h2>
+<p>可以用string定义字符串数组<br>
+<code>string name[5];</code><br>
+<code>string name[5]={″Zhang″,″Li″,″Fun″,″Wang″,″Tan″};</code></p>
+<ul>
+<li>不要求每个字符串元素具有相同的长度</li>
+<li>每一个字符串元素中只包含字符串本身的字符而<strong>不包括′\0′</strong>。</li>
+</ul>
+<h2 id="数组参数">数组参数</h2>
+<ul>
+<li>实参数组与形参数组类型应一致。</li>
+<li>实参数组和形参数组占同一段内存单元，改变形参数组元素的值即改变实参数组元素的值。</li>
+<li><strong>C++实际上只把实参数组首元素的地址（数组起始地址）传递给形参。形参数组名作为一个指针变量来接收从实参传过来的地址。</strong></li>
+<li>形参一维数组的声明中可以不写元素个数</li>
+</ul>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+void test(int arr[ ])
+{
+	int length = 0;
+	length = sizeof(arr) / sizeof(int);     
+	printf(&quot;test中数组的总字节数为: %d\n&quot;,sizeof(arr));   
+	printf(&quot;test中数组的长度为: %d\n&quot;,length);
+}
+int main()
+{
+	int arr[ ] = {1,2,3,4,5,6,7,8,9};
+	int length = 0;
+	length = sizeof(arr) / sizeof(int);
+    printf(&quot;main中数组的总字节数：%d\n&quot;,sizeof(arr));
+	printf(&quot;main中数组的长度为: %d\n&quot;,length);
+	test(arr);    
+	return 0;
+}
+main中数组的总字节数：36
+main中数组的长度为: 9
+test中数组的总字节数为: 8
+test中数组的长度为: 2
+</code></pre>
+<ul>
+<li><u>  数据个数 = 所有数据的字节数 / 一个数据的字节数  </u></li>
+<li>一个整型数组的长度 = 该数组的总字节数 / int字节数(4)</li>
+<li>在test函数中输出的sizeof(arr)其实得到的是一个整型数组的长度(所占的字节数), 所以结果是8, 再用其除以int所占的字节数(4), 结果就是2 .</li>
+<li>求数组的准确长度： 在定义数组的函数中计算数组的长度, 在以实参的形式传递出去, 这样其他的函数变可以获得数组的长度</li>
 </ul>
 
             </div>
@@ -183,9 +371,9 @@
               <div class="next">
                 下一篇
               </div>
-              <a href="https://chtholist.gitee.io/post/hexo-cai-keng-ji-lu/">
+              <a href="https://chtholist.gitee.io/post/Cstudy2/">
                 <h3 class="post-title">
-                  Hexo 踩坑记录
+                  C++学习笔记 —— 输入输出
                 </h3>
               </a>
             </div>
@@ -312,23 +500,23 @@
           html
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge secondary">
+        <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge ">
           学习
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge ">
+        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge success">
           编程
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge success">
+        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge warning">
           java
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge secondary">
+        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge warning">
           git
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge warning">
+        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge success">
           c
         </a>
       

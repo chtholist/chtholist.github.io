@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C++学习笔记 —— 函数 | Chtholist</title>
+<meta name="description" content="&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
+&lt;b&gt; 末红褪去春意来 &lt;/b&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://chtholist.gitee.io/favicon.ico?v=1584848943381">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://chtholist.gitee.io/styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  
+  <div class="nav-brand">
+    <h3><a href="https://chtholist.gitee.io">Chtholist</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                Who am I
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="http://chtholist.gitee.io/wallpaper/" class="menu">
+                墨鱼壁纸
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://libnet.chtholly.moe:2333/" class="menu">
+                中珂院图库
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>C++学习笔记 —— 函数</h1>
+            <p class="article-meta">
+              2020-03-22
+              
+            </p>
+            
+            <div class="post-content">
+              <h1 id="函数">函数</h1>
+<p>分类：系统函数、自定义函数、有参函数、无参函数</p>
+<h2 id="返回值">返回值</h2>
+<ul>
+<li>C++要求在定义函数时必须指定函数的类型，如无返回值需指定void</li>
+<li><strong>一个函数中可以有多个return语句</strong></li>
+<li>return后面的括号可以省略，即return z;与return(z)等价</li>
+<li>return的类型要和函数的类型一致</li>
+<li>void表示函数没有返回值或没有参数</li>
+<li>在C语言的函数定义中，如果省略了return语句，函数也可以返回主调函数（void）</li>
+<li>不能返回自动变量的指针</li>
+</ul>
+<pre><code class="language-c++">    int *f(void)				//f是一个无参数的函数，返回的是一个指向整型数据的指针
+    { int i;
+    return &amp;i;}				//函数结束时局部变量i被释放空间
+</code></pre>
+<blockquote>
+<p>被调函数运行结束后系统为被调函数中的局部变量分配的内存空间就会被释放。<br>
+在执行 return 语句时系统是在内部自动创建了一个临时变量，然后将 return 要返回的那个值赋给这个临时变量。所以当被调函数运行结束后 return 后面的返回值就被释放掉了，最后是通过这个临时变量将值返回给主调函数的。而且定义函数时指定的返回值类型实际上指定的就是这个临时变量的类型。<br>
+这也是为什么当 return 语句中表达式的类型和函数返回值类型不一致时，将 return 的类型转换成函数返回值类型的原因。return 语句实际上就是将其后的值赋给临时变量，所以它要以临时变量的类型为准，即函数返回值的类型。</p>
+</blockquote>
+<h2 id="函数调用">函数调用</h2>
+<ul>
+<li>main函数由系统调用</li>
+<li>所有函数是平行的，不能嵌套定义</li>
+<li>各函数之间可以互相调用，但不能调用main函数</li>
+<li>如果main函数在其他函数前进行定义，在调用该函数时需进行声明</li>
+<li>调用函数时，要给出参数。在主调函数和被调函数之间有数据传递。即主调函数将数据传给被调函数使用。被调函数可以带回或者不带回（此时函数类型为void）函数值。</li>
+</ul>
+<h3 id="形参-实参">形参 &amp; 实参</h3>
+<ul>
+<li><strong>形式参数</strong>：在定义函数时函数名后面括号中的变量名称</li>
+<li><strong>实际参数</strong>：在调用一个函数时，函数名后面括号中的参数，可以是常量、变量或表达式</li>
+</ul>
+<ol>
+<li><em>实参变量对形参变量的数据传递是“值传递”</em>，即单向传递，只由实参传给形参</li>
+<li>实参与形参的类型可以不相同（发生强制转换）</li>
+<li><em>形参只有在函数调用时才被分配内存单元</em>，以便接收从实参传来的数据。在调用结束后，形参所占的内存单元也被释放。因此，在执行一个被调用函数时，形参的值如果发生改变，并不会改变主调函数中实参的值。</li>
+<li><em>实参单元与形参单元是不同的单元，实参形参占用不同的空间。</em></li>
+</ol>
+<h2 id="内置函数-内联函数">内置函数 / 内联函数</h2>
+<p>C++提供一种提高效率的方法，即在编译时将所调用函数的代码直接嵌入到主调函数中，编译系统在遇到该函数调用时，就用该函数体的代码进行代替，同时将实参代替形参。</p>
+<ul>
+<li>可以在声明函数和定义函数时同时写inline，也可以只在函数声明时加inline，效果相同。</li>
+<li>使用内置函数可以节省运行时间，但增加了目标程序的长度。因此一般只将规模很小而使用频繁的函数声明为内置函数。</li>
+<li>inline声明只是建议性的，而不是指令性的。<br>
+函数调用时需要一定的时间和空间的开销：保护现场、恢复现场<br>
+一般的程序调用函数时的过程：</li>
+</ul>
+<ol>
+<li>执行函数中调用前的语句；</li>
+<li>转移到被调用函数的入口处，同时进行参数传递；</li>
+<li>执行被调用的函数；</li>
+<li>带回被调用函数的返回值；</li>
+<li>接着执行主调函数中未执行的语句。</li>
+</ol>
+<h2 id="函数的重载运算符重载">函数的重载（运算符重载）</h2>
+<p>C++允许用同一函数名定义多个函数</p>
+<ul>
+<li><strong>重载函数的参数个数、参数类型或参数顺序三者中必须至少有一种不同</strong></li>
+<li>函数的返回值类型可以相同也可以不同，不要求函数体相同</li>
+</ul>
+<h2 id="函数模板">函数模板</h2>
+<p>建立一个通用函数，其函数类型和形参类型不具体指定，用一个虚拟的类型来代表。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">template &lt; typename T&gt;</td>
+<td style="text-align:center">template <class T></td>
+</tr>
+<tr>
+<td style="text-align:center">通用函数定义</td>
+<td style="text-align:center">通用类定义</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>函数体相同的函数都可以用这个模板来代替，不必定义多个函数，只需在模板中定义一次</li>
+<li>在调用函数时系统会根据实参的类型来取代模板中的虚拟类型</li>
+<li>类型参数可以不只一个，可以根据需要确定个数。</li>
+<li><strong>只适用于函数的参数个数相同而类型不同，且函数体相同的情况</strong><br>
+<br/><br>
+编译器由模板自动生成函数时，会用具体的类型名对模板中所有的类型参数进行替换，其他部分原封不动地保留。同一个类型参数只能替换为同一种类型。编译器在编译到调用函数模板的语句时，会根据实参的类型判断如何替换模板中的类型参数。T 是类型参数，代表类型</li>
+</ul>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+template&lt;class T&gt;
+void Swap(T &amp; x, T &amp; y)
+{
+    T tmp = x;
+    x = y;
+    y = tmp;
+}
+int main( )
+{
+    int n = 1, m = 2;
+    Swap(n, m);     //编译器自动生成void Swap(int &amp;,int &amp;)函数
+    double f = 1.2, g = 2.3;
+    Swap(f, g);     //编译器自动生成void Swap(double &amp;,double &amp;)函数
+    return 0;
+}
+</code></pre>
+<h2 id="有默认参数的函数">有默认参数的函数</h2>
+<ul>
+<li>实参与形参结合顺序为从左至右，因此，<strong>指定默认值的参数必须放在形参表列中的最右端</strong></li>
+<li>如果函数的定义在函数调用之前，则应在函数定义中给出默认值。</li>
+<li><em>一个函数不能既作为重载函数，又作为有默认参数的函数。</em></li>
+</ul>
+<hr>
+<h2 id="作用域">作用域</h2>
+<p>每一个变量都有其有效作用范围，称为变量的作用域。<br>
+在作用域以外是不能访问这些变量的。</p>
+<h3 id="局部变量-内部变量">局部变量 / 内部变量</h3>
+<p><em><strong>保存在栈中，所在函数被调用时才由系统动态在栈中分配临时性的存储单元。</strong></em></p>
+<ul>
+<li>在复合语句中定义的变量只在本复合语句范围内有效</li>
+<li><em>主函数中定义的变量也只在主函数中有效</em></li>
+<li>不同函数中可以使用同名的变量,它们代表不同的对象,互不干扰。</li>
+<li>形式参数也是局部变量。</li>
+<li>在函数<em>声明</em>中出现的参数名，其作用范围只在本行的括号内。</li>
+</ul>
+<h3 id="全局变量-外部变量">全局变量 / 外部变量</h3>
+<p><em><strong>在函数之外定义的变量。保存在内存的全局存储区中，占用静态的存储单元。</strong></em><br>
+有效范围为从定义变量的位置开始到本源文件结束。</p>
+<ul>
+<li>全局变量在程序的全部执行过程中都占用存储单元，而不是仅在需要时才开辟单元。</li>
+<li>它使函数的通用性降低了，因为在执行函数时要受到外部变量的影响。</li>
+<li>使用全局变量过多，会降低程序的清晰性。<br>
+如果在同一个源文件中，全局变量与局部变量同名，则在局部变量的作用范围内，全局变量被屏蔽，即不起作用。要用this指定为全局变量。</li>
+</ul>
+<h2 id="c语言内存区">C语言内存区</h2>
+<h3 id="栈stack">栈（stack）</h3>
+<p>由编译器进行管理，自动分配和释放，存放函数调用过程中的各种参数、局部变量、返回值以及函数返回地址。</p>
+<ol>
+<li>申请后，只要栈的剩余空间足够，系统将为程序提供内存，否则异常提示栈溢<br>
+出overflow。</li>
+<li>栈是向低地址扩展的数据结构，是一块连续的内存区域(栈顶的地址和栈的最大容量是系统预先规定好的)，大小是2MB。 —&gt; 栈获得的空间较小</li>
+<li>堆获得的空间比较灵活，也比较大</li>
+<li>在函数调用时，第一个进栈的是主函数中后的下一条指令（函数调用语句的下一条可<br>
+执行语句）的地址，然后是函数的各个参数，在大多数的C编译器中，参数是由右往左入栈<br>
+的，然后是函数中的局部变量。注意静态变量是不入栈的。<br>
+当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地<br>
+址，也就是主函数中的下一条指令，程序由该点继续运行。</li>
+<li>操作方式类似数据结构中的栈。</li>
+</ol>
+<h3 id="堆heap">堆（heap）</h3>
+<p>用于程序动态申请分配和释放空间。在C中用malloc，C++中用new。需要程序员自己申请，并指明大小，申请的空间在使用结束后应该释放，若程序员没有释放空间，则程序结束时系统自动回收。</p>
+<ol>
+<li>申请后，操作系统会 1.遍历一个记录空闲内存地址的链表，寻找第一个空间大于所申请空间的堆结点，2.然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，3.同时在这块内存空间中的首地址处记录本次分配的大小，这样，代码中的delete语句才能正确的释放本内存空间。4.另外，由于找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。</li>
+<li>堆是向高地址扩展的数据结构，是不连续的内存区域(系统是用链表来存储<br>
+的空闲内存地址的)，堆的大小受限于计算机的虚拟内存。—&gt; 堆获得的空间比较灵活，也比较大</li>
+<li>堆是由new分配的内存，一般速度比较慢，而且容易产生内存碎片，但是方便</li>
+<li>一般是在堆的头部用一个字节存放堆的大小。堆中的具体内容由程序员安排。</li>
+<li>注意：这里的“堆”并不是数据结构中的“堆”。</li>
+</ol>
+<pre><code class="language-c++">void main()
+{
+    char a = 1;
+    char c[] = &quot;1234567890&quot;;    //栈上数组：在运行时刻赋值
+    //在读取时直接就把字符串中的元素读到寄存器cl中
+    char *p =&quot;1234567890&quot;;      //指针所指向的字符串(例如堆)：在编译时就确定
+    //要先把指针值读到edx中，再根据edx读取字符，更慢
+    a = c[1];
+    a = p[1];
+return;
+}
+</code></pre>
+<h3 id="全局静态存储区">全局（静态）存储区</h3>
+<h4 id="全局初始化区data段">全局初始化区（DATA段）</h4>
+<p>存放已经初始化的全局变量和静态局部变量(static修饰的已经初始化的变量)<br>
+这些变量需要占用存储器的空间，在程序执行时它们需要位于可读写的内存区域内，并且有初值，以供程序运行时读写。</p>
+<h4 id="未初始化段bss段">未初始化段（BSS段）</h4>
+<p>存放未初始化的全局变量和静态变量。（在程序中声明，但未初始化，在程序运行前不占用存储器空间）<br>
+可读写，在程序运行结束时自动释放。BBS段在程序执行之前会被自动清0，所以未初始化的全局变量和静态变量在程序执行之前已经为0。</p>
+<h3 id="文字常量区">文字常量区</h3>
+<p>存放常量字符串。程序结束后由系统释放。<br>
+<code>char *name = &quot;fengke&quot;;</code>      保存在文字常量区<br>
+<code>char name1[] = &quot;fengke&quot;</code>      保存在栈区</p>
+<pre><code class="language-c++">char *name = &quot;fengke&quot;;
+name 0x004156b8 —&gt; unsigned char *  //name的值是保存在文字常量区&quot;fengke&quot;的地址
+&amp;name 0x0013ff5c —&gt; unsigned char * *    //name自身的地址则被编译器分配在栈区
+name[0] 102 —&gt; unsigned char      //name的第一个字符值为'f'
+&amp;name[0] 0x004156b8 —&gt; unsigned char *   //它保存在文字常量区
+</code></pre>
+<ul>
+<li>&amp;name与name的地址不同 / 字符串常量的指针指向的内容和指针自身的地址不同<br>
+因为name是个字符型变量，该变量的空间分配在栈区，name指向的字符串在文字常量区，而name又是个字符型指针变量，它里面所保存的值即为字符串在文字常量区的地址</li>
+</ul>
+<h3 id="程序代码区存放程序的二进制代码">程序代码区：存放程序的二进制代码。</h3>
+<hr>
+<h2 id="存储空间">存储空间</h2>
+<p>可以分为三部分：程序区、静态存储区、动态存储区</p>
+<h3 id="动态存储区-栈-堆">动态存储区 （ 栈 / 堆 ）</h3>
+<p>形参、自动变量（未加static声明的局部变量）、函数调用的现场保护和返回地址<br>
+在函数调用开始时分配动态存储空间，函数结束时释放这些空间。<br>
+这种分配和释放是动态的在程序运行期间，系统对变量动态地分配存储空间</p>
+<h3 id="静态存储区">静态存储区</h3>
+<p>静态变量、全局变量<br>
+在程序开始执行时给变量分配存储单元，程序执行完毕就释放这些空间。<br>
+在程序执行过程中它们占据固定的存储单元，而不是动态地进行分配和释放。</p>
+<hr>
+<h2 id="存储类别">存储类别</h2>
+<h3 id="自动的auto">自动的(auto)</h3>
+<ul>
+<li>数据存储在<strong>动态存储区</strong>中，在函数调用结束时就自动释放这些空间</li>
+<li>关键字auto可以省略，如果不写auto，则系统把它默认为自动存储类别。</li>
+<li>在函数调用时赋初值，每调用一次函数重新给一次初值。<br>
+<strong>如果不赋初值，则它的值是一个不确定的值。</strong></li>
+</ul>
+<h3 id="静态的static">静态的(static)</h3>
+<ul>
+<li>在<strong>静态存储区</strong>内分配存储单元。在程序整个运行期间都不释放。</li>
+<li><strong>赋初值是在编译时进行的，即只赋初值一次。以后每次调用函数时不再重新赋初值而只是保留上次函数调用结束时的值。</strong><br>
+<strong>如果在定义时不赋初值的话，编译时自动赋初值0(对数值型变量)或空字符(对字符型变量)。</strong></li>
+<li>静态存储要多占内存，而且降低了程序的可读性</li>
+<li>虽然静态局部变量在程序生成时，在函数调用结束后仍然存在，但其他函数是不能引用它的。</li>
+</ul>
+<pre><code class="language-c++">int f(int n) {
+    static int k, s;
+    n--;
+    for(k=n; k&gt;0; k--)
+		s += k;  
+    return s;
+}
+int main(void)
+{  	int k;
+    k=f(3);
+    printf(&quot;(%d,%d)&quot;, k, f(k));        //输出(3,6)
+}
+</code></pre>
+<h3 id="寄存器的register">寄存器的(register)</h3>
+<ul>
+<li>将局部变量的值放在CPU中的寄存器中，需要用时直接从寄存器取出参加运算，不必再到内存中去存取。</li>
+<li>只是建议性(而不是强制性)的</li>
+</ul>
+<h3 id="外部的extern">外部的(extern)</h3>
+<p>在一个文件内声明全局变量</p>
+<ul>
+<li>提前引用声明<br>
+如果在定义点之前的函数想引用该全局变量，则应该在引用之前用关键字extern对该变量作外部变量声明，表示该变量是一个将在下面定义的全局变量。有了此声明，就可以从声明处起，合法地引用该全局变量</li>
+<li>在任一个文件中定义外部变量，而在另一文件中用extern对其作外部变量声明：<br>
+<br/></li>
+<li>静态外部变量(static)<br>
+<strong>加上static声明，只能用于本文件的外部变量（全局变量）</strong></li>
+</ul>
+<hr>
+<h2 id="变量属性">变量属性</h2>
+<p>存储类型、作用域、数据类型、存储期</p>
+<h3 id="从作用域角度分">从作用域角度分</h3>
+<ul>
+<li>局部变量：
+<ol>
+<li>自动变量,即动态局部变量(离开函数,值就消失)</li>
+<li>静态局部变量(离开函数,值仍保留)</li>
+<li>寄存器变量(离开函数,值就消失)</li>
+<li>形式参数(可以定义为自动变量或寄存器变量)</li>
+</ol>
+</li>
+<li>全局变量
+<ol>
+<li>静态外部变量(只限本文件引用)</li>
+<li>外部变量(即非静态的外部变量,允许其他文件引用)</li>
+</ol>
+</li>
+</ul>
+<h3 id="从变量存储期存在的时间来区分">从变量存储期(存在的时间)来区分</h3>
+<ul>
+<li>动态存储
+<ol>
+<li>自动变量(本函数内有效)</li>
+<li>寄存器变量(本函数内有效)</li>
+<li>形式参数</li>
+</ol>
+</li>
+<li>静态存储
+<ol>
+<li>静态局部变量(函数内有效)</li>
+<li>静态外部变量(本文件内有效)</li>
+<li>外部变量(其他文件可引用)</li>
+</ol>
+</li>
+</ul>
+<h3 id="从变量值存放的位置来区分">从变量值存放的位置来区分</h3>
+<ul>
+<li>内存中静态存储区
+<ol>
+<li>静态局部变量</li>
+<li>静态外部变量(函数外部静态变量)</li>
+<li>外部变量(可为其他文件引用)</li>
+</ol>
+</li>
+<li>内存中动态存储区：  自动变量和形式参数</li>
+<li>CPU 中的寄存器：    寄存器变量</li>
+</ul>
+<hr>
+<h2 id="声明定义">声明&amp;定义</h2>
+<p><strong>函数：函数的原型是声明，函数功能的确立是定义</strong><br>
+<strong>变量：建立存储空间的是定义，不需要建立存储空间的是声明</strong><br>
+在一个程序中，变量只能定义一次，却可以声明多次。</p>
+<ul>
+<li>定义分配存储空间，而声明不会。<br>
+extern 是声明不是定义,除非有extern关键字，否则都是变量的定义。<br>
+通过使用extern关键字声明变量名而不定义它。</li>
+</ul>
+<blockquote>
+<p>例如：extern int a 其中变量 a 可以在别的文件中定义的。<br>
+当你要引用一个全局变量的时候，你就要声明 extern int a   , 省略了，就变成 int a 这是一个定义，不是声明。<br>
+（在函数外int定义变量后，在函数内extern int 声明为外部变量）</p>
+</blockquote>
+<pre><code class="language-c++">extern int i;       //声明，不是定义
+int i;              //声明，也是定义
+extern int a;       // 声明一个全局变量 a
+int a;              // 定义一个全局变量 a
+extern int a =0;    // 定义一个全局变量 a 并给初值。
+                    //一旦给予赋值，一定是定义，定义才会分配存储空间
+int a =0;           //定义一个全局变量 a，并给初值，等于第三个，都是定义一个可以被外部使用的全局变量，并给初值。
+</code></pre>
+<h2 id="函数原型-函数声明-function-prototype">函数原型 / 函数声明  (function prototype)</h2>
+<p>一般形式为</p>
+<ol>
+<li>函数类型 函数名(参数类型1，参数类型2…)；</li>
+<li>函数类型 函数名(参数类型1  参数名1，参数类型2  参数名2…)；<br>
+根据函数原型在程序编译阶段对调用函数的合法性进行全面检查。如果发现与函数原型不匹配的函数调用就报告编译出错。它属于语法错误。</li>
+</ol>
+<h2 id="内部函数静态函数">内部函数（静态函数）</h2>
+<p>只能被本文件中其他函数所调用的函数，使函数只局限于所在文件<br>
+static int fun(int a,int b)</p>
+<h2 id="外部函数">外部函数</h2>
+<p>在函数首部的最左端冠以关键字extern，可供其他文件调用<br>
+extern int fun (int a, int b)<br>
+如果在定义函数时省略extern,则默认为外部函数<br>
+在需要调用此函数的文件中,用extern声明所用的函数是外部函数。</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://chtholist.gitee.io/post/xue-xi-ji-lu/">
+                <h3 class="post-title">
+                  学习记录
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    
+    <img src="https://chtholist.gitee.io/images/avatar.png?v=1584848943381" class="no-responsive avatar">
+    <div class="text-muted"><b> 终焉虽至曲未尽 </b> <br/>
+<b> 末红褪去春意来 </b></div>
+    <div class="social-container">
+      
+        
+          <a href="https://github.com/chtholist" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/HTMLstudy1/">HTML学习笔记 1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/JAVAstudy0/">Java&amp;后端 学习路径</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/JAVAstudy1/">Java —— 最基础</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/windows-kuai-jie-jian/">Windows快捷键</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/windows/">Windows快捷键</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/markdown/">Markdown学习笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy4/">C++学习笔记 —— 运算&amp;表达式</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy_array/">C++学习笔记 —— 数组</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy2/">C++学习笔记 —— 输入输出</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy/">C++学习笔记 —— 函数</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://chtholist.gitee.io/tag/sT3HnA4VM/" class="badge secondary">
+          html
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge secondary">
+          学习
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge secondary">
+          编程
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge ">
+          java
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge secondary">
+          git
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge secondary">
+          c
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Producted by <b><a href="https://gitee.com/chtholist"> TIAT'S DREAMS </a><b/> | <a class="rss" href="https://chtholist.gitee.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+
+    <!-- 右下角live2d效果 -->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 120,
+            "height": 280,
+            "hOffset": 0,
+            "vOffset": -10
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.8,
+            "opacityOnHover": 0.4
+        }
+    });
+</script>
+
+<!-- 返回顶部  -->
+<a href="#top"><div data-v-3682a700 data-v-4e808e30 class="back-top" style="left: 0px; "></div></a>
+
+    
+    <!-- 页尾的走马灯-->
+    <div id="i1" style="color:rgb(10, 8, 8);font-size:20px;padding:50px;text-align:center;">
+      What&nbsp;do&nbsp;you&nbsp;do&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;world? 
+      Are&nbsp;you&nbsp;busy?&nbsp;Will&nbsp;you&nbsp;save&nbsp;us?&nbsp;&nbsp;&nbsp;
+      </div>
+  <script>
+     function func(){
+         var tag = document.getElementById('i1');
+         var content = tag.innerText;
+         var f = content.charAt(0);
+         var l = content.substring(1,content.length);
+         var new_content = l + f;
+         tag.innerText = new_content;
+     }
+     setInterval('func()',500);
+  </script>
+
+
+        <!-- 爱心点击特效-->
+        <script type="text/javascript">
+
+          (function(window,document,undefined){
+                  var hearts = [];
+                  window.requestAnimationFrame = (function(){
+                          return window.requestAnimationFrame || 
+                                     window.webkitRequestAnimationFrame ||
+                                     window.mozRequestAnimationFrame ||
+                                     window.oRequestAnimationFrame ||
+                                     window.msRequestAnimationFrame ||
+                                     function (callback){
+                                             setTimeout(callback,1000/60);
+                                     }
+                  })();
+                  init();
+                  function init(){
+                          css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                          attachEvent();
+                          gameloop();
+                  }
+                  function gameloop(){
+                          for(var i=0;i<hearts.length;i++){
+                              if(hearts[i].alpha <=0){
+                                      document.body.removeChild(hearts[i].el);
+                                      hearts.splice(i,1);
+                                      continue;
+                              }
+                              hearts[i].y--;
+                              hearts[i].scale += 0.004;
+                              hearts[i].alpha -= 0.013;
+                              hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+                      }
+                      requestAnimationFrame(gameloop);
+                  }
+                  function attachEvent(){
+                          var old = typeof window.onclick==="function" && window.onclick;
+                          window.onclick = function(event){
+                                  old && old();
+                                  createHeart(event);
+                          }
+                  }
+                  function createHeart(event){
+                      var d = document.createElement("div");
+                      d.className = "heart";
+                      hearts.push({
+                              el : d,
+                              x : event.clientX - 5,
+                              y : event.clientY - 5,
+                              scale : 1,
+                              alpha : 1,
+                              color : randomColor()
+                      });
+                      document.body.appendChild(d);
+              }
+              function css(css){
+                      var style = document.createElement("style");
+                          style.type="text/css";
+                          try{
+                              style.appendChild(document.createTextNode(css));
+                          }catch(ex){
+                              style.styleSheet.cssText = css;
+                          }
+                          document.getElementsByTagName('head')[0].appendChild(style);
+              }
+                  function randomColor(){
+                          return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+                  }
+          })(window,document);
+          
+          </script>
+  </body>
+</html>

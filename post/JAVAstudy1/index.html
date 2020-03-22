@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Java —— 最基础 | Chtholist</title>
+<meta name="description" content="&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
+&lt;b&gt; 末红褪去春意来 &lt;/b&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://chtholist.gitee.io/favicon.ico?v=1584848943381">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://chtholist.gitee.io/styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  
+  <div class="nav-brand">
+    <h3><a href="https://chtholist.gitee.io">Chtholist</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                Who am I
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="http://chtholist.gitee.io/wallpaper/" class="menu">
+                墨鱼壁纸
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://libnet.chtholly.moe:2333/" class="menu">
+                中珂院图库
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>Java —— 最基础</h1>
+            <p class="article-meta">
+              2020-03-22
+              
+                <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge success">
+                  java
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge secondary">
+                  学习
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge secondary">
+                  编程
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <ol>
+<li>JavaSE (Java标准版)</li>
+<li>JavaEE (Java企业版)</li>
+<li>JavaME (Java微型版)<br>
+JavaSE为基础，JavaEE为方向</li>
+</ol>
+<ul>
+<li>JDK：Java开发工具包 （一般自带JRE）
+<ul>
+<li>Java程序设计语言</li>
+<li>JRE：Java的运行环境
+<ul>
+<li>JVM：Java虚拟机</li>
+<li>Java API类库</li>
+</ul>
+</li>
+<li>各种辅助工具，如javac</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="java简介">Java简介</h2>
+<ul>
+<li>简单性：
+<ul>
+<li>Java语言底层是C++实现的</li>
+<li>Java不支持多继承</li>
+<li>Java屏蔽了指针的概念</li>
+</ul>
+</li>
+<li>Java纯面向对象，所有代码写在类中</li>
+<li>可移植性
+<ul>
+<li>Java程序可跨平台直接在windows和Linux上运行，不用做修改<br>
+（让Java程序运行在不同版本的Java虚拟机JVM上）</li>
+</ul>
+</li>
+<li>多线程</li>
+<li>健壮性：
+<ul>
+<li>运行过程中产生的垃圾自动回收，自动垃圾回收机制——GC机制</li>
+<li>c++中开辟空间后要再人为释放，Java中只需要申请空间不需要回收</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="java-的加载-执行">Java 的加载 &amp; 执行</h2>
+<p>（DOS命令）</p>
+<h3 id="编译">编译</h3>
+<ul>
+<li>源文件( .java )编译生成一个或多个字节码文件( .class )</li>
+<li>字节码文件 / class文件为最终运行的文件</li>
+<li>class文件名 = <strong>类名</strong></li>
+<li>JDK工具包里有Java编译器（命令）javac.exe<br>
+javac.exe将源文件编译成字节码文件</li>
+</ul>
+<h3 id="运行">运行</h3>
+<ul>
+<li>把DOS窗口的路径切换到字节码文件所在的目录（dir能看到文件）<br>
+输入Java x （x.class）  (Java后面跟着类名)<br>
+java.exe命令会启动JVM，启动类加载器ClassLoader<br>
+ClassLoader会去硬盘上搜索 x.class 文件，装载到JVM中<br>
+（classpath环境变量属于Java语言，配置为某个指定路径之后，类加载器只去指定的路径中加载字节码文件）（若未配则从当前路径下加载）<br>
+JVM将 x.class 文件解释成二进制数据<br>
+操作系统执行二进制和底层硬件平台交互</li>
+</ul>
+<hr>
+<h3 id="注释">注释</h3>
+<ul>
+<li>只会出现在Java的源程序.java中，不会被编译到字节码.class中</li>
+<li><u><strong>javadoc注释（会被javadoc.exe提取到java的帮助文档中）</strong></u><br>
+/**<br>
+*  javadoc1<br>
+*  javadoc2<br>
+*/</li>
+</ul>
+<hr>
+<pre><code class="language-java">public class HelloWorld {
+  public static void main( String[] args) {   //定义一个公开的静态的主方法
+    System.out.println(&quot;Hello World&quot;);
+  }
+}  
+// ( String[] args )为一个main方法的形式参数列表
+</code></pre>
+<ul>
+<li>类名和文件名必须一致（HelloWorld）</li>
+</ul>
+<hr>
+<ol>
+<li><strong>关键字</strong> ： 完全小写字母 /</li>
+<li><strong>标识符</strong> ： <kbd>英文字母（大小写）</kbd> <kbd>数字</kbd> <kbd>$</kbd> <kbd>_</kbd><br>
+（标识符不能以数字开头）
+<ul>
+<li>类名：首字母大写，后面每个单词首字母大写（大驼峰）</li>
+<li>变量名：首字母<strong>小</strong>写，后米娜每个单词首字母大写（小驼峰）</li>
+</ul>
+</li>
+<li>常量
+<ul>
+<li>Java的字符常量可以为中文  ：  &quot;汉&quot;</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="数据类型">数据类型</h2>
+<ul>
+<li>基本数据类型  (java中默认整型int，默认浮点型double)
+<ul>
+<li>整数型 ：byte (1字节，-128~127) / short (2字节) / int (4个字节) /long (8个字节)</li>
+<li>浮点型 ：float (4个字节) / double (8个字节)</li>
+<li>字符型 ：char (2个字节)</li>
+<li>布尔型 ：<strong>boolean</strong> (1个字节)<br>
+<strong>(数据大时， float和double类型后缀为F，long类型后缀为L )</strong></li>
+</ul>
+</li>
+<li>引用数据类型
+<ul>
+<li><strong>字符串</strong></li>
+<li>数组</li>
+<li>类</li>
+<li>接口</li>
+<li>Lambda</li>
+</ul>
+</li>
+</ul>
+<p>(数据范围和字节数不一定相关，例如float范围比long广泛)</p>
+<ul>
+<li>隐式（自动）转换是<strong>数据范围</strong>从小到大
+<ul>
+<li>错： int num = 100L;</li>
+<li>对： int num = (int)100L;</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="运算">运算</h2>
+<h3 id="加法">加法</h3>
+<ul>
+<li>char / byte / short  + int<br>
+在计算前char提升成int，根据ASCII码计算</li>
+<li>String + 任何数据类型<br>
+相加表示字符串连接，最终结果都是字符串<br>
+<code>String str =&quot;abc&quot;;</code><br>
+<code>System.out.println(str+10+20); //java1020</code><br>
+<code>System.out.println(str+(10+20)); //java30</code></li>
+</ul>
+<pre><code class="language-java">short a = 5;
+short b = 9;
+short c1 = a+b;  //错误，不兼容的类型
+//short + short ——&gt; int + int ——&gt; int
+//正确的为 int c1 = a+b; 
+short c2 = 5 + a + 8; //错误，右侧有变量  
+</code></pre>
+<hr>
+<h2 id="方法">方法</h2>
+<ul>
+<li>主方法：<br>
+public static void main(String[ ] args){……}</li>
+<li>定义方法：<br>
+public static 数据类型 方法名(){……}</li>
+</ul>
+<hr>
+<h2 id="idea">IDEA</h2>
+<h3 id="项目结构">项目结构</h3>
+<ul>
+<li>代码保存层次<br>
+项目Project ——&gt; 模块Module ——&gt; 包Package ——&gt; 文件</li>
+</ul>
+<blockquote>
+<p>File ——&gt; New ——&gt; Empty Project ——&gt; Add New Modules<br>
+src ——&gt; New ——&gt; Package<br>
+Package ——&gt; New ——&gt; Java Class<br>
+调字体：File ——&gt; Settings ——&gt; Editor ——&gt; Font<br>
+导入模块：File ——&gt; Project Structure ——&gt; Import Module</p>
+</blockquote>
+<ul>
+<li>
+<p>Package命名使用英文小写，数字和 <strong>&quot;.&quot;</strong><br>
+按点给包分层：大包.中包.小包</p>
+</li>
+<li>
+<p><strong>所有代码要写在src文件夹里</strong><br>
+.iml为Idea的配置信息<br>
+External Libraries 为JDK</p>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷输入</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">psvm回车</td>
+<td style="text-align:left">——&gt; public static void main(String[] args){ }</td>
+</tr>
+<tr>
+<td style="text-align:left">sout回车</td>
+<td style="text-align:left">——&gt; System.out.println();</td>
+</tr>
+<tr>
+<td style="text-align:left">n.fori回车</td>
+<td style="text-align:left">——&gt;  for( int i=0; i&lt;5; i++ ) <strong>正序</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">n.forr回车</td>
+<td style="text-align:left">——&gt;  for( int i=3; i&gt;0; i-- ) <strong>倒序</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Alt + Enter</td>
+<td style="text-align:center">自动修正代码</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + y</td>
+<td style="text-align:center">删除当前行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + d</td>
+<td style="text-align:center">复制当前行到下一行</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Ctrl + Alt + L</strong></td>
+<td style="text-align:center"><strong>格式化代码（对齐）</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + /</td>
+<td style="text-align:center">当前行变为注释or取消注释</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Shift + /</td>
+<td style="text-align:center">选中代码注释/**/or取消注释</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + Ins</td>
+<td style="text-align:center">自动生成代码</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt +Shift +上下箭头</td>
+<td style="text-align:center">移动当前行代码</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + 鼠标左键选择</td>
+<td style="text-align:center">上下列</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">System.out.println(……);</td>
+<td style="text-align:left">输出后换行</td>
+</tr>
+<tr>
+<td style="text-align:left">System.out.print(……);</td>
+<td style="text-align:left">输出后不换行</td>
+</tr>
+<tr>
+<td style="text-align:left">System.out.println();</td>
+<td style="text-align:left">换行</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="debug">Debug</h2>
+<ul>
+<li>Debug模式：Shift + F9</li>
+<li>断点：在左边行号栏 单击左键 / Ctrl + F8</li>
+<li>按蓝色向下箭头 / F7</li>
+</ul>
+<hr>
+<h2 id="数组">数组</h2>
+<ul>
+<li>
+<p>初始化  (左右数据类型要一致)</p>
+<ul>
+<li><strong>动态初始化（指定长度）</strong><br>
+数据类型[ ] 数组名称 = new 数据类型[数组长度];<br>
+int[] arrayA = new int [3];</li>
+<li><strong>静态初始化（指定内容）</strong><br>
+数据类型[ ] 数组名称 = new 数据类型[]{元素1, 元素2, ……};<br>
+int[] arrayB = new int[]{2,5,6};</li>
+<li><strong>省略格式静态初始化</strong><br>
+数据类型[] 数组名称 = {元素1, 元素2, ……};</li>
+</ul>
+</li>
+<li>
+<p>直接打印数组名称，得到数组对应的内存地址哈希值</p>
+</li>
+</ul>
+<hr>
+<h2 id="java内存-数组">Java内存 &amp; 数组</h2>
+<ol>
+<li><strong>栈Stack</strong>：存放方法中的局部变量，<strong>方法一定在栈中运行</strong>  ，超出作用域即从栈内存中消失</li>
+<li><strong>堆Heap</strong>：<strong>new出来的变量都在堆内存中</strong>，（数组都在堆中），都有16进制的地址值<br>
+     堆内存中数据默认值
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">整数</td>
+<td style="text-align:center">浮点数</td>
+<td style="text-align:center">字符</td>
+<td style="text-align:center">布尔</td>
+<td style="text-align:center">引用</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0.0</td>
+<td style="text-align:center">\u0000</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">null</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>方法区Method Area</strong>：存储.class相关信息，包含方法的信息</li>
+<li>本地方法栈Native Method Stack：与操作系统相关</li>
+<li>寄存器pc Register：与CPU相关</li>
+</ol>
+<pre><code class="language-java">public static void main ( String[ ] args){
+  int[] array = new int [3];  
+  System.out.println(array);     //直接打印地址值
+  System.out.println(array[1]);  //根据栈中地址值找到堆中的数组
+}
+</code></pre>
+<blockquote>
+<p>1.方法区保存.class中的方法信息<code>public static void main(String[] args)</code><br>
+2.运行main方法时将<code>main(String[] args)</code>加载到栈中，并开辟一段内存空间 ——&gt; <strong>进栈</strong><br>
+3.数组名称为局部变量在栈中 ，new出来的数组在堆中，栈中存储的实际为数组地址值</p>
+</blockquote>
+<ul>
+<li>
+<p>引用<br>
+<code>int[] arrayB = arrayA;</code> //将arrayA数组的地址值赋值给arrayB数组</p>
+</li>
+<li>
+<p>所有的引用类型变量，都可以赋值Null,代表其中什么都没有<br>
+数组若只赋值null，会发生空指针异常NullPointerException</p>
+</li>
+<li>
+<p>获取数组长度：<code>int len = array.length</code><br>
+<strong>数组创建后，程序运行期间，长度不可改变</strong>（一个new新建一个数组）<br>
+可以用来遍历数组<code>for(int i=0; i&lt;array.length; i++)</code></p>
+</li>
+<li>
+<p><strong>数组作为方法参数</strong>：</p>
+<pre><code class="language-java">public static void main( String[] args ){
+  int[] array = {1,2,3};
+  printArray(array);            //传参即传入数组地址值
+} 
+public static void printArray( int[] array ){
+  System.out.println(array[1]);
+}
+</code></pre>
+</li>
+<li>
+<p><strong>数组作为返回值（可以返回多个值）</strong></p>
+<pre><code class="language-java">public static void main( String[] args){
+  int[] result = cal(10,20);    //用另一个数组介绍
+  System.out.println(result[0],result[1]);
+}
+public static int[] cal(int a,int b){
+  int sum = a+b;
+  int avg = sum/2;
+  int[] array={sum,avg};
+  return array;                 //返回的即数组地址值
+} ```  
+</code></pre>
+</li>
+</ul>
+<p><u>数组作为方法的参数，传递的是数组地址值</u><br>
+<u>数组作为方法的返回值，返回的是数组的地址值</u></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">成员变量</th>
+<th style="text-align:center">局部变量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">定义位置</td>
+<td style="text-align:center">方法外部，直接写在类中</td>
+<td style="text-align:center">方法内部</td>
+</tr>
+<tr>
+<td style="text-align:center">作用范围</td>
+<td style="text-align:center">整个类内</td>
+<td style="text-align:center">方法中</td>
+</tr>
+<tr>
+<td style="text-align:center">默认值</td>
+<td style="text-align:center">有初始默认值</td>
+<td style="text-align:center">无默认值</td>
+</tr>
+<tr>
+<td style="text-align:center">内存位置</td>
+<td style="text-align:center">堆内存</td>
+<td style="text-align:center">栈内存</td>
+</tr>
+<tr>
+<td style="text-align:center">生命周期</td>
+<td style="text-align:center">对象创建—&gt;对象被回收</td>
+<td style="text-align:center">方法进栈—&gt;方法出栈</td>
+</tr>
+</tbody>
+</table>
+<p><u><strong>面向对象三大特性：封装、继承、多态</strong></u></p>
+<h3 id="封装">封装</h3>
+<p>把执行某一步骤的代码封装起来，对外界不可见</p>
+<ul>
+<li>方法、private为封装</li>
+<li>间接访问private成员变量，要定义一对Getter/Setter方法
+<ul>
+<li>Alt + Insert 快捷插入Getter和Setter</li>
+<li>对于boolean，Getter方法为<strong>isXxx</strong>的形式，setXxx不变</li>
+</ul>
+<pre><code class="language-java">public class Person{
+  String name;
+  private int age;
+
+  //有参数无返回  方法名：set+首字母大写的private变量
+  public void setAge(int num){  //专门用于向age设置数据
+    age = num; …………             //方法内控制输入的数据
+  }
+  //无参数有返回  方法名：get+首字母大写的private变量
+  public int getAge(){  //专门获取age的数据
+    return age;
+  }
+} 
+</code></pre>
+</li>
+<li>当方法的局部变量和类的成员变量<strong>重名</strong>时，优先使用局部变量<br>
+访问类的成员变量：<strong>this.成员变量名</strong> （一定是在方法内部）<br>
+通过谁调用方法，谁就是this</li>
+</ul>
+<h3 id="构造方法">构造方法</h3>
+<ul>
+<li>专门用来创建对象的方法，用nex创建对象时就是在调用构造方法</li>
+<li>只要编写构造方法，编译器不再生成默认构造方法</li>
+<li>public 类名(参数类型 参数名称){<br>
+方法体<br>
+}</li>
+</ul>
+<pre><code class="language-java">public class Student{
+  private String name;
+  private int age;
+  public Student(){   //没有void,无返回值
+    //执行构造方法
+  }
+  Student stu1 = new Student();    //实例化对象=调用构造方法  
+  /*
+   public Student(String name,int age){   //全参构造
+    this.name = name;
+    this.age = age;
+  }
+  Student stu2 = new Student(&quot;张三&quot;,20)；
+  */
+}
+</code></pre>
+<blockquote>
+<p>Alt +Insert —&gt; Constructor —&gt; 构造方法  (Select None 无参构造)</p>
+</blockquote>
+<ul>
+<li>
+<p>标准的类  ( Java Bean )</p>
+<ol>
+<li>所有成员变量都用private修饰</li>
+<li>每个成员变量都要有Getter/Setter方法</li>
+<li>编写一个无参数的构造方法</li>
+<li>编写一个全参数的构造方法 (参数为所有成员变量)</li>
+</ol>
+</li>
+<li>
+<p><u><strong>分文件</strong></u><br>
+<strong>在一个包Package底下，分多个类class，把变量和方法封装起来，最后再建一个Demo类，其中有主函数来调用其他的class</strong></p>
+</li>
+</ul>
+<hr>
+<h2 id="api-应用程序编程接口">API  —— 应用程序编程接口</h2>
+<p>（类似于字典）</p>
+<ol>
+<li>打开帮助文档</li>
+<li>点击显示，找到索引，在输入框中搜索</li>
+<li>看包路径 (java.lang下的类不需要导包，其他都需要import……)</li>
+<li>看类的解释和说明</li>
+<li>看构造方法</li>
+<li>使用成员方法 （方法摘要）</li>
+</ol>
+<blockquote>
+<p>关键字都是小写的，Scanner和String开头大写，为JDK中的类<br>
+只要不是基本类型，就是引用类型<br>
+使用引用类型：</p>
+<ol>
+<li>导包  ——  import 包路径.类名称;<br>
+若要使用的目标类和当前类在同一个包下，或为java.lang，则不用导包<br>
+导包语句 import…… 写在 package 后面 class 前面</li>
+<li>创建  ——  类名称 对象名 = new 类名称();</li>
+<li>使用  ——  对象名.成员方法名()</li>
+</ol>
+</blockquote>
+<h3 id="从键盘获取输入">从键盘获取输入</h3>
+<ol>
+<li>System.in 方法<br>
+只能针对一个字符的获取  /  获取的只是char类型的</li>
+</ol>
+<pre><code class="language-java">  //import java.io.IOException; (Idea自动补上)
+  try {
+    char i = (char) System.in.read();
+    System.out.println(&quot;Enter Char is:&quot; + i);
+  } 
+  catch (IOException e) {
+    e.printStackTrace();
+  }   
+</code></pre>
+<ol start="2">
+<li>InputStreamReader和BufferedReader方法<br>
+可以获取键盘输入的字符串</li>
+</ol>
+<pre><code class="language-java">    InputStreamReader is = new InputStreamReader(System.in);   
+    //new构造InputStreamReader对象 
+    BufferedReader br = new BufferedReader(is);   
+    //拿构造的方法传到BufferedReader中 
+    try{ //该方法中有个IOExcepiton需要捕获 
+      String name = br.readLine(); 
+      System.out.println(&quot;ReadTest Output:&quot; + name); 
+    } 
+    catch(IOException e){ 
+      e.printStackTrace(); 
+</code></pre>
+<ol start="3">
+<li><strong>Scanner类中的方法</strong><br>
+可以获取键盘输入的字符串和int,float等类型数据</li>
+</ol>
+<pre><code class="language-java">    Scanner sc = new Scanner(System.in); //System.in为从键盘输入
+    // sc 作为对象名可以调用以输入
+    String name = sc.nextLine();  //读取字符串型输入 
+    int age = sc.nextInt();    //读取整型输入 
+    float salary = sc.nextFloat(); //读取float型输入 
+    char x = sc.next().charAt(0)
+    …………   
+</code></pre>
+<hr>
+<h3 id="匿名对象-new-类名称">匿名对象 —— new 类名称();</h3>
+<p>只有右边的对象，没有左边的名字和赋值运算符<br>
+匿名对象只能使用一次 （无法调用）</p>
+<blockquote>
+<p>new Student().name = &quot;张三&quot;;</p>
+</blockquote>
+<p>只接受一个输入：<code>int num = new Scanner(System.in).nextInt();</code></p>
+<pre><code class="language-java">//这个函数methodReturn相当于sc
+public static Scanner methodReturn(){
+  return new Scanner(System.in);  //匿名对象作为方法返回值
+}
+</code></pre>
+<h3 id="random类-生成随机数">Random类  —— 生成随机数</h3>
+<ol>
+<li>导包： import java.util.Random;  （可自动生成）</li>
+<li>创建： <code>Random r = new Random();</code></li>
+<li>使用：<br>
+<code>int num = r.nextInt(); // int范围内的伪随机数</code><br>
+<code>int num = r.nextInt(n); // [0,n)范围内的伪随机数</code></li>
+</ol>
+<blockquote>
+<p>求2~35直接的随机整数 ——&gt; <strong>r.nextInt(34)+2;</strong></p>
+</blockquote>
+<ul>
+<li>生成指定位数的<strong>随机字符串</strong> (包含大小字母、数字,0&lt;length)<br>
+1.先自定义一个字符串库KeyString<br>
+2.通过Math.random()方法获取KeyString长度内的一个随机数<br>
+3.再获取该随机数对应KeyString中相应位置的一个字符<br>
+4.最后将随机获取并组装好的字符串返回。<br>
+若想修改包含的字符,只需将相应字符添加到字符串库KeyString 中去即可<pre><code class="language-java">//获取随机字符串
+public static String getRandomString(int length) {
+  //随机字符串的随机字符库
+  String KeyString = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;
+  StringBuffer sb = new StringBuffer();
+  int len = KeyString.length();
+  for (int i = 0; i &lt; length; i++) {
+     sb.append(KeyString.charAt((int) Math.round(Math.random() * (len - 1))));
+  }
+  return sb.toString();
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="arrayliste">ArrayList&lt;E&gt;</h3>
+<ul>
+<li>数组长度不可以改变，ArrayList集合的长度可以随意变</li>
+<li>&lt;E&gt;表示<strong>泛型</strong>：在集合中的所有元素均为统一的引用类型，不能为基本类型<br>
+(集合中储存的为地址值，基本类型无地址值)</li>
+<li>直接打印ArrayList得到的是内容，若无内容则得到“ [ ] ”</li>
+</ul>
+<pre><code class="language-java">public static void main(String[] args){
+  ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+  //创建了一个ArrayList集合，名称为 list，装的是String字符串类型的数据  
+  // ps.从JDK1.7+开始，右侧尖括号内可以不写内容  
+  list.add(&quot;内容&quot;);   //添加数据要用到 add()  
+  System.out.println(list);     //打印出  [内容]
+}     
+</code></pre>
+<ul>
+<li><code>public booleam add(E e)</code><br>
+向集合中<strong>添加元素</strong>，参数的类型和泛型一致，返回值表示添加是否成功<br>
+（对于ArrayList集合，add一定成功，可不用返回值，但其他集合的add不一定成功）</li>
+<li><code>public E get(int index)</code><br>
+从集合中<strong>获取元素</strong>，参数index为序号，返回值为对应序号的元素</li>
+<li><code>public E remove(int index)</code><br>
+从集合中<strong>删除元素</strong>，参数index为序号，返回值为被删除掉的元素</li>
+<li><code>public int size()</code><br>
+<strong>获取集合的长度</strong>，返回值为集合中元素的个数</li>
+</ul>
+<blockquote>
+<p>list.fori ——&gt; for( int i = 0; i &lt; list.size(); i++){ }</p>
+</blockquote>
+<ul>
+<li>
+<p>若要在ArrayList中存储基本类型数据，要使用对应的包装类<br>
+（包装类为引用类型，位于java.lang包下）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">基本类型</th>
+<th style="text-align:center">包装类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">byte</td>
+<td style="text-align:center">Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">short</td>
+<td style="text-align:center">Short</td>
+</tr>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center"><strong>Integer</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">Long</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">Float</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center">Double</td>
+</tr>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center"><strong>Character</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">Boolean</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>对象添加到集合</p>
+</li>
+</ul>
+<pre><code class="language-java">ArrayList&lt;Student&gt; list = new ArrayList&lt;Student&gt;();
+Student stu = new Student(&quot;张三&quot;,15);
+list.add(stu);
+</code></pre>
+<hr>
+<h2 id="string">String</h2>
+<ul>
+<li>Java中所有字符串都为String类的对象（实例）</li>
+<li>字符串的内容不可改变</li>
+<li>字符串可以共享使用</li>
+<li>字符串效果相当于char[] 字符数组，但<strong>底层原理为byte[]字节数组</strong></li>
+</ul>
+<h3 id="构造方法-2">构造方法</h3>
+<ol>
+<li><code>String str = &quot; …… &quot;</code><br>
+直接创建 (直接写上双引号，就是字符串对象)</li>
+<li><code>public String( )</code><br>
+创建一个空白字符串，内容为null</li>
+<li><code>public String( char[ ] array )</code><br>
+根据字符数组的内容，合起来建立相应的字符串  (括号中为数组名)</li>
+<li><code>public String( byte[] array )</code><br>
+根据字节数组的内容，合起来建立相应的字符串  (括号中为数组名)
+<blockquote>
+<p>byte类型存储的全是ASCII码<br>
+<code>byte val = 97;</code><br>
+<code>System.out.println( (char) val);</code><br>
+结果为：a</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="常量池">常量池</h3>
+<p>程序中只有直接写上的双引号字符串，才在字符串常量池中</p>
+<ul>
+<li>对于基本类型，== 为<strong>数值</strong>的比较</li>
+<li>对于引用类型，== 为<strong>地址值</strong>的比较</li>
+</ul>
+<blockquote>
+<p><code>String str = &quot;abc&quot;;</code><br>
+堆 —&gt; 字符串常量池 —&gt; 字符串对象String —&gt; 保存byte[] = {97,98,99}的地址值<br>
+栈 —&gt; String str 保存常量池中String 的地址值<br>
+<a href="F:/%E7%BC%96%E7%A8%8B/%E5%90%8E%E7%AB%AF/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0.png">内存图</a></p>
+</blockquote>
+<h4 id="字符串比较">字符串比较</h4>
+<p>（== 为对象地址值间的比较）</p>
+<ul>
+<li><code>public bollean equals ( Object obj );</code><br>
+参数可以为任何对象，true &lt;——&gt; 参数为一个字符串&amp;&amp;内容相同<br>
+若比较双方一个常量一个变量，应用 <code>常量.equals(变量)</code><pre><code class="language-java">String str1 = &quot;hello&quot;;
+char[] charArray = {'h','e','l','l','o'};
+String str2 = new String (charArray);
+System.out.println( str1.equals(str2) );  //true
+</code></pre>
+</li>
+<li><code>public boolean equalsIgnoreCase (String str);</code><br>
+忽略大小写进行内容比较</li>
+</ul>
+<h4 id="字符串获取">字符串获取</h4>
+<ul>
+<li><code>public int Length();</code><br>
+获取字符串长度</li>
+<li><code>public String concat(String str);</code><br>
+将当前字符串和参数字符串拼接成返回值新的字符串</li>
+<li><code>public char charAt(int index);</code><br>
+获取指定序号的单个字符</li>
+<li><code>public int indexOf(String str);</code><br>
+查找参数字符串在当前字符串中首次出现的序号， 无则返回-1</li>
+</ul>
+<pre><code class="language-java">String str1 =&quot;hello&quot;;
+String str2 =&quot;world&quot;;
+
+//获取长度 length()
+System.out.println(str1.length());
+
+//拼接 concat(String)
+System.out.println(str2.concat(str1));
+
+//通过序号查找字符 charAt(int)
+System.out.println(str1.charAt(3));
+
+//通过字符查找首次出现的序号 indexOf(char/String)
+System.out.println(str2.indexOf('d'));
+</code></pre>
+<h4 id="字符串截取">字符串截取</h4>
+<ul>
+<li><code>public String substring(int index);</code><br>
+从参数位置截取到字符串末尾，返回新字符串</li>
+<li><code>public String substring(int begin, int end);</code><br>
+从begin截取到end，返回截取的新字符串</li>
+</ul>
+<h4 id="字符串转换">字符串转换</h4>
+<ul>
+<li><code>public char[] toCharArray[]();</code><br>
+将当前字符串拆分成字符数组作为返回值</li>
+<li><code>public byte[] getBytes();</code><br>
+获得当前字符串底层的字节数组</li>
+<li><code>public String replace(CharSequence oldString, CharSequence newString)</code><br>
+将所有出现的字符串替换成新字符串，返回新字符串</li>
+</ul>
+<pre><code class="language-java">String str = &quot;HelloWorld&quot;;  
+//拆分为字符数组  
+char[] char1 = str.toCharArray();
+//拆分为字节数组  
+byte[] bytes = str.getBytes();  
+//字符串替换  
+String str2 = str.replace(&quot;o&quot;,&quot;*&quot;);
+System.out.println(str2);     //输出：Hell*W*rld   
+</code></pre>
+<h4 id="字符串分割">字符串分割</h4>
+<ul>
+<li><code>public String[] split(String regex);</code><br>
+按照参数的规则，将字符串分割为若干部分<br>
+split方法的参数为<strong>正则表达式</strong>，若按“.”切分要写“<strong>\ \ .</strong>”</li>
+</ul>
+<pre><code class="language-java">String array = &quot;aaa/bbb//c/d&quot;;
+String[] split = array.split(&quot;/&quot;);
+for (int i = 0; i &lt; split.length; i++) {
+  System.out.print(&quot;(&quot;+(i+1)+&quot;)&quot;+split[i]);
+}
+// (1)aaa(2)bbb(3)(4)c(5)d 
+</code></pre>
+<blockquote>
+<p>输入完 <code>array.split(&quot;/&quot;);</code> 后按 Alt+Enter 自动补充之前的 <code>String[] split =</code></p>
+</blockquote>
+<hr>
+<h3 id="静态static关键字">静态static关键字</h3>
+<p>只在类中保存一份，不属于对象，属于类，所有本类对象共享同一份</p>
+<ul>
+<li>对于<strong>静态方法/变量</strong>，可以通过对象名调用，也可<strong>通过类名调用</strong><br>
+（用对象名调用时，JDK会自动转换成类名）</li>
+<li>本类中的静态方法，调用时可省略类名称</li>
+<li>静态方法不能直接访问非静态变量 （在内存中先有静态内容，后才有非静态）</li>
+<li>静态方法中不能使用 this （this代表当前对象，用谁调用谁就是当前对象）</li>
+</ul>
+<h4 id="静态代码块">静态代码块</h4>
+<ul>
+<li>用途：一次性地对静态成员变量进行赋值</li>
+</ul>
+<pre><code class="language-java">public class 类名称{
+  static {
+    //静态代码块的内容
+  }
+}
+</code></pre>
+<ul>
+<li>静态内容总是优先于非静态 ——&gt; 静态代码块比构造方法先执行</li>
+<li>静态代码块只执行唯一的一次</li>
+</ul>
+<hr>
+<h3 id="arrays-数组工具类">Arrays 数组工具类</h3>
+<ul>
+<li><code>public static String toString(数组);</code><br>
+将参数数组变为字符串，按默认格式 [元素1,元素2……]<br>
+(输出数组名只能得到地址值，所以可以先转成字符串)</li>
+</ul>
+<pre><code class="language-java">char[] array2 = {'h','e','l','l','o'};
+System.out.println( Arrays.toString(array2) );
+</code></pre>
+<ul>
+<li><code>public static void sort(数组)</code><br>
+按默认升序对数组元素进行排序<br>
+（若为自定义类型，需要有Comparable或Comparator接口的支持）</li>
+</ul>
+<pre><code class="language-java">int[] array = {2,1,3,10,6};
+Arrays.sort(array);
+System.out.println(Arrays.toString(array));
+//  [1, 2, 3, 6, 10]
+</code></pre>
+<h3 id="math-数学工具类">Math 数学工具类</h3>
+<ul>
+<li>Math.PI / public static final double PI —&gt; 圆周率近似</li>
+<li>public static double abs(double num) —&gt; 绝对值</li>
+<li>public static double ceil(double num) —&gt; 向上取整</li>
+<li>public static double floor(double num) —&gt; 向下取整</li>
+<li>public static long round(double num) —&gt; 四舍五入</li>
+</ul>
+<pre><code class="language-java">System.out.println( Math.abs( -2.3 ) ); //2.3  
+System.out.println( Math.ceil( 3.1 ) ); //4.0
+System.out.println( Math.floor( 3.9 ) );  //3.0  
+System.out.println( Math.round( 5.4 ) );  //5  (不带小数点)
+</code></pre>
+<hr>
+<h2 id="继承-抽象类">继承 &amp; 抽象类</h2>
+<p>面向对象的三大特性：封装性 / <strong>继承性</strong> / 多态性<br>
+（继承是多态的前提）<br>
+子类定义：  <code>public class 子类名称 extends 父类名称 { // …… }</code></p>
+<ul>
+<li>父子类的方法调用的成员变量重名：
+<ul>
+<li>直接通过子类对象访问成员变量：  <code>子类名.变量名</code></li>
+<li>间接通过成员方法访问成员变量：<br>
+该方法属于谁，就优先用谁，没有则向上找</li>
+</ul>
+</li>
+<li>子类中变量重名
+<ul>
+<li>局部变量：      直接写成员变量名</li>
+<li>本类的成员变量： this.成员变量名</li>
+<li>父类的成员变量： super.成员变量名</li>
+</ul>
+</li>
+<li>父子类的方法重名：<br>
+创建对象的是谁，就优先用谁，没有则向上找</li>
+</ul>
+<pre><code class="language-java">(1)
+public class Fu{
+  int num = 10;
+  public void methodFu(){
+    System.out.println(num);
+  }
+}
+(2)
+public class Zi extends Fu{
+  int num = 25;
+  public void methodZi(){
+    System.out.println(num);
+  }
+  public void methodZi(){
+    int num = 30;
+    System.out.println( num );        //30  局部变量
+    System.out.println( this.num );   //25  本类中的成员变量  
+    System.out.println( super.num );  //10  父类的成员变量
+  }
+}
+(3)//主函数  
+Fu fu = new Fu(); //创建父类对象
+Zi zi = new Zi(); //创建子类对象
+System.out.println(zi.num); //25  优先子类
+zi.methodZi();  //25  方法为子类的，优先用子类变量
+zi.methodFu();  //10  方法在父类中定义
+</code></pre>
+<ul>
+<li>重载Overload：          方法名称一样，<u>参数列表不一样</u></li>
+</ul>
+<h4 id="重写覆写覆盖override"><strong>重写/覆写/覆盖Override</strong>：</h4>
+<ol>
+<li>方法名称一样，<u>参数列表也一样  </u></li>
+<li>子类方法的返回值必须 &lt;= 父类方法的返回值<br>
+（ Object类是所有类的公共最高父类(祖宗类) )</li>
+<li>子类方法权限 &gt;= 父类方法权限<br>
+public &gt; protected &gt; default(不写) &gt; private</li>
+</ol>
+<p><strong>@Override</strong>：写在方法的上一行，检测覆盖重写是否正确</p>
+<blockquote>
+<p>对于已经使用的类，尽量不修改，继承后重复利用相同的功能，通过覆盖重写进行改动</p>
+</blockquote>
+<pre><code class="language-java">(1) public class Fu{
+  public void show(){
+    System.out.println(&quot;老功能&quot;);
+  }
+}
+(2) public class Zi extends Fu{
+  @Override
+  public void show(){
+    super.show();     // 可以把父类的show方法拿来重复利用
+    System.out.println(&quot;新功能&quot;);
+  }
+}
+</code></pre>
+<h4 id="构造方法-3">构造方法：</h4>
+<ol>
+<li>子类必须调用父类构造方法，不写则默认调用父类无参构造方法<code>super()</code><br>
+<strong>先调用父类构造，再执行子类构造</strong></li>
+<li>只有子类构造方法才能调用父类构造方法，且只能调用一个</li>
+<li>super的父类构造调用，必须是子类构造方法的第一个语句</li>
+<li>若父类只有构造有参，子类不写会报错：默认的是父类无参<code>super()</code></li>
+</ol>
+<h4 id="super关键字">super关键字</h4>
+<ol>
+<li>在子类的成员方法中，访问父类的成员变量</li>
+<li>在子类的成员方法中，访问父类的成员方法</li>
+<li>在子类的构造方法中，访问父类的构造方法</li>
+</ol>
+<h4 id="this关键字">this关键字</h4>
+<ol>
+<li>在本类的成员方法中，访问本类的成员变量</li>
+<li>在本类的成员方法中，调用本类的另一个成员方法</li>
+<li>在本类的构造方法中，调用本类的另一个构造方法  （构造方法的重载调用）<br>
+this(……)的调用也必须是构造方法的第一个语句，且唯一<br>
+super和this两种构造调用，不能同时</li>
+</ol>
+<h3 id="继承">继承</h3>
+<p>Java语言为<strong>单继承</strong>：一个类的直接父亲只能有一个<br>
+Java语言可以<strong>多级继承</strong>： 最高级父类为java.lang.Object</p>
+<ul>
+<li>一个子类的直接父类是唯一的，但一个父类可以有多个子类</li>
+</ul>
+<h4 id="抽象">抽象</h4>
+<ul>
+<li>抽象方法：父类中的方法不确定用什么方法体 { } 实现<br>
+加上abstract关键字，去掉大括号，直接分号结束</li>
+<li>抽象方法必须定义在抽象类中，抽象类中不一定有抽象方法</li>
+<li>抽象类：
+<ol>
+<li>不能创建new抽象类对象，要用一个子类来继承抽象父类</li>
+<li>子类必须覆盖重写抽象父类中的<strong>所有</strong>的抽象方法 （除非子类也抽象）<br>
+去掉抽象方法的abstract关键字，然后补上方法体</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>光标放在子类class的extends上 —&gt; Alt + Enter —&gt; Implement methods + Enter —&gt; Enter —&gt; 生成所有需要覆盖重写的方法</p>
+</blockquote>
+<hr>
+<h2 id="接口">接口</h2>
+<ul>
+<li>接口为多个类的公共规范，为一种引用数据类型<br>
+<code>public interface 接口名称 { //接口内容 }</code><br>
+换成关键字interface后，依然是 .java —&gt; .class</li>
+<li>Java 8 的接口可包含：<br>
+1.常量 2.抽象方法 3.默认方法 4.静态方法 5.私有方法(Java 9)</li>
+</ul>
+<blockquote>
+<p>在package中New —&gt; Java Class —&gt; Kind —&gt; 选择Interface (向下箭头)</p>
+</blockquote>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://chtholist.gitee.io/post/windows-kuai-jie-jian/">
+                <h3 class="post-title">
+                  Windows快捷键
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    
+    <img src="https://chtholist.gitee.io/images/avatar.png?v=1584848943381" class="no-responsive avatar">
+    <div class="text-muted"><b> 终焉虽至曲未尽 </b> <br/>
+<b> 末红褪去春意来 </b></div>
+    <div class="social-container">
+      
+        
+          <a href="https://github.com/chtholist" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/HTMLstudy1/">HTML学习笔记 1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/JAVAstudy0/">Java&amp;后端 学习路径</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/JAVAstudy1/">Java —— 最基础</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/windows-kuai-jie-jian/">Windows快捷键</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/windows/">Windows快捷键</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/markdown/">Markdown学习笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy4/">C++学习笔记 —— 运算&amp;表达式</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy_array/">C++学习笔记 —— 数组</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy2/">C++学习笔记 —— 输入输出</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy/">C++学习笔记 —— 函数</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://chtholist.gitee.io/tag/sT3HnA4VM/" class="badge warning">
+          html
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge success">
+          学习
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge ">
+          编程
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge secondary">
+          java
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge success">
+          git
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge success">
+          c
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Producted by <b><a href="https://gitee.com/chtholist"> TIAT'S DREAMS </a><b/> | <a class="rss" href="https://chtholist.gitee.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+
+    <!-- 右下角live2d效果 -->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 120,
+            "height": 280,
+            "hOffset": 0,
+            "vOffset": -10
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.8,
+            "opacityOnHover": 0.4
+        }
+    });
+</script>
+
+<!-- 返回顶部  -->
+<a href="#top"><div data-v-3682a700 data-v-4e808e30 class="back-top" style="left: 0px; "></div></a>
+
+    
+    <!-- 页尾的走马灯-->
+    <div id="i1" style="color:rgb(10, 8, 8);font-size:20px;padding:50px;text-align:center;">
+      What&nbsp;do&nbsp;you&nbsp;do&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;world? 
+      Are&nbsp;you&nbsp;busy?&nbsp;Will&nbsp;you&nbsp;save&nbsp;us?&nbsp;&nbsp;&nbsp;
+      </div>
+  <script>
+     function func(){
+         var tag = document.getElementById('i1');
+         var content = tag.innerText;
+         var f = content.charAt(0);
+         var l = content.substring(1,content.length);
+         var new_content = l + f;
+         tag.innerText = new_content;
+     }
+     setInterval('func()',500);
+  </script>
+
+
+        <!-- 爱心点击特效-->
+        <script type="text/javascript">
+
+          (function(window,document,undefined){
+                  var hearts = [];
+                  window.requestAnimationFrame = (function(){
+                          return window.requestAnimationFrame || 
+                                     window.webkitRequestAnimationFrame ||
+                                     window.mozRequestAnimationFrame ||
+                                     window.oRequestAnimationFrame ||
+                                     window.msRequestAnimationFrame ||
+                                     function (callback){
+                                             setTimeout(callback,1000/60);
+                                     }
+                  })();
+                  init();
+                  function init(){
+                          css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                          attachEvent();
+                          gameloop();
+                  }
+                  function gameloop(){
+                          for(var i=0;i<hearts.length;i++){
+                              if(hearts[i].alpha <=0){
+                                      document.body.removeChild(hearts[i].el);
+                                      hearts.splice(i,1);
+                                      continue;
+                              }
+                              hearts[i].y--;
+                              hearts[i].scale += 0.004;
+                              hearts[i].alpha -= 0.013;
+                              hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+                      }
+                      requestAnimationFrame(gameloop);
+                  }
+                  function attachEvent(){
+                          var old = typeof window.onclick==="function" && window.onclick;
+                          window.onclick = function(event){
+                                  old && old();
+                                  createHeart(event);
+                          }
+                  }
+                  function createHeart(event){
+                      var d = document.createElement("div");
+                      d.className = "heart";
+                      hearts.push({
+                              el : d,
+                              x : event.clientX - 5,
+                              y : event.clientY - 5,
+                              scale : 1,
+                              alpha : 1,
+                              color : randomColor()
+                      });
+                      document.body.appendChild(d);
+              }
+              function css(css){
+                      var style = document.createElement("style");
+                          style.type="text/css";
+                          try{
+                              style.appendChild(document.createTextNode(css));
+                          }catch(ex){
+                              style.styleSheet.cssText = css;
+                          }
+                          document.getElementsByTagName('head')[0].appendChild(style);
+              }
+                  function randomColor(){
+                          return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+                  }
+          })(window,document);
+          
+          </script>
+  </body>
+</html>

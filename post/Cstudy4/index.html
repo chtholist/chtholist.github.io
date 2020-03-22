@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title> Gridea使用指北  | Chtholist</title>
+<title>C++学习笔记 —— 运算&amp;表达式 | Chtholist</title>
 <meta name="description" content="&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
 &lt;b&gt; 末红褪去春意来 &lt;/b&gt;">
 
@@ -100,78 +100,204 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1> Gridea使用指北 </h1>
+            <h1>C++学习笔记 —— 运算&amp;表达式</h1>
             <p class="article-meta">
               2020-03-22
+              
+                <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge success">
+                  c
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge secondary">
+                  学习
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge warning">
+                  编程
+                </a>
               
             </p>
             
             <div class="post-content">
-              <h3 id="大佬博客集合">大佬博客集合</h3>
-<li><a href="https://chiperman.github.io/" title="Pan">Pan</a></li>
-<li><a href="https://shanbu.fun/" title="Anatale">Anatale</a></li>
-<li><a href="https://blog.blinkstar.cn/" title="bitcron-pro">bitcron-pro</a></li>
-<li><a href="https://zhangajian.com/" title="Space">Space</a></li>
-<li><a href="https://kveln.cn/" title="Clean">Clean</a></li>
-<li><a href="https://i.immmmm.com/">Break</a></li>
-<li><a href="https://yeming.site/">NextT</a><br>
-<h3 id="theme下载注意">theme下载注意：</h3>
-<ol>
-<li>
-<ol>
-<li>推荐使用 git clone 的方式下载到 Gridea 客户端的 theme 目录。方便后期更新升级。</li>
-<li>打开 theme 目录：~/Documents/gridea/themes</li>
-<li>在当前目录执行 https://github.com/Mrcxt/gridea-theme-lemon.git</li>
-<li>重启 Gridea 客户端查看效果</li>
-</ol>
-</li>
-<li>
-<ol>
-<li>克隆项目到本地</li>
-<li>复制「 gridea-theme-xxx」目录到「 Gridea 」主题文件中<br>
-<strong>要点进去看下里面是否就是参数的文件了，不然要把真正的theme package拿出来</strong></li>
-<li>重启「 Gridea 」客户端
-<ol>
-<li>在主题中选择「  gridea-theme-xxx 」主题，点击保存</li>
-<li>
-<ol start="5">
-<li>预览查看效果</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="gridea使用注意">Gridea使用注意</h3>
-<ol>
-<li>用Github pages搭一个博客时，名字不用user name也行，就是输域名的时候长点</li>
-</ol>
-<blockquote>
-<p><strong>Gridea客户端只是一个框架，将写的md转换成html，然后所有的放在Gridea文件夹中的output，同步的时候整个文件夹推到GitHub上</strong>  ，<em><strong>所以备份的时候不用从Github上clone下来，直接把output文件复制一个就行了</strong></em></p>
-</blockquote>
-<h3 id="gridea推送到本地服务器">Gridea推送到本地服务器</h3>
-<ol>
-<li>将远程的域名改成自家的域名，name和密钥改成nas的，然后同步，output中的文件就能设置好了。之后用软件把output同步到服务器上。</li>
-</ol>
-<blockquote>
-<p>Gridea根据远程的设置，把相关域名参数保存在output中，同步时将整个文件夹推送给远程的域名</p>
-</blockquote>
+              <h2 id="数学公式">数学公式</h2>
+<p>#include<cmath></p>
+<h4 id="开平方-sqrta">开平方 sqrt（a）</h4>
+<h4 id="求绝对值-fbsa">求绝对值 fbs（a）</h4>
+<h4 id="朝上取整-ceil">朝上取整 ceil（）</h4>
+<p>ceil(-3.14) = -3;<br>
+ceil(4.56) = 5;</p>
+<h4 id="朝下取整-floor">朝下取整 floor（）</h4>
+<p>floor(-3.14) = -4;<br>
+floor(4.56) = 4;</p>
+<h4 id="朝0取整-fix">朝0取整 fix（）</h4>
+<p>fix(-3.14) = -3;<br>
+fix(4.56) = 4;</p>
+<h4 id="四舍五入-round">四舍五入 round（）</h4>
+<p>round(-3.14) = -3;<br>
+round(4.56) = 5;<br>
+round(11.5) = 12;<br>
+round(-11.5) = -11;</p>
+<h2 id="条件运算符-三元运算符">条件运算符 / 三元运算符</h2>
 <ul>
-<li>2020.3.8
+<li>variable x = (expression) ? value if true : value if false<br>
+需要判断布尔表达式的值。该运算符的主要是决定哪个值应该赋值给变量</li>
+<li>利用<strong>条件运算符的嵌套</strong>来完成此题：学习成绩&gt;=90分的同学用A表示，60-89分之间的用B表示，60分以下的用C表示。(Java)</li>
+</ul>
+<pre><code class="language-java">public static void main(String[] args) {
+      System.out.println(&quot;请输入你的分数：&quot;);   
+      Scanner scanner=new Scanner(System.in);
+      int input=scanner.nextInt();//获取输入
+      String belong=  input &gt;= 90 ? &quot;A&quot; : (input&gt;=60?&quot;B&quot;:&quot;c&quot;);     //！！！ (a&gt;b)?a:b  等级判断
+      System.out.println(input+&quot;分属于：&quot;+belong);
+      scanner.close();    
+}
+</code></pre>
+<h2 id="逗号表达式">逗号表达式</h2>
+<p>表达式1，表达式2，表达式3……表达式n<br>
+它的值为表达式n的值。<br>
+先求解表达式1，再求解表达式2……整个逗号表达式的值是表达式n的值。<br>
+逗号运算符是所有运算符中级别最低的。</p>
+<pre><code>x=i=4,j=16,k=32;            x=4
+y=(i=4,j=16),k=32;          y=16
+z=(i=4,j=16,k=32);          z=32
+a=(a=3*5,a*4)               a=60
+</code></pre>
+<h2 id="运算符">运算符</h2>
+<ol>
+<li>逗号运算符 (，)</li>
+<li>指针运算符 (*)</li>
+<li>引用运算符和地址运算符 (＆)</li>
+<li>求字节数运算符（sizeof）</li>
+<li>强制类型转换运算符（ (类型) 或类型( )）</li>
+<li>成员运算符 （.）</li>
+<li>指向成员的运算符 （-&gt;）</li>
+<li>下标运算符 （［ ］）</li>
+<li>其他 （  如函数调用运算符（）  ）</li>
+</ol>
+<h2 id="混合运算">混合运算</h2>
 <ul>
-<li>Gridea的主题设置老是没法保存就很奇怪……去看了下洛谷上的巨佬们，都是用Gridea在GitHub上搭的博客，莫非全都是受那篇洛谷日报的影响？？？</li>
-<li>突然发现洛谷和博客园都可以搭个人博客，也可以弄得花里胡哨的🉐</li>
+<li>进行运算时，不同类型的数据要先转换成同一类型，然后进行运算</li>
+<li>横向箭头表示必定的转换</li>
+<li>纵向的箭头表示运算对象为不同类型时转换的方向<br>
+<a href="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1583169776198&amp;di=ceac46f8aa24f1b64185a1b5e0dc47db&amp;imgtype=0&amp;src=http%3A%2F%2Fp.ananas.chaoxing.com%2Fstar3%2Forigin%2F5476f0aaa310e0448134b8f2.png">类型转换</a></li>
+</ul>
+<h2 id="if语句">if语句</h2>
+<ul>
+<li><strong>在嵌套使用if语句时，C语言规定else总是和之前与其最近的且不带else的if配对</strong></li>
+</ul>
+<pre><code class="language-c++">int  a = 2, b = -1, c = 2;
+    if(a &lt; b)
+        if(b &lt; 0)  
+            c = 0;
+        else  c++;
+    printf(&quot;%d\n&quot;,c);	//2
+//——————————————————————————
+int y = 0;		
+    if(x &gt;= 0);	
+        if(x &gt; 0) 
+            y = 1;	
+        else y = -1;
+//——————————————————————————
+if (x &lt; 2)
+   if (x &lt; 1)
+        y = x + 1; 
+   else;
+else
+   y = x + 2;
+</code></pre>
+<h2 id="switch">switch</h2>
+<ul>
+<li>允许测试一个变量等于多个值时的情况。</li>
+<li>default在上面所有case都不为真时执行一个任务。</li>
+<li>default中的 break 语句不是必需的</li>
+<li>case后各常量表达式的值不能相同</li>
+<li>多个case可以共用一组执行语句</li>
+</ul>
+<pre><code class="language-c++">switch(op){
+       case a: printf(&quot;%d&quot;, 1); 
+       default: printf(&quot;x&quot;); 
+       case b: printf(&quot;%d&quot;, 2); 
+}
+输入a  //1x2
+输入b  //2
+
+int  a;
+scanf(&quot;%d&quot;, &amp;a);
+    if(a &gt; 50)  printf(&quot;%d&quot;, a);      //输入52，输出525252
+    if(a &gt; 40)  printf(&quot;%d&quot;, a);      //输入43，输出4343
+    if(a &gt; 30)  printf(&quot;%d&quot;, a);
+</code></pre>
+<h2 id="判断字符类型-include-ctypeh">判断字符类型   #include &lt;ctype.h&gt;</h2>
+<ol>
+<li>字母和数字      <code>int isalnum(int c);</code></li>
+<li>字母            <code>int isalpha(int c);</code></li>
+<li>控制字符        <code>int iscntrl(int c);</code></li>
+<li>十进制数字字符   <code>int isdigit(int c);</code></li>
+<li>小写字母        <code>int islower(int c);</code></li>
+<li>大写字母。      <code>int isupper(int c)</code></li>
+<li>标点符号字符    <code>int ispunct(int c)</code></li>
+</ol>
+<h2 id="循环">循环</h2>
+<ol>
+<li><strong>break</strong> ——&gt; 结束循环，跳出循环体,进行后面的程序；</li>
+<li><strong>continue</strong> ——&gt; 结束本次循环(不执行本循环内的其他语句)，直接进行下次循环；</li>
+<li><strong>return</strong> ——&gt; 跳出循环体所在的方法，相当于结束该方法。</li>
+<li><strong>goto</strong> ——&gt; 直接goto到某个地方继续执行</li>
+</ol>
+<h3 id="有多层for循环">有多层for循环</h3>
+<ol>
+<li>break会跳出当前这一层,去执行外一层循环(而不是退出所有层循环);</li>
+<li>continue则跳过当前循环中的代码，强迫开始下一次循环。<br>
+(注意一层循环和一次循环的区别:一层循环包含若干(i)次循环)</li>
+<li>continue 语句执行后自增语句仍然会执行。</li>
+</ol>
+<h3 id="键盘操作">键盘操作</h3>
+<ol>
+<li><strong>ctrl-c</strong> ——&gt; 发送 SIGINT 信号给前台进程组中的所有进程。常用于终止正在运行的程序。</li>
+<li><strong>ctrl-z</strong> ——&gt; 发送 SIGTSTP 信号给前台进程组中的所有进程，常用于挂起一个进程。
+<ul>
+<li>C/C++程序中，cin为读入标准输入格式，直到遇到文件结束符时结束运行</li>
+<li>而在Windows中CTRL+Z相当于文件结束符EOF，所以你键入CTRL+Z回车后跳出了While循环，才能执行到程序后面的内容。如果缓冲中还有其它内容，ctrl+z不表示输入结束，仅代表当前行输入结束，只在单独一个ctrl+z的时候才表示输入结束。即输入数据后按回车，之后在下一行输入Ctrl+Z继续执行程序。</li>
+<li>只有当Ctrl+Z单独位于一行的行首时，才表示输入的终止！ （即无论何时，都推荐先回车，再Ctrl+Z，再回车结束输入）</li>
+<li>当Ctrl+Z位于行中、行末时，输入都不会结束。(Ctrl+Z表示一个字符，其ASCII码为26.）</li>
 </ul>
 </li>
-</ul>
-<h2 id="后续">后续</h2>
-<h3 id="2020322">20203.22</h3>
+<li><strong>ctrl-d</strong> ——&gt; 不是发送信号，而是表示一个特殊的二进制值，表示 EOF。</li>
+</ol>
+<h2 id="eof">EOF</h2>
+<p>EOF为定义在头文件&lt;stdio.h&gt;的常量，为-1<br>
+函数读入文件数据时，函数会返回一个状态，标识符为EOF<br>
+EOF为文件操作函数，在文件结尾操作时返回<br>
+EOF在UNIX中为ctrl+d，在win中为ctrl+z</p>
+<h2 id="排序函数sort">排序函数Sort（ ）</h2>
 <ul>
-<li>破案了，就只有用Next主题没法保存，不知道为什么。而且网站兼容性极差（gitee、Github），有几个版面可以正常显示，但是看不出端倪</li>
-<li>之前用Next的时候，推流后网站没法跳转，原来仓库里的链接代码<code>chtholist.gitee.io/xxx</code>，在页面部署后变成<code>gitee.com/chtholist/chtholist.gitee.io/xxx</code>，奇怪的是部署完后过了半天到一天就正常了？</li>
-<li>改用Paper主题，无法显示封面图，<strong>无法显示MD文档的侧边栏导航</strong>（这是坠要命的，以后看看怎么改）</li>
-<li>发现博客园的代码可以挪过来用，于是做了搬运工，小改了主题，增加了 1.鼠标点击特效 2.鼠标图案更改 3.回到顶部 4.Live2D</li>
+<li>时间复杂度为n*log2(n)，执行效率较高</li>
+<li>头文件为#include<algorithm><br>
+三个参数：</li>
+</ul>
+<ol>
+<li>第一个是要排序的数组的起始地址。</li>
+<li>第二个是结束的地址（最后一位要排序的地址）</li>
+<li>第三个参数是排序的方法，不写第三个参数，此时默认的排序方法是从小到大排序。Sort(start,end,排序方法)</li>
+</ol>
+<ul>
+<li>加入一个比较函数 complare()</li>
+</ul>
+<pre><code class="language-c">bool complare(int a,int b)
+{ return a&gt;b;} 
+sort(a,a+10,complare);      //在这里就不需要对complare函数传入参数了
+</code></pre>
+<ul>
+<li>从小到大排序less&lt;数据类型&gt;( )     <code>sort(a,a+10,less&lt;int&gt;( ));</code></li>
+<li>从大到小排序greater&lt;数据类型&gt;( )  <code>sort(a,a+10,greater&lt;int&gt;( ));</code></li>
+<li>对字符的排序<br>
+sort(a,a+10,greater<char>( ));<br>
+sort(str.begin(),str.end( ));</li>
+</ul>
+<hr>
+<ul>
+<li>程序中的循环不会无限循环<br>
+任何一个数据类型是有位数限制，好似int在C语言里就固定为32位带符号的整数类型，范围是-2147483648～2147483647，当不断增加一时，超过了就会溢出，返回到负的尽头</li>
 </ul>
 
             </div>
@@ -183,9 +309,9 @@
               <div class="next">
                 下一篇
               </div>
-              <a href="https://chtholist.gitee.io/post/hexo-cai-keng-ji-lu/">
+              <a href="https://chtholist.gitee.io/post/Cstudy_array/">
                 <h3 class="post-title">
-                  Hexo 踩坑记录
+                  C++学习笔记 —— 数组
                 </h3>
               </a>
             </div>
@@ -308,7 +434,7 @@
     </div>
     <div class="row">
       
-        <a href="https://chtholist.gitee.io/tag/sT3HnA4VM/" class="badge secondary">
+        <a href="https://chtholist.gitee.io/tag/sT3HnA4VM/" class="badge ">
           html
         </a>
       
@@ -316,11 +442,11 @@
           学习
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge ">
+        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge secondary">
           编程
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge success">
+        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge ">
           java
         </a>
       
@@ -328,7 +454,7 @@
           git
         </a>
       
-        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge warning">
+        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge success">
           c
         </a>
       

@@ -2,497 +2,2697 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chtholist.gitee.io</id>
     <title>Chtholist</title>
-    <updated>2020-03-22T01:35:19.498Z</updated>
+    <updated>2020-03-22T04:07:11.157Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chtholist.gitee.io"/>
     <link rel="self" href="https://chtholist.gitee.io/atom.xml"/>
-    <subtitle>The Warehouse</subtitle>
+    <subtitle>&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
+&lt;b&gt; 末红褪去春意来 &lt;/b&gt;</subtitle>
     <logo>https://chtholist.gitee.io/images/avatar.png</logo>
     <icon>https://chtholist.gitee.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Chtholist</rights>
     <entry>
-        <title type="html"><![CDATA[ Gridea使用指北 ]]></title>
-        <id>https://chtholist.gitee.io/post/gridea-shi-yong-zhi-bei/</id>
-        <link href="https://chtholist.gitee.io/post/gridea-shi-yong-zhi-bei/">
+        <title type="html"><![CDATA[HTML学习笔记 1]]></title>
+        <id>https://chtholist.gitee.io/post/HTMLstudy1/</id>
+        <link href="https://chtholist.gitee.io/post/HTMLstudy1/">
         </link>
-        <updated>2020-03-22T01:31:48.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="大佬博客集合">大佬博客集合</h3>
-<li><a href="https://chiperman.github.io/" title="Pan">Pan</a></li>
-<li><a href="https://shanbu.fun/" title="Anatale">Anatale</a></li>
-<li><a href="https://blog.blinkstar.cn/" title="bitcron-pro">bitcron-pro</a></li>
-<li><a href="https://zhangajian.com/" title="Space">Space</a></li>
-<li><a href="https://kveln.cn/" title="Clean">Clean</a></li>
-<li><a href="https://i.immmmm.com/">Break</a></li>
-<li><a href="https://yeming.site/">NextT</a><br>
-<h3 id="theme下载注意">theme下载注意：</h3>
+        <updated>2020-03-22T03:21:49.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="html">HTML</h1>
+<h2 id="html简介">HTML简介</h2>
 <ol>
-<li>
-<ol>
-<li>推荐使用 git clone 的方式下载到 Gridea 客户端的 theme 目录。方便后期更新升级。</li>
-<li>打开 theme 目录：~/Documents/gridea/themes</li>
-<li>在当前目录执行 https://github.com/Mrcxt/gridea-theme-lemon.git</li>
-<li>重启 Gridea 客户端查看效果</li>
+<li>HTML 指的是超文本标记语言 (Hyper Text Markup Language)</li>
+<li>HTML 不是一种编程语言，而是一种标记语言</li>
+<li>标记语言是一套标记标签</li>
+<li>HTML文档(网页) = 标记标签 + 纯文本  (使用标记标签来描述网页)</li>
 </ol>
-</li>
-<li>
-<ol>
-<li>克隆项目到本地</li>
-<li>复制「 gridea-theme-xxx」目录到「 Gridea 」主题文件中<br>
-<strong>要点进去看下里面是否就是参数的文件了，不然要把真正的theme package拿出来</strong></li>
-<li>重启「 Gridea 」客户端
-<ol>
-<li>在主题中选择「  gridea-theme-xxx 」主题，点击保存</li>
-<li>
-<ol start="5">
-<li>预览查看效果</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="gridea使用注意">Gridea使用注意</h3>
-<ol>
-<li>用Github pages搭一个博客时，名字不用user name也行，就是输域名的时候长点</li>
-</ol>
-<blockquote>
-<p><strong>Gridea客户端只是一个框架，将写的md转换成html，然后所有的放在Gridea文件夹中的output，同步的时候整个文件夹推到GitHub上</strong>  ，<em><strong>所以备份的时候不用从Github上clone下来，直接把output文件复制一个就行了</strong></em></p>
-</blockquote>
-<h3 id="gridea推送到本地服务器">Gridea推送到本地服务器</h3>
-<ol>
-<li>将远程的域名改成自家的域名，name和密钥改成nas的，然后同步，output中的文件就能设置好了。之后用软件把output同步到服务器上。</li>
-</ol>
-<blockquote>
-<p>Gridea根据远程的设置，把相关域名参数保存在output中，同步时将整个文件夹推送给远程的域名</p>
-</blockquote>
-<h3 id="后续">后续</h3>
+<h4 id="html-标签">HTML 标签</h4>
+<p>由尖括号包围的关键词</p>
 <ul>
-<li>20203.22<br>
-用Next主题没法保存，不知道为什么。网站兼容性极差（gitee、Github）</li>
+<li>通常是成对出现的，比如 &lt;b&gt; 和 &lt;/b&gt;</li>
+<li>标签对中的第一个标签是开始标签(开放标签)，第二个标签是结束标签(闭合标签)</li>
+</ul>
+<h4 id="html元素">HTML元素</h4>
+<ul>
+<li>元素内容 = 开始标签到结束标签间的内容</li>
+<li>空元素在开始标签中关闭 （以开始标签的结束而结束）<br>
+&lt;br&gt; 为没有关闭标签的空元素（定义换行）<br>
+在开始标签中添加斜杠 —&gt; 关闭空元素   （如&lt;br/&gt;）</li>
+</ul>
+<h4 id="html属性">HTML属性</h4>
+<ul>
+<li>属性为 <code>名称 = &quot;值&quot;</code></li>
+<li>属性在开始标签中规定</li>
+</ul>
+<h4 id="html输出">HTML输出</h4>
+<ul>
+<li>无法确定 HTML 被显示的确切效果。屏幕的大小，以及对窗口的调整都可能导致不同的结果。</li>
+<li>无法通过在 HTML 代码中添加额外的空格或换行来改变输出的效果。</li>
+<li>当显示页面时，浏览器会移除源代码中多余的空格和空行。所有连续的空格或空行都会被算作一个空格。需要注意的是，HTML 代码中的所有连续的空行（换行）也被显示为一个空格。</li>
+</ul>
+<hr>
+<hr>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;             
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt; &lt;!-- 让网页可以显示中文 --&gt;
+        &lt;title&gt; 网页名称 &lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        正文……
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;!DOCTYPE html&gt;</td>
+<td style="text-align:center">声明为 HTML5 文档(不分大小写)</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;html&gt;</td>
+<td style="text-align:center">HTML 页面的根元素，之间的文本描述网页</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;head&gt;</td>
+<td style="text-align:center">包含了文档的元（meta）数据，如 &lt;meta charset=&quot;utf-8&quot;&gt; 定义网页编码格式为 utf-8。</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;title&gt;</td>
+<td style="text-align:center">描述了文档的标题</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;body&gt;</td>
+<td style="text-align:center">之间的文本可见的页面内容</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;h1&gt;</td>
+<td style="text-align:center">定义一个标题 ( h1-h6 )</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;p&gt;</td>
+<td style="text-align:center">定义一个段落</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;hr/&gt;</td>
+<td style="text-align:center">创建水平线</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;!-- xxx --&gt;</td>
+<td style="text-align:center">注释</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;br/&gt;</td>
+<td style="text-align:center">换行</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;hr/&gt;</td>
+<td style="text-align:center">划分线</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">文本设置</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;b&gt; or &lt;strong&gt;</td>
+<td style="text-align:center">加粗文本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;em&gt;  or &lt;i&gt;</td>
+<td style="text-align:center">斜体文本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;big&gt;</td>
+<td style="text-align:center">放大文本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;small&gt;</td>
+<td style="text-align:center">缩小文本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;sub&gt;</td>
+<td style="text-align:center">下标</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;sup&gt;</td>
+<td style="text-align:center">上标</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;del&gt;</td>
+<td style="text-align:center">删除线</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;ins&gt;</td>
+<td style="text-align:center">下划线</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">计算机输出</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;code&gt;</td>
+<td style="text-align:center">定义计算机代码</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;kbd&gt;</td>
+<td style="text-align:center">定义键盘码</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;samp&gt;</td>
+<td style="text-align:center">定义计算机代码样本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;tt&gt;</td>
+<td style="text-align:center">定义打字机代码</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;var&gt;</td>
+<td style="text-align:center">定义变量</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;pre&gt;</td>
+<td style="text-align:center">定义预格式文本</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>code 元素不保留多余的空格和折行</li>
+</ul>
+<pre>
+    使用pre显示预格式文本
+        可以保留
+            空格和换行
+                适合显示代码
+</pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">引用 &amp; 术语定义</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;address&gt;</td>
+<td style="text-align:center">定义地址</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;bdo dir=&quot;rtl&quot;&gt;</td>
+<td style="text-align:center">定义文字方向(逆序)</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;blockquote&gt;</td>
+<td style="text-align:center">定义长的引用 (浏览器会插入换行和外边距)</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;q&gt;</td>
+<td style="text-align:center">定义短的引用语(仅添加引号)</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;cite&gt;</td>
+<td style="text-align:center">定义引用、引证</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;dfn&gt;</td>
+<td style="text-align:center">定义一个定义项目</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><bdo dir="rtl"> 使用 bdo dir=&quot;rtl&quot; 更改文字方向</bdo><br>
+<code>&lt;bdo dir=&quot;rtl&quot;&gt; 使用 bdo dir=&quot;rtl&quot; 更改文字方向&lt;/bdo&gt;</code></li>
+</ul>
+<hr>
+<hr>
+<h2 id="链接">链接</h2>
+<p>用标签&lt;a&gt;&lt;/a&gt; (在href这个属性中指定链接的地址url)<br>
+<a href="https://chtholist.github.io" target="_blank" > 这是一个链接 </a><br>
+<code>&lt;a href=&quot;url&quot; target=&quot;_blank&quot; &gt; 链接的替代文字 &lt;/a&gt;</code></p>
+<ul>
+<li>target=&quot;_blank&quot; —&gt; 让链接在新窗口打开</li>
+</ul>
+<h4 id="命名锚">命名锚</h4>
+<p>命名锚：HTML页面中的书签 （同页面内跳转），这样浏览者就不用滚动页面<br>
+<code>&lt; a href=&quot;#tip&quot; &gt; 命名锚从这里跳转 &lt;/a&gt;</code><br>
+<code>&lt;a name=&quot;tip&quot;&gt; 命名锚跳转到这里 &lt;/a&gt;</code></p>
+<ul>
+<li>命名锚跳转的地方，用 #+锚名 来链接，可添加到URL的末端</li>
+</ul>
+<h4 id="跳出框架">跳出框架</h4>
+<p><code>&lt;a href=&quot;这个网页的url&quot; target=&quot;_top&quot;&gt; 替代文字 &lt;/a&gt;</code></p>
+<hr>
+<hr>
+<h2 id="图像">图像</h2>
+<p>用标签&lt;img src=&quot; &quot;&gt;<br>
+<code>&lt;img src=&quot;url&quot; width=&quot;x&quot; height=&quot;y&quot; alt=&quot;图片显示不出来时替换的文本&quot; align=&quot; bottom / middle / top / left / right (对齐方式)&quot; /&gt;</code></p>
+<ul>
+<li>图像作为链接：</li>
+</ul>
+<pre><code class="language-html">    &lt;a href=&quot;要跳转到的url&quot; &gt;
+        &lt;img border=&quot;0&quot; src=&quot;图片的url&quot; &gt;
+    &lt;/a&gt;
+</code></pre>
+<h4 id="图片映射">图片映射</h4>
+<pre><code class="language-html">&lt;img src=&quot;url&quot; usemap=&quot;#PhotoName&quot;&gt;
+&lt;map name=&quot;PhotoName&quot;&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;x1,y1,x2,y2&quot;  href=&quot;url1&quot;&gt;
+  &lt;area shape=&quot;circle&quot; coords=&quot;x1,y1,r&quot;  href=&quot;url2&quot;&gt;
+&lt;/map&gt;
+</code></pre>
+<ul>
+<li>shape指点击区域的形状，coords指链接区域在图中的坐标（像素为单位）
+<ul>
+<li>矩形rect：左上角顶点坐标为(x1,y1)，右下角顶点坐标为(x2,y2)</li>
+<li>圆形circle：圆心坐标为(X1,y1)，半径为r</li>
+<li>多边形：各顶点坐标依次为(x1,y1)、(x2,y2)、(x3,y3) ......</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="字体">字体</h2>
+<ul>
+<li>用 style=&quot; xxx : xxx ;&quot; 设置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">字体</td>
+<td style="text-align:center">font-family</td>
+</tr>
+<tr>
+<td style="text-align:center">字体大小</td>
+<td style="text-align:center">font-size</td>
+</tr>
+<tr>
+<td style="text-align:center">背景颜色</td>
+<td style="text-align:center">background-color</td>
+</tr>
+<tr>
+<td style="text-align:center">文本对齐方式</td>
+<td style="text-align:center">text-align</td>
+</tr>
+</tbody>
+</table>
+<h4 id="缩写文本">缩写文本</h4>
+<p>把鼠标移至缩略词语上时，可展示完整版本<br>
+<abbr title="使用abbr显示缩写"> 缩 </abbr><br>
+<code>&lt;abbr title=&quot;使用abbr显示缩写&quot;&gt; 缩 &lt;/abbr&gt;</code><br>
+<acronym title="World Wide Web"> WWW </acronym><br>
+<code>&lt;acronym title=&quot;使用acronym显示首字母缩写&quot;&gt; 首缩 &lt;/acronym&gt;</code></p>
+<hr>
+<hr>
+<h2 id="样式表">样式表</h2>
+<p>所有的格式化代码均可移出 HTML 文档，然后移入一个独立的样式表<br>
+当浏览器读到一个样式表，它就会按照这个样式表来对文档进行格式化。</p>
+<ul>
+<li>将CSS添加到HTML中：
+<ul>
+<li><strong>内联样式</strong>：在HTML元素中使用 style <em>属性</em></li>
+<li><strong>内部样式表</strong>：在HTML文档头部 head 区域中用 style <em>元素</em>来包含CSS</li>
+<li><strong>外部引用</strong>：使用外部CSS文件</li>
+</ul>
+</li>
+</ul>
+<h4 id="内联样式h3">内联样式</h3></h4>
+<ul>
+<li>当特殊的样式需要应用到<strong>个别元素</strong>时，就可以使用内联样式。</li>
+<li>使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何CSS 属性。<br>
+<code>&lt;p style=&quot;color:blue;&quot;&gt; 使用内联样式 &lt;/p&gt;</code></li>
+</ul>
+<h4 id="内部样式表">内部样式表</h4>
+<ul>
+<li>当<strong>单个文件</strong>需要特别样式时，就可以使用内部样式表。</li>
+<li>可以在 head 部分通过 style 标签定义内部样式表。</li>
+</ul>
+<h4 id="外部样式表-推荐">外部样式表 （推荐）</h4>
+<ul>
+<li>当样式需要被应用到<strong>很多页面</strong>的时候，外部样式表将是理想的选择。</li>
+<li>可以通过更改一个文件来改变整个站点的外观。</li>
 </ul>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hexo 踩坑记录]]></title>
-        <id>https://chtholist.gitee.io/post/hexo-cai-keng-ji-lu/</id>
-        <link href="https://chtholist.gitee.io/post/hexo-cai-keng-ji-lu/">
+        <title type="html"><![CDATA[Java&后端 学习路径]]></title>
+        <id>https://chtholist.gitee.io/post/JAVAstudy0/</id>
+        <link href="https://chtholist.gitee.io/post/JAVAstudy0/">
         </link>
-        <updated>2020-03-22T01:31:15.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="配置">配置</h3>
+        <updated>2020-03-22T03:20:02.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="后端学习">后端学习</h1>
+<h2 id="基础篇">基础篇</h2>
+<h3 id="java">Java</h3>
 <ol>
-<li>hexo generate时出现</li>
+<li>环境及基础语法（重点在于数据类型、类与对象、文件、异常等操作）：<br>
+https://www.runoob.com/java/java-tutorial.html</li>
+<li>servlet——java web基础（重点在于http，session，cookie，数据库访问，文件上传等）：<br>
+https://www.runoob.com/servlet/servlet-writing-filters.html</li>
+</ol>
+<h3 id="mysql">Mysql</h3>
+<p>数据库各种基本操作：https://www.runoob.com/mysql/mysql-tutorial.html</p>
+<h3 id="git">Git</h3>
+<p>菜鸟教程：https://www.runoob.com/git/git-basic-operations.html<br>
+廖雪峰：https://www.liaoxuefeng.com/wiki/896043488029600</p>
+<h3 id="maven">Maven</h3>
+<p>菜鸟教程（重点在于仓库配置，部署，理解，mvn打包命令）：<br>
+https://www.runoob.com/maven/maven-tutorial.html</p>
+<h2 id="入门篇">入门篇</h2>
+<h3 id="spring">Spring</h3>
+<p>配置及基础概念：https://www.w3cschool.cn/wkspring/</p>
+<h3 id="mybatis">Mybatis</h3>
+<p>文档：https://mybatis.org/mybatis-3/zh/index.html</p>
+<h3 id="redis">Redis</h3>
+<p>数据类型文档：https://redis.io/topics/data-types-intro</p>
+<h3 id="springboot">Springboot</h3>
+<p>项目学习：https://github.com/MarkLux/today</p>
+<h2 id="实战篇">实战篇</h2>
+<ul>
+<li>初级 简单用户demo</li>
+<li>中级 xxx</li>
+<li>高级 xxx<br>
+实战篇初级要求：基础篇和入门篇所有知识点都有一定掌握程度</li>
+</ul>
+<h2 id="其他">其他</h2>
+<h3 id="开发工具">开发工具</h3>
+<ul>
+<li>IDEA（Java）</li>
+<li>Navicat（Mysql）</li>
+<li>Postman（http模拟请求）</li>
+<li>Git</li>
+</ul>
+<h3 id="网站">网站</h3>
+<ul>
+<li>慕课网（只建议学习免费视频）：https://www.imooc.com/course/list</li>
+<li>程序园（里面东西很多，如果不清楚学习顺序可以先向学长询问）：http://www.voidcn.com/course</li>
+<li>牛客（剑指Offer 刷算法题）：https://www.nowcoder.com/ta/coding-interviews</li>
+</ul>
+<hr>
+<hr>
+<h1 id="java学习">Java学习</h1>
+<ul>
+<li>面向对象的编程思想</li>
+<li><u><strong>数据类型 / 类与对象 / 文件 / 异常处理</strong></u></li>
+<li>数组</li>
+<li>数据结构与算法</li>
+<li>集合：List &amp; Map</li>
+<li>代码管理：SVN / <strong><u>Git</u></strong></li>
+<li>Java项目管理工具：  Gradle / <strong><u>Maven(仓库配置，部署，理解，mvn打包命令)</u></strong></li>
+</ul>
+<h2 id="web相关">Web相关</h2>
+<ul>
+<li>网络模型/网络协议</li>
+<li><u><strong>了解servlet——http，session，cookie，数据库访问，文件上传</strong></u></li>
+<li>写一个B/S的demo</li>
+</ul>
+<h2 id="数据库">数据库</h2>
+<ul>
+<li><strong><u>MySQL</u></strong> ACID</li>
+<li>学业务建模 写SQL</li>
+<li>使用JDBC，写带数据库的demo</li>
+</ul>
+<h2 id="基本语法-常用jdk-api">基本语法 &amp; 常用JDK API</h2>
+<ul>
+<li>一些简单的带有逻辑的算法题</li>
+<li>一些多编程读写文件的demo</li>
+<li>一些具有多继承 多态性质的demo</li>
+</ul>
+<h2 id="框架">框架</h2>
+<ul>
+<li>Spring SSM框架</li>
+<li>了解前后端分离，编写Restful接口</li>
+<li>使用框架搭建后端，写一个前后端分离的demo</li>
+</ul>
+<hr>
+<ol>
+<li>零基础开始学java，到多线程为止</li>
+<li>对JAVA有了一定的基础之后，就可以看JSP的知识，也就是JAVA跟web前台页面联合起来用。JSP需要一点html网页的基础</li>
+<li>
+<ul>
+<li>在学JSP的时候，会接触到javaScript 俗称js。不难，照着网站学一下就行。</li>
+<li>在学JSP的时候，会接触到MVC分层， M--Model就是JavaBean也就是一种符合一定规范的Java类，V--View就是视图也就是前台显示的东西，C--Controller就是控制器也就是Servlet之类是通过写一些方法来沟通Model与View之间的交互；</li>
+</ul>
+</li>
+<li>JSP相关知识掌握好后，那可以看一下框架相关的东西，SSH、SSM框架是现在用得比较多的框架</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Java —— 最基础]]></title>
+        <id>https://chtholist.gitee.io/post/JAVAstudy1/</id>
+        <link href="https://chtholist.gitee.io/post/JAVAstudy1/">
+        </link>
+        <updated>2020-03-22T03:19:10.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>JavaSE (Java标准版)</li>
+<li>JavaEE (Java企业版)</li>
+<li>JavaME (Java微型版)<br>
+JavaSE为基础，JavaEE为方向</li>
+</ol>
+<ul>
+<li>JDK：Java开发工具包 （一般自带JRE）
+<ul>
+<li>Java程序设计语言</li>
+<li>JRE：Java的运行环境
+<ul>
+<li>JVM：Java虚拟机</li>
+<li>Java API类库</li>
+</ul>
+</li>
+<li>各种辅助工具，如javac</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="java简介">Java简介</h2>
+<ul>
+<li>简单性：
+<ul>
+<li>Java语言底层是C++实现的</li>
+<li>Java不支持多继承</li>
+<li>Java屏蔽了指针的概念</li>
+</ul>
+</li>
+<li>Java纯面向对象，所有代码写在类中</li>
+<li>可移植性
+<ul>
+<li>Java程序可跨平台直接在windows和Linux上运行，不用做修改<br>
+（让Java程序运行在不同版本的Java虚拟机JVM上）</li>
+</ul>
+</li>
+<li>多线程</li>
+<li>健壮性：
+<ul>
+<li>运行过程中产生的垃圾自动回收，自动垃圾回收机制——GC机制</li>
+<li>c++中开辟空间后要再人为释放，Java中只需要申请空间不需要回收</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="java-的加载-执行">Java 的加载 &amp; 执行</h2>
+<p>（DOS命令）</p>
+<h3 id="编译">编译</h3>
+<ul>
+<li>源文件( .java )编译生成一个或多个字节码文件( .class )</li>
+<li>字节码文件 / class文件为最终运行的文件</li>
+<li>class文件名 = <strong>类名</strong></li>
+<li>JDK工具包里有Java编译器（命令）javac.exe<br>
+javac.exe将源文件编译成字节码文件</li>
+</ul>
+<h3 id="运行">运行</h3>
+<ul>
+<li>把DOS窗口的路径切换到字节码文件所在的目录（dir能看到文件）<br>
+输入Java x （x.class）  (Java后面跟着类名)<br>
+java.exe命令会启动JVM，启动类加载器ClassLoader<br>
+ClassLoader会去硬盘上搜索 x.class 文件，装载到JVM中<br>
+（classpath环境变量属于Java语言，配置为某个指定路径之后，类加载器只去指定的路径中加载字节码文件）（若未配则从当前路径下加载）<br>
+JVM将 x.class 文件解释成二进制数据<br>
+操作系统执行二进制和底层硬件平台交互</li>
+</ul>
+<hr>
+<h3 id="注释">注释</h3>
+<ul>
+<li>只会出现在Java的源程序.java中，不会被编译到字节码.class中</li>
+<li><u><strong>javadoc注释（会被javadoc.exe提取到java的帮助文档中）</strong></u><br>
+/**<br>
+*  javadoc1<br>
+*  javadoc2<br>
+*/</li>
+</ul>
+<hr>
+<pre><code class="language-java">public class HelloWorld {
+  public static void main( String[] args) {   //定义一个公开的静态的主方法
+    System.out.println(&quot;Hello World&quot;);
+  }
+}  
+// ( String[] args )为一个main方法的形式参数列表
+</code></pre>
+<ul>
+<li>类名和文件名必须一致（HelloWorld）</li>
+</ul>
+<hr>
+<ol>
+<li><strong>关键字</strong> ： 完全小写字母 /</li>
+<li><strong>标识符</strong> ： <kbd>英文字母（大小写）</kbd> <kbd>数字</kbd> <kbd>$</kbd> <kbd>_</kbd><br>
+（标识符不能以数字开头）
+<ul>
+<li>类名：首字母大写，后面每个单词首字母大写（大驼峰）</li>
+<li>变量名：首字母<strong>小</strong>写，后米娜每个单词首字母大写（小驼峰）</li>
+</ul>
+</li>
+<li>常量
+<ul>
+<li>Java的字符常量可以为中文  ：  &quot;汉&quot;</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="数据类型">数据类型</h2>
+<ul>
+<li>基本数据类型  (java中默认整型int，默认浮点型double)
+<ul>
+<li>整数型 ：byte (1字节，-128~127) / short (2字节) / int (4个字节) /long (8个字节)</li>
+<li>浮点型 ：float (4个字节) / double (8个字节)</li>
+<li>字符型 ：char (2个字节)</li>
+<li>布尔型 ：<strong>boolean</strong> (1个字节)<br>
+<strong>(数据大时， float和double类型后缀为F，long类型后缀为L )</strong></li>
+</ul>
+</li>
+<li>引用数据类型
+<ul>
+<li><strong>字符串</strong></li>
+<li>数组</li>
+<li>类</li>
+<li>接口</li>
+<li>Lambda</li>
+</ul>
+</li>
+</ul>
+<p>(数据范围和字节数不一定相关，例如float范围比long广泛)</p>
+<ul>
+<li>隐式（自动）转换是<strong>数据范围</strong>从小到大
+<ul>
+<li>错： int num = 100L;</li>
+<li>对： int num = (int)100L;</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="运算">运算</h2>
+<h3 id="加法">加法</h3>
+<ul>
+<li>char / byte / short  + int<br>
+在计算前char提升成int，根据ASCII码计算</li>
+<li>String + 任何数据类型<br>
+相加表示字符串连接，最终结果都是字符串<br>
+<code>String str =&quot;abc&quot;;</code><br>
+<code>System.out.println(str+10+20); //java1020</code><br>
+<code>System.out.println(str+(10+20)); //java30</code></li>
+</ul>
+<pre><code class="language-java">short a = 5;
+short b = 9;
+short c1 = a+b;  //错误，不兼容的类型
+//short + short ——&gt; int + int ——&gt; int
+//正确的为 int c1 = a+b; 
+short c2 = 5 + a + 8; //错误，右侧有变量  
+</code></pre>
+<hr>
+<h2 id="方法">方法</h2>
+<ul>
+<li>主方法：<br>
+public static void main(String[ ] args){……}</li>
+<li>定义方法：<br>
+public static 数据类型 方法名(){……}</li>
+</ul>
+<hr>
+<h2 id="idea">IDEA</h2>
+<h3 id="项目结构">项目结构</h3>
+<ul>
+<li>代码保存层次<br>
+项目Project ——&gt; 模块Module ——&gt; 包Package ——&gt; 文件</li>
+</ul>
+<blockquote>
+<p>File ——&gt; New ——&gt; Empty Project ——&gt; Add New Modules<br>
+src ——&gt; New ——&gt; Package<br>
+Package ——&gt; New ——&gt; Java Class<br>
+调字体：File ——&gt; Settings ——&gt; Editor ——&gt; Font<br>
+导入模块：File ——&gt; Project Structure ——&gt; Import Module</p>
+</blockquote>
+<ul>
+<li>
+<p>Package命名使用英文小写，数字和 <strong>&quot;.&quot;</strong><br>
+按点给包分层：大包.中包.小包</p>
+</li>
+<li>
+<p><strong>所有代码要写在src文件夹里</strong><br>
+.iml为Idea的配置信息<br>
+External Libraries 为JDK</p>
+</li>
+<li>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">快捷输入</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">psvm回车</td>
+<td style="text-align:left">——&gt; public static void main(String[] args){ }</td>
+</tr>
+<tr>
+<td style="text-align:left">sout回车</td>
+<td style="text-align:left">——&gt; System.out.println();</td>
+</tr>
+<tr>
+<td style="text-align:left">n.fori回车</td>
+<td style="text-align:left">——&gt;  for( int i=0; i&lt;5; i++ ) <strong>正序</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">n.forr回车</td>
+<td style="text-align:left">——&gt;  for( int i=3; i&gt;0; i-- ) <strong>倒序</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Alt + Enter</td>
+<td style="text-align:center">自动修正代码</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + y</td>
+<td style="text-align:center">删除当前行</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + d</td>
+<td style="text-align:center">复制当前行到下一行</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Ctrl + Alt + L</strong></td>
+<td style="text-align:center"><strong>格式化代码（对齐）</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + /</td>
+<td style="text-align:center">当前行变为注释or取消注释</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl + Shift + /</td>
+<td style="text-align:center">选中代码注释/**/or取消注释</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + Ins</td>
+<td style="text-align:center">自动生成代码</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt +Shift +上下箭头</td>
+<td style="text-align:center">移动当前行代码</td>
+</tr>
+<tr>
+<td style="text-align:center">Alt + 鼠标左键选择</td>
+<td style="text-align:center">上下列</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">System.out.println(……);</td>
+<td style="text-align:left">输出后换行</td>
+</tr>
+<tr>
+<td style="text-align:left">System.out.print(……);</td>
+<td style="text-align:left">输出后不换行</td>
+</tr>
+<tr>
+<td style="text-align:left">System.out.println();</td>
+<td style="text-align:left">换行</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="debug">Debug</h2>
+<ul>
+<li>Debug模式：Shift + F9</li>
+<li>断点：在左边行号栏 单击左键 / Ctrl + F8</li>
+<li>按蓝色向下箭头 / F7</li>
+</ul>
+<hr>
+<h2 id="数组">数组</h2>
+<ul>
+<li>
+<p>初始化  (左右数据类型要一致)</p>
+<ul>
+<li><strong>动态初始化（指定长度）</strong><br>
+数据类型[ ] 数组名称 = new 数据类型[数组长度];<br>
+int[] arrayA = new int [3];</li>
+<li><strong>静态初始化（指定内容）</strong><br>
+数据类型[ ] 数组名称 = new 数据类型[]{元素1, 元素2, ……};<br>
+int[] arrayB = new int[]{2,5,6};</li>
+<li><strong>省略格式静态初始化</strong><br>
+数据类型[] 数组名称 = {元素1, 元素2, ……};</li>
+</ul>
+</li>
+<li>
+<p>直接打印数组名称，得到数组对应的内存地址哈希值</p>
+</li>
+</ul>
+<hr>
+<h2 id="java内存-数组">Java内存 &amp; 数组</h2>
+<ol>
+<li><strong>栈Stack</strong>：存放方法中的局部变量，<strong>方法一定在栈中运行</strong>  ，超出作用域即从栈内存中消失</li>
+<li><strong>堆Heap</strong>：<strong>new出来的变量都在堆内存中</strong>，（数组都在堆中），都有16进制的地址值<br>
+     堆内存中数据默认值
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">整数</td>
+<td style="text-align:center">浮点数</td>
+<td style="text-align:center">字符</td>
+<td style="text-align:center">布尔</td>
+<td style="text-align:center">引用</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0.0</td>
+<td style="text-align:center">\u0000</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">null</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><strong>方法区Method Area</strong>：存储.class相关信息，包含方法的信息</li>
+<li>本地方法栈Native Method Stack：与操作系统相关</li>
+<li>寄存器pc Register：与CPU相关</li>
+</ol>
+<pre><code class="language-java">public static void main ( String[ ] args){
+  int[] array = new int [3];  
+  System.out.println(array);     //直接打印地址值
+  System.out.println(array[1]);  //根据栈中地址值找到堆中的数组
+}
+</code></pre>
+<blockquote>
+<p>1.方法区保存.class中的方法信息<code>public static void main(String[] args)</code><br>
+2.运行main方法时将<code>main(String[] args)</code>加载到栈中，并开辟一段内存空间 ——&gt; <strong>进栈</strong><br>
+3.数组名称为局部变量在栈中 ，new出来的数组在堆中，栈中存储的实际为数组地址值</p>
+</blockquote>
+<ul>
+<li>
+<p>引用<br>
+<code>int[] arrayB = arrayA;</code> //将arrayA数组的地址值赋值给arrayB数组</p>
+</li>
+<li>
+<p>所有的引用类型变量，都可以赋值Null,代表其中什么都没有<br>
+数组若只赋值null，会发生空指针异常NullPointerException</p>
+</li>
+<li>
+<p>获取数组长度：<code>int len = array.length</code><br>
+<strong>数组创建后，程序运行期间，长度不可改变</strong>（一个new新建一个数组）<br>
+可以用来遍历数组<code>for(int i=0; i&lt;array.length; i++)</code></p>
+</li>
+<li>
+<p><strong>数组作为方法参数</strong>：</p>
+<pre><code class="language-java">public static void main( String[] args ){
+  int[] array = {1,2,3};
+  printArray(array);            //传参即传入数组地址值
+} 
+public static void printArray( int[] array ){
+  System.out.println(array[1]);
+}
+</code></pre>
+</li>
+<li>
+<p><strong>数组作为返回值（可以返回多个值）</strong></p>
+<pre><code class="language-java">public static void main( String[] args){
+  int[] result = cal(10,20);    //用另一个数组介绍
+  System.out.println(result[0],result[1]);
+}
+public static int[] cal(int a,int b){
+  int sum = a+b;
+  int avg = sum/2;
+  int[] array={sum,avg};
+  return array;                 //返回的即数组地址值
+} ```  
+</code></pre>
+</li>
+</ul>
+<p><u>数组作为方法的参数，传递的是数组地址值</u><br>
+<u>数组作为方法的返回值，返回的是数组的地址值</u></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">成员变量</th>
+<th style="text-align:center">局部变量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">定义位置</td>
+<td style="text-align:center">方法外部，直接写在类中</td>
+<td style="text-align:center">方法内部</td>
+</tr>
+<tr>
+<td style="text-align:center">作用范围</td>
+<td style="text-align:center">整个类内</td>
+<td style="text-align:center">方法中</td>
+</tr>
+<tr>
+<td style="text-align:center">默认值</td>
+<td style="text-align:center">有初始默认值</td>
+<td style="text-align:center">无默认值</td>
+</tr>
+<tr>
+<td style="text-align:center">内存位置</td>
+<td style="text-align:center">堆内存</td>
+<td style="text-align:center">栈内存</td>
+</tr>
+<tr>
+<td style="text-align:center">生命周期</td>
+<td style="text-align:center">对象创建—&gt;对象被回收</td>
+<td style="text-align:center">方法进栈—&gt;方法出栈</td>
+</tr>
+</tbody>
+</table>
+<p><u><strong>面向对象三大特性：封装、继承、多态</strong></u></p>
+<h3 id="封装">封装</h3>
+<p>把执行某一步骤的代码封装起来，对外界不可见</p>
+<ul>
+<li>方法、private为封装</li>
+<li>间接访问private成员变量，要定义一对Getter/Setter方法
+<ul>
+<li>Alt + Insert 快捷插入Getter和Setter</li>
+<li>对于boolean，Getter方法为<strong>isXxx</strong>的形式，setXxx不变</li>
+</ul>
+<pre><code class="language-java">public class Person{
+  String name;
+  private int age;
+
+  //有参数无返回  方法名：set+首字母大写的private变量
+  public void setAge(int num){  //专门用于向age设置数据
+    age = num; …………             //方法内控制输入的数据
+  }
+  //无参数有返回  方法名：get+首字母大写的private变量
+  public int getAge(){  //专门获取age的数据
+    return age;
+  }
+} 
+</code></pre>
+</li>
+<li>当方法的局部变量和类的成员变量<strong>重名</strong>时，优先使用局部变量<br>
+访问类的成员变量：<strong>this.成员变量名</strong> （一定是在方法内部）<br>
+通过谁调用方法，谁就是this</li>
+</ul>
+<h3 id="构造方法">构造方法</h3>
+<ul>
+<li>专门用来创建对象的方法，用nex创建对象时就是在调用构造方法</li>
+<li>只要编写构造方法，编译器不再生成默认构造方法</li>
+<li>public 类名(参数类型 参数名称){<br>
+方法体<br>
+}</li>
+</ul>
+<pre><code class="language-java">public class Student{
+  private String name;
+  private int age;
+  public Student(){   //没有void,无返回值
+    //执行构造方法
+  }
+  Student stu1 = new Student();    //实例化对象=调用构造方法  
+  /*
+   public Student(String name,int age){   //全参构造
+    this.name = name;
+    this.age = age;
+  }
+  Student stu2 = new Student(&quot;张三&quot;,20)；
+  */
+}
+</code></pre>
+<blockquote>
+<p>Alt +Insert —&gt; Constructor —&gt; 构造方法  (Select None 无参构造)</p>
+</blockquote>
+<ul>
+<li>
+<p>标准的类  ( Java Bean )</p>
+<ol>
+<li>所有成员变量都用private修饰</li>
+<li>每个成员变量都要有Getter/Setter方法</li>
+<li>编写一个无参数的构造方法</li>
+<li>编写一个全参数的构造方法 (参数为所有成员变量)</li>
+</ol>
+</li>
+<li>
+<p><u><strong>分文件</strong></u><br>
+<strong>在一个包Package底下，分多个类class，把变量和方法封装起来，最后再建一个Demo类，其中有主函数来调用其他的class</strong></p>
+</li>
+</ul>
+<hr>
+<h2 id="api-应用程序编程接口">API  —— 应用程序编程接口</h2>
+<p>（类似于字典）</p>
+<ol>
+<li>打开帮助文档</li>
+<li>点击显示，找到索引，在输入框中搜索</li>
+<li>看包路径 (java.lang下的类不需要导包，其他都需要import……)</li>
+<li>看类的解释和说明</li>
+<li>看构造方法</li>
+<li>使用成员方法 （方法摘要）</li>
 </ol>
 <blockquote>
-<p>Commands:<br><br>
-help Get help on a command.<br><br>
-init Create a new Hexo folder.<br><br>
-version Display version information.<br><br>
-………………………………</p></p>
+<p>关键字都是小写的，Scanner和String开头大写，为JDK中的类<br>
+只要不是基本类型，就是引用类型<br>
+使用引用类型：</p>
+<ol>
+<li>导包  ——  import 包路径.类名称;<br>
+若要使用的目标类和当前类在同一个包下，或为java.lang，则不用导包<br>
+导包语句 import…… 写在 package 后面 class 前面</li>
+<li>创建  ——  类名称 对象名 = new 类名称();</li>
+<li>使用  ——  对象名.成员方法名()</li>
+</ol>
 </blockquote>
-</blockquote>
-<p>原因：没有在Hexo的目录下打开Git Bash，没有用npx hexo <command>  （我直接用了win的终端）</p>
-<br/>
+<h3 id="从键盘获取输入">从键盘获取输入</h3>
+<ol>
+<li>System.in 方法<br>
+只能针对一个字符的获取  /  获取的只是char类型的</li>
+</ol>
+<pre><code class="language-java">  //import java.io.IOException; (Idea自动补上)
+  try {
+    char i = (char) System.in.read();
+    System.out.println(&quot;Enter Char is:&quot; + i);
+  } 
+  catch (IOException e) {
+    e.printStackTrace();
+  }   
+</code></pre>
 <ol start="2">
-<li>本地的localhost:4000端口被占用<br>
-之前的一个Gridea博客把本地的4000占了，hexo要换一个，网上搜了一下没法在命令行里改（好像新版本的Hexo取消了这个功能）</li>
+<li>InputStreamReader和BufferedReader方法<br>
+可以获取键盘输入的字符串</li>
 </ol>
-<blockquote>
-<p>解决：node_modules —&gt; 往下狂拉找到hexo-server —&gt; package.json —&gt; 在里面改port端口  （我改成4004）</p>
-</blockquote>
+<pre><code class="language-java">    InputStreamReader is = new InputStreamReader(System.in);   
+    //new构造InputStreamReader对象 
+    BufferedReader br = new BufferedReader(is);   
+    //拿构造的方法传到BufferedReader中 
+    try{ //该方法中有个IOExcepiton需要捕获 
+      String name = br.readLine(); 
+      System.out.println(&quot;ReadTest Output:&quot; + name); 
+    } 
+    catch(IOException e){ 
+      e.printStackTrace(); 
+</code></pre>
 <ol start="3">
-<li>
-<p>hexo g，然后hexo server，打开http://localhost:4004/ 后啥都没有，一看命令行：Warning: 没有index.html，然后public里面的index.html也都</p>
-<ul>
-<li>复制粘贴文档上的代码时，有时候会报错：bash:syntax error near unexpected token 'newline'，因为是把 <xxx> 一起复制来了，那里应为用户自己的语句</li>
-</ul>
-</li>
-<li>
-<p>听说hexo全用命令行……遂放弃</p>
-</li>
+<li><strong>Scanner类中的方法</strong><br>
+可以获取键盘输入的字符串和int,float等类型数据</li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[博客改造计划]]></title>
-        <id>https://chtholist.gitee.io/post/bo-ke-gai-zao-ji-hua/</id>
-        <link href="https://chtholist.gitee.io/post/bo-ke-gai-zao-ji-hua/">
-        </link>
-        <updated>2020-03-21T13:24:34.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>引用链接</li>
+<pre><code class="language-java">    Scanner sc = new Scanner(System.in); //System.in为从键盘输入
+    // sc 作为对象名可以调用以输入
+    String name = sc.nextLine();  //读取字符串型输入 
+    int age = sc.nextInt();    //读取整型输入 
+    float salary = sc.nextFloat(); //读取float型输入 
+    char x = sc.next().charAt(0)
+    …………   
+</code></pre>
+<hr>
+<h3 id="匿名对象-new-类名称">匿名对象 —— new 类名称();</h3>
+<p>只有右边的对象，没有左边的名字和赋值运算符<br>
+匿名对象只能使用一次 （无法调用）</p>
+<blockquote>
+<p>new Student().name = &quot;张三&quot;;</p>
+</blockquote>
+<p>只接受一个输入：<code>int num = new Scanner(System.in).nextInt();</code></p>
+<pre><code class="language-java">//这个函数methodReturn相当于sc
+public static Scanner methodReturn(){
+  return new Scanner(System.in);  //匿名对象作为方法返回值
+}
+</code></pre>
+<h3 id="random类-生成随机数">Random类  —— 生成随机数</h3>
+<ol>
+<li>导包： import java.util.Random;  （可自动生成）</li>
+<li>创建： <code>Random r = new Random();</code></li>
+<li>使用：<br>
+<code>int num = r.nextInt(); // int范围内的伪随机数</code><br>
+<code>int num = r.nextInt(n); // [0,n)范围内的伪随机数</code></li>
+</ol>
+<blockquote>
+<p>求2~35直接的随机整数 ——&gt; <strong>r.nextInt(34)+2;</strong></p>
+</blockquote>
+<ul>
+<li>生成指定位数的<strong>随机字符串</strong> (包含大小字母、数字,0&lt;length)<br>
+1.先自定义一个字符串库KeyString<br>
+2.通过Math.random()方法获取KeyString长度内的一个随机数<br>
+3.再获取该随机数对应KeyString中相应位置的一个字符<br>
+4.最后将随机获取并组装好的字符串返回。<br>
+若想修改包含的字符,只需将相应字符添加到字符串库KeyString 中去即可<pre><code class="language-java">//获取随机字符串
+public static String getRandomString(int length) {
+  //随机字符串的随机字符库
+  String KeyString = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;
+  StringBuffer sb = new StringBuffer();
+  int len = KeyString.length();
+  for (int i = 0; i &lt; length; i++) {
+     sb.append(KeyString.charAt((int) Math.round(Math.random() * (len - 1))));
+  }
+  return sb.toString();
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="arrayliste">ArrayList&lt;E&gt;</h3>
+<ul>
+<li>数组长度不可以改变，ArrayList集合的长度可以随意变</li>
+<li>&lt;E&gt;表示<strong>泛型</strong>：在集合中的所有元素均为统一的引用类型，不能为基本类型<br>
+(集合中储存的为地址值，基本类型无地址值)</li>
+<li>直接打印ArrayList得到的是内容，若无内容则得到“ [ ] ”</li>
+</ul>
+<pre><code class="language-java">public static void main(String[] args){
+  ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+  //创建了一个ArrayList集合，名称为 list，装的是String字符串类型的数据  
+  // ps.从JDK1.7+开始，右侧尖括号内可以不写内容  
+  list.add(&quot;内容&quot;);   //添加数据要用到 add()  
+  System.out.println(list);     //打印出  [内容]
+}     
+</code></pre>
+<ul>
+<li><code>public booleam add(E e)</code><br>
+向集合中<strong>添加元素</strong>，参数的类型和泛型一致，返回值表示添加是否成功<br>
+（对于ArrayList集合，add一定成功，可不用返回值，但其他集合的add不一定成功）</li>
+<li><code>public E get(int index)</code><br>
+从集合中<strong>获取元素</strong>，参数index为序号，返回值为对应序号的元素</li>
+<li><code>public E remove(int index)</code><br>
+从集合中<strong>删除元素</strong>，参数index为序号，返回值为被删除掉的元素</li>
+<li><code>public int size()</code><br>
+<strong>获取集合的长度</strong>，返回值为集合中元素的个数</li>
 </ul>
 <blockquote>
-<p>https://www.cnblogs.com/ECJTUACM-873284962/p/7628894.html<br>
-https://www.cnblogs.com/jajian/p/9763946.html</p>
+<p>list.fori ——&gt; for( int i = 0; i &lt; list.size(); i++){ }</p>
 </blockquote>
-<h2 id="背景-鼠标图案">背景 + 鼠标图案</h2>
 <ul>
-<li>自定义css</li>
+<li>
+<p>若要在ArrayList中存储基本类型数据，要使用对应的包装类<br>
+（包装类为引用类型，位于java.lang包下）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">基本类型</th>
+<th style="text-align:center">包装类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">byte</td>
+<td style="text-align:center">Byte</td>
+</tr>
+<tr>
+<td style="text-align:center">short</td>
+<td style="text-align:center">Short</td>
+</tr>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center"><strong>Integer</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">Long</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">Float</td>
+</tr>
+<tr>
+<td style="text-align:center">double</td>
+<td style="text-align:center">Double</td>
+</tr>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center"><strong>Character</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">Boolean</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>对象添加到集合</p>
+</li>
 </ul>
-<pre><code class="language-css">body {
-color: #000;
-background: url(https://i0.hdslb.com/bfs/album/93e37f6ab9db6785595e4dbec4dff9984cce98d0.png
-) fixed;
-background-size: 100%;
-background-repeat: no-repeat;
-font-family: &quot;Helvetica Neue&quot;,Helvetica,Verdana,Arial,sans-serif;
-min-height: 101%;
-cursor: url(https://files.cnblogs.com/files/wkfvawl/cursor.ico),auto;  //鼠标图案
-}
+<pre><code class="language-java">ArrayList&lt;Student&gt; list = new ArrayList&lt;Student&gt;();
+Student stu = new Student(&quot;张三&quot;,15);
+list.add(stu);
 </code></pre>
-<h2 id="鼠标点击特效">鼠标点击特效</h2>
+<hr>
+<h2 id="string">String</h2>
 <ul>
-<li>theme —&gt; paper —&gt; templates —&gt; index.ejs</li>
+<li>Java中所有字符串都为String类的对象（实例）</li>
+<li>字符串的内容不可改变</li>
+<li>字符串可以共享使用</li>
+<li>字符串效果相当于char[] 字符数组，但<strong>底层原理为byte[]字节数组</strong></li>
 </ul>
-<h3 id="爱心特效">爱心特效</h3>
-<pre><code class="language-js">&lt;script type=&quot;text/javascript&quot;&gt;
-
-(function(window,document,undefined){
-        var hearts = [];
-        window.requestAnimationFrame = (function(){
-                return window.requestAnimationFrame || 
-                           window.webkitRequestAnimationFrame ||
-                           window.mozRequestAnimationFrame ||
-                           window.oRequestAnimationFrame ||
-                           window.msRequestAnimationFrame ||
-                           function (callback){
-                                   setTimeout(callback,1000/60);
-                           }
-        })();
-        init();
-        function init(){
-                css(&quot;.heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}&quot;);
-                attachEvent();
-                gameloop();
-        }
-        function gameloop(){
-                for(var i=0;i&lt;hearts.length;i++){
-                    if(hearts[i].alpha &lt;=0){
-                            document.body.removeChild(hearts[i].el);
-                            hearts.splice(i,1);
-                            continue;
-                    }
-                    hearts[i].y--;
-                    hearts[i].scale += 0.004;
-                    hearts[i].alpha -= 0.013;
-                    hearts[i].el.style.cssText = &quot;left:&quot;+hearts[i].x+&quot;px;top:&quot;+hearts[i].y+&quot;px;opacity:&quot;+hearts[i].alpha+&quot;;transform:scale(&quot;+hearts[i].scale+&quot;,&quot;+hearts[i].scale+&quot;) rotate(45deg);background:&quot;+hearts[i].color;
-            }
-            requestAnimationFrame(gameloop);
-        }
-        function attachEvent(){
-                var old = typeof window.onclick===&quot;function&quot; &amp;&amp; window.onclick;
-                window.onclick = function(event){
-                        old &amp;&amp; old();
-                        createHeart(event);
-                }
-        }
-        function createHeart(event){
-            var d = document.createElement(&quot;div&quot;);
-            d.className = &quot;heart&quot;;
-            hearts.push({
-                    el : d,
-                    x : event.clientX - 5,
-                    y : event.clientY - 5,
-                    scale : 1,
-                    alpha : 1,
-                    color : randomColor()
-            });
-            document.body.appendChild(d);
-    }
-    function css(css){
-            var style = document.createElement(&quot;style&quot;);
-                style.type=&quot;text/css&quot;;
-                try{
-                    style.appendChild(document.createTextNode(css));
-                }catch(ex){
-                    style.styleSheet.cssText = css;
-                }
-                document.getElementsByTagName('head')[0].appendChild(style);
-    }
-        function randomColor(){
-                return &quot;rgb(&quot;+(~~(Math.random()*255))+&quot;,&quot;+(~~(Math.random()*255))+&quot;,&quot;+(~~(Math.random()*255))+&quot;)&quot;;
-        }
-})(window,document);
-&lt;/script&gt;
-</code></pre>
-<h3 id="烟花特效">烟花特效</h3>
-<pre><code class="language-js">/* 鼠标特效——烟花 */
-        var a_idx = 0;
-        jQuery(document).ready(function($) {
-            $(&quot;body&quot;).click(function(e) {
-                var a = new Array(&quot;❤富强❤&quot;,&quot;❤民主❤&quot;,&quot;❤文明❤&quot;,&quot;❤和谐❤&quot;,&quot;❤自由❤&quot;,&quot;❤平等❤&quot;,&quot;❤公正❤&quot;,&quot;❤法治❤&quot;,&quot;❤爱国❤&quot;,&quot;❤敬业❤&quot;,&quot;❤诚信❤&quot;,&quot;❤友善❤&quot;);
-                var $i = $(&quot;&lt;span&gt;&lt;/span&gt;&quot;).text(a[a_idx]);
-                a_idx = (a_idx + 1) % a.length;
-                var x = e.pageX,
-                y = e.pageY;
-                $i.css({
-                    &quot;z-index&quot;: 999999999999999999999999999999999999999999999999999999999999999999999,
-                    &quot;top&quot;: y - 20,
-                    &quot;left&quot;: x,
-                    &quot;position&quot;: &quot;absolute&quot;,
-                    &quot;font-weight&quot;: &quot;bold&quot;,
-                    &quot;color&quot;: &quot;rgb(&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;)&quot;
-                });
-                $(&quot;body&quot;).append($i);
-                $i.animate({
-                    &quot;top&quot;: y - 180,
-                    &quot;opacity&quot;: 0
-                },
-                1500,
-                function() {
-                    $i.remove();
-                });
-            });
-        });
-        &lt;/script&gt;
-        &lt;script src=&quot;https://files.cnblogs.com/files/wkfvawl/mouse-click.js&quot;&gt;&lt;/script&gt;
-        &lt;canvas width=&quot;1777&quot; height=&quot;841&quot; style=&quot;position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;&quot;&gt;&lt;/canvas&gt;
-</code></pre>
-<h2 id="返回顶部">返回顶部</h2>
-<h3 id="1-图片">1. 图片</h3>
-<ul>
-<li>.ejs</li>
-</ul>
-<pre><code class="language-css">    &lt;span id=&quot;back-to-top&quot;&gt;
-      &lt;a href=&quot;#top&quot;&gt;
-      &lt;img  src=&quot;https://i0.hdslb.com/bfs/album/97d27ecfd428ce7a275ef2053efe20d90665e908.jpg&quot; 
-        alt=&quot;BACK TO TOP&quot; width=&quot;80&quot; height=&quot;55&quot;/&gt;
-      &lt;/a&gt;
-    &lt;/span&gt;
-    ```
-    - _blocks —&gt; main.less
- ```css
-    // 返回顶部 
-    #back-to-top {
- 
-        bottom: 0;
-        color: #444444;
-        padding: 0px 0px;
-        position: fixed;
-        left: 5px;
-        cursor: pointer;
-    }
-</code></pre>
-<h3 id="2-b站小火箭">2. b站小火箭</h3>
-<ul>
-<li>直接从b站上扒下来</li>
-<li>有很多缺陷：直接copy下来的代码没法回到顶部，只能自己加个<code>a href=&quot;#top&quot;</code></li>
-</ul>
+<h3 id="构造方法-2">构造方法</h3>
 <ol>
-<li>.ejs  .</li>
+<li><code>String str = &quot; …… &quot;</code><br>
+直接创建 (直接写上双引号，就是字符串对象)</li>
+<li><code>public String( )</code><br>
+创建一个空白字符串，内容为null</li>
+<li><code>public String( char[ ] array )</code><br>
+根据字符数组的内容，合起来建立相应的字符串  (括号中为数组名)</li>
+<li><code>public String( byte[] array )</code><br>
+根据字节数组的内容，合起来建立相应的字符串  (括号中为数组名)
+<blockquote>
+<p>byte类型存储的全是ASCII码<br>
+<code>byte val = 97;</code><br>
+<code>System.out.println( (char) val);</code><br>
+结果为：a</p>
+</blockquote>
+</li>
 </ol>
-<pre><code class="language-js">&lt;!-- 返回顶部  --&gt;
-&lt;a href=&quot;#top&quot;&gt;&lt;div data-v-3682a700 data-v-4e808e30 class=&quot;back-top&quot; style=&quot;right: 0px; &quot;&gt;&lt;/div&gt;&lt;/a&gt;
+<h3 id="常量池">常量池</h3>
+<p>程序中只有直接写上的双引号字符串，才在字符串常量池中</p>
+<ul>
+<li>对于基本类型，== 为<strong>数值</strong>的比较</li>
+<li>对于引用类型，== 为<strong>地址值</strong>的比较</li>
+</ul>
+<blockquote>
+<p><code>String str = &quot;abc&quot;;</code><br>
+堆 —&gt; 字符串常量池 —&gt; 字符串对象String —&gt; 保存byte[] = {97,98,99}的地址值<br>
+栈 —&gt; String str 保存常量池中String 的地址值<br>
+<a href="F:/%E7%BC%96%E7%A8%8B/%E5%90%8E%E7%AB%AF/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0.png">内存图</a></p>
+</blockquote>
+<h4 id="字符串比较">字符串比较</h4>
+<p>（== 为对象地址值间的比较）</p>
+<ul>
+<li><code>public bollean equals ( Object obj );</code><br>
+参数可以为任何对象，true &lt;——&gt; 参数为一个字符串&amp;&amp;内容相同<br>
+若比较双方一个常量一个变量，应用 <code>常量.equals(变量)</code><pre><code class="language-java">String str1 = &quot;hello&quot;;
+char[] charArray = {'h','e','l','l','o'};
+String str2 = new String (charArray);
+System.out.println( str1.equals(str2) );  //true
 </code></pre>
-<ol start="2">
-<li>main.less</li>
+</li>
+<li><code>public boolean equalsIgnoreCase (String str);</code><br>
+忽略大小写进行内容比较</li>
+</ul>
+<h4 id="字符串获取">字符串获取</h4>
+<ul>
+<li><code>public int Length();</code><br>
+获取字符串长度</li>
+<li><code>public String concat(String str);</code><br>
+将当前字符串和参数字符串拼接成返回值新的字符串</li>
+<li><code>public char charAt(int index);</code><br>
+获取指定序号的单个字符</li>
+<li><code>public int indexOf(String str);</code><br>
+查找参数字符串在当前字符串中首次出现的序号， 无则返回-1</li>
+</ul>
+<pre><code class="language-java">String str1 =&quot;hello&quot;;
+String str2 =&quot;world&quot;;
+
+//获取长度 length()
+System.out.println(str1.length());
+
+//拼接 concat(String)
+System.out.println(str2.concat(str1));
+
+//通过序号查找字符 charAt(int)
+System.out.println(str1.charAt(3));
+
+//通过字符查找首次出现的序号 indexOf(char/String)
+System.out.println(str2.indexOf('d'));
+</code></pre>
+<h4 id="字符串截取">字符串截取</h4>
+<ul>
+<li><code>public String substring(int index);</code><br>
+从参数位置截取到字符串末尾，返回新字符串</li>
+<li><code>public String substring(int begin, int end);</code><br>
+从begin截取到end，返回截取的新字符串</li>
+</ul>
+<h4 id="字符串转换">字符串转换</h4>
+<ul>
+<li><code>public char[] toCharArray[]();</code><br>
+将当前字符串拆分成字符数组作为返回值</li>
+<li><code>public byte[] getBytes();</code><br>
+获得当前字符串底层的字节数组</li>
+<li><code>public String replace(CharSequence oldString, CharSequence newString)</code><br>
+将所有出现的字符串替换成新字符串，返回新字符串</li>
+</ul>
+<pre><code class="language-java">String str = &quot;HelloWorld&quot;;  
+//拆分为字符数组  
+char[] char1 = str.toCharArray();
+//拆分为字节数组  
+byte[] bytes = str.getBytes();  
+//字符串替换  
+String str2 = str.replace(&quot;o&quot;,&quot;*&quot;);
+System.out.println(str2);     //输出：Hell*W*rld   
+</code></pre>
+<h4 id="字符串分割">字符串分割</h4>
+<ul>
+<li><code>public String[] split(String regex);</code><br>
+按照参数的规则，将字符串分割为若干部分<br>
+split方法的参数为<strong>正则表达式</strong>，若按“.”切分要写“<strong>\ \ .</strong>”</li>
+</ul>
+<pre><code class="language-java">String array = &quot;aaa/bbb//c/d&quot;;
+String[] split = array.split(&quot;/&quot;);
+for (int i = 0; i &lt; split.length; i++) {
+  System.out.print(&quot;(&quot;+(i+1)+&quot;)&quot;+split[i]);
+}
+// (1)aaa(2)bbb(3)(4)c(5)d 
+</code></pre>
+<blockquote>
+<p>输入完 <code>array.split(&quot;/&quot;);</code> 后按 Alt+Enter 自动补充之前的 <code>String[] split =</code></p>
+</blockquote>
+<hr>
+<h3 id="静态static关键字">静态static关键字</h3>
+<p>只在类中保存一份，不属于对象，属于类，所有本类对象共享同一份</p>
+<ul>
+<li>对于<strong>静态方法/变量</strong>，可以通过对象名调用，也可<strong>通过类名调用</strong><br>
+（用对象名调用时，JDK会自动转换成类名）</li>
+<li>本类中的静态方法，调用时可省略类名称</li>
+<li>静态方法不能直接访问非静态变量 （在内存中先有静态内容，后才有非静态）</li>
+<li>静态方法中不能使用 this （this代表当前对象，用谁调用谁就是当前对象）</li>
+</ul>
+<h4 id="静态代码块">静态代码块</h4>
+<ul>
+<li>用途：一次性地对静态成员变量进行赋值</li>
+</ul>
+<pre><code class="language-java">public class 类名称{
+  static {
+    //静态代码块的内容
+  }
+}
+</code></pre>
+<ul>
+<li>静态内容总是优先于非静态 ——&gt; 静态代码块比构造方法先执行</li>
+<li>静态代码块只执行唯一的一次</li>
+</ul>
+<hr>
+<h3 id="arrays-数组工具类">Arrays 数组工具类</h3>
+<ul>
+<li><code>public static String toString(数组);</code><br>
+将参数数组变为字符串，按默认格式 [元素1,元素2……]<br>
+(输出数组名只能得到地址值，所以可以先转成字符串)</li>
+</ul>
+<pre><code class="language-java">char[] array2 = {'h','e','l','l','o'};
+System.out.println( Arrays.toString(array2) );
+</code></pre>
+<ul>
+<li><code>public static void sort(数组)</code><br>
+按默认升序对数组元素进行排序<br>
+（若为自定义类型，需要有Comparable或Comparator接口的支持）</li>
+</ul>
+<pre><code class="language-java">int[] array = {2,1,3,10,6};
+Arrays.sort(array);
+System.out.println(Arrays.toString(array));
+//  [1, 2, 3, 6, 10]
+</code></pre>
+<h3 id="math-数学工具类">Math 数学工具类</h3>
+<ul>
+<li>Math.PI / public static final double PI —&gt; 圆周率近似</li>
+<li>public static double abs(double num) —&gt; 绝对值</li>
+<li>public static double ceil(double num) —&gt; 向上取整</li>
+<li>public static double floor(double num) —&gt; 向下取整</li>
+<li>public static long round(double num) —&gt; 四舍五入</li>
+</ul>
+<pre><code class="language-java">System.out.println( Math.abs( -2.3 ) ); //2.3  
+System.out.println( Math.ceil( 3.1 ) ); //4.0
+System.out.println( Math.floor( 3.9 ) );  //3.0  
+System.out.println( Math.round( 5.4 ) );  //5  (不带小数点)
+</code></pre>
+<hr>
+<h2 id="继承-抽象类">继承 &amp; 抽象类</h2>
+<p>面向对象的三大特性：封装性 / <strong>继承性</strong> / 多态性<br>
+（继承是多态的前提）<br>
+子类定义：  <code>public class 子类名称 extends 父类名称 { // …… }</code></p>
+<ul>
+<li>父子类的方法调用的成员变量重名：
+<ul>
+<li>直接通过子类对象访问成员变量：  <code>子类名.变量名</code></li>
+<li>间接通过成员方法访问成员变量：<br>
+该方法属于谁，就优先用谁，没有则向上找</li>
+</ul>
+</li>
+<li>子类中变量重名
+<ul>
+<li>局部变量：      直接写成员变量名</li>
+<li>本类的成员变量： this.成员变量名</li>
+<li>父类的成员变量： super.成员变量名</li>
+</ul>
+</li>
+<li>父子类的方法重名：<br>
+创建对象的是谁，就优先用谁，没有则向上找</li>
+</ul>
+<pre><code class="language-java">(1)
+public class Fu{
+  int num = 10;
+  public void methodFu(){
+    System.out.println(num);
+  }
+}
+(2)
+public class Zi extends Fu{
+  int num = 25;
+  public void methodZi(){
+    System.out.println(num);
+  }
+  public void methodZi(){
+    int num = 30;
+    System.out.println( num );        //30  局部变量
+    System.out.println( this.num );   //25  本类中的成员变量  
+    System.out.println( super.num );  //10  父类的成员变量
+  }
+}
+(3)//主函数  
+Fu fu = new Fu(); //创建父类对象
+Zi zi = new Zi(); //创建子类对象
+System.out.println(zi.num); //25  优先子类
+zi.methodZi();  //25  方法为子类的，优先用子类变量
+zi.methodFu();  //10  方法在父类中定义
+</code></pre>
+<ul>
+<li>重载Overload：          方法名称一样，<u>参数列表不一样</u></li>
+</ul>
+<h4 id="重写覆写覆盖override"><strong>重写/覆写/覆盖Override</strong>：</h4>
+<ol>
+<li>方法名称一样，<u>参数列表也一样  </u></li>
+<li>子类方法的返回值必须 &lt;= 父类方法的返回值<br>
+（ Object类是所有类的公共最高父类(祖宗类) )</li>
+<li>子类方法权限 &gt;= 父类方法权限<br>
+public &gt; protected &gt; default(不写) &gt; private</li>
 </ol>
-<pre><code class="language-css">.back-top {}
-.back-top[data-v-3682a700]:hover {
-  background-image: url(//s2.hdslb.com/bfs/static/blive/blfe-dynamic-web/static/img/rocket_frame.f7563b84.png);
-  -webkit-animation: rocket-data-v-3682a700 steps(1, start) 0.5s infinite;
-          animation: rocket-data-v-3682a700 steps(1, start) 0.5s infinite;
+<p><strong>@Override</strong>：写在方法的上一行，检测覆盖重写是否正确</p>
+<blockquote>
+<p>对于已经使用的类，尽量不修改，继承后重复利用相同的功能，通过覆盖重写进行改动</p>
+</blockquote>
+<pre><code class="language-java">(1) public class Fu{
+  public void show(){
+    System.out.println(&quot;老功能&quot;);
+  }
 }
-.rocket-fade-enter-active[data-v-3682a700],
-.rocket-fade-leave-active[data-v-3682a700] {
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-}
-.rocket-fade-enter[data-v-3682a700],
-.rocket-fade-leave-to[data-v-3682a700] {
-  opacity: 0;
-}
-@-webkit-keyframes rocket-data-v-3682a700 {
-0% {
-    background-position: 0 0;
-}
-25% {
-    background-position: -150px 0;
-}
-50% {
-    background-position: -300px 0;
-}
-75% {
-    background-position: -450px 0;
-}
-100% {
-    background-position: -600px 0;
-}
-}
-@keyframes rocket-data-v-3682a700 {
-0% {
-    background-position: 0 0;
-}
-25% {
-    background-position: -150px 0;
-}
-50% {
-    background-position: -300px 0;
-}
-75% {
-    background-position: -450px 0;
-}
-100% {
-    background-position: -600px 0;
-}
-}
-
-.back-top[data-v-3682a700] {
-  position: fixed;
-  bottom: 50px;
-  width: 150px;
-  height: 174px;
-  cursor: pointer;
-  z-index: 998;
-  background-position: 0 0;
-  text-align: center;
-  background-image: url(//s2.hdslb.com/bfs/static/blive/blfe-dynamic-web/static/img/rocket_top.bcc748c3.png);
-  background-repeat: no-repeat;
-}
-.back-top[data-v-3682a700]:hover {
-  background-image: url(//s2.hdslb.com/bfs/static/blive/blfe-dynamic-web/static/img/rocket_frame.f7563b84.png);
-  -webkit-animation: rocket-data-v-3682a700 steps(1, start) 0.5s infinite;
-          animation: rocket-data-v-3682a700 steps(1, start) 0.5s infinite;
-}
-.rocket-fade-enter-active[data-v-3682a700],
-.rocket-fade-leave-active[data-v-3682a700] {
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-}
-.rocket-fade-enter[data-v-3682a700],
-.rocket-fade-leave-to[data-v-3682a700] {
-  opacity: 0;
-}
-@-webkit-keyframes rocket-data-v-3682a700 {
-0% {
-    background-position: 0 0;
-}
-25% {
-    background-position: -150px 0;
-}
-50% {
-    background-position: -300px 0;
-}
-75% {
-    background-position: -450px 0;
-}
-100% {
-    background-position: -600px 0;
-}
-}
-@keyframes rocket-data-v-3682a700 {
-0% {
-    background-position: 0 0;
-}
-25% {
-    background-position: -150px 0;
-}
-50% {
-    background-position: -300px 0;
-}
-75% {
-    background-position: -450px 0;
-}
-100% {
-    background-position: -600px 0;
-}
+(2) public class Zi extends Fu{
+  @Override
+  public void show(){
+    super.show();     // 可以把父类的show方法拿来重复利用
+    System.out.println(&quot;新功能&quot;);
+  }
 }
 </code></pre>
-<h2 id="页脚走马灯">页脚走马灯</h2>
+<h4 id="构造方法-3">构造方法：</h4>
+<ol>
+<li>子类必须调用父类构造方法，不写则默认调用父类无参构造方法<code>super()</code><br>
+<strong>先调用父类构造，再执行子类构造</strong></li>
+<li>只有子类构造方法才能调用父类构造方法，且只能调用一个</li>
+<li>super的父类构造调用，必须是子类构造方法的第一个语句</li>
+<li>若父类只有构造有参，子类不写会报错：默认的是父类无参<code>super()</code></li>
+</ol>
+<h4 id="super关键字">super关键字</h4>
+<ol>
+<li>在子类的成员方法中，访问父类的成员变量</li>
+<li>在子类的成员方法中，访问父类的成员方法</li>
+<li>在子类的构造方法中，访问父类的构造方法</li>
+</ol>
+<h4 id="this关键字">this关键字</h4>
+<ol>
+<li>在本类的成员方法中，访问本类的成员变量</li>
+<li>在本类的成员方法中，调用本类的另一个成员方法</li>
+<li>在本类的构造方法中，调用本类的另一个构造方法  （构造方法的重载调用）<br>
+this(……)的调用也必须是构造方法的第一个语句，且唯一<br>
+super和this两种构造调用，不能同时</li>
+</ol>
+<h3 id="继承">继承</h3>
+<p>Java语言为<strong>单继承</strong>：一个类的直接父亲只能有一个<br>
+Java语言可以<strong>多级继承</strong>： 最高级父类为java.lang.Object</p>
 <ul>
-<li>theme —&gt; paper —&gt; templates —&gt; .ejs</li>
+<li>一个子类的直接父类是唯一的，但一个父类可以有多个子类</li>
 </ul>
-<pre><code class="language-css">    &lt;!-- 页尾的走马灯--&gt;
-    &lt;div id=&quot;i1&quot; style=&quot;color:rgb(10, 8, 8);font-size:20px;padding:50px;text-align:center;&quot;&gt;
-        What&amp;nbsp;do&amp;nbsp;you&amp;nbsp;do&amp;nbsp;at&amp;nbsp;the&amp;nbsp;end&amp;nbsp;of&amp;nbsp;the&amp;nbsp;world? 
-        Are&amp;nbsp;you&amp;nbsp;busy?&amp;nbsp;Will&amp;nbsp;you&amp;nbsp;save&amp;nbsp;us?&amp;nbsp;&amp;nbsp;&amp;nbsp;
-        &lt;/div&gt;
-    &lt;script&gt;
-       function func(){
-           var tag = document.getElementById('i1');
-           var content = tag.innerText;
-           var f = content.charAt(0);
-           var l = content.substring(1,content.length);
-           var new_content = l + f;
-           tag.innerText = new_content;
-       }
-       setInterval('func()',500);
-    &lt;/script&gt;
-</code></pre>
-<h2 id="live2d">Live2D</h2>
+<h4 id="抽象">抽象</h4>
 <ul>
-<li>.ejs</li>
+<li>抽象方法：父类中的方法不确定用什么方法体 { } 实现<br>
+加上abstract关键字，去掉大括号，直接分号结束</li>
+<li>抽象方法必须定义在抽象类中，抽象类中不一定有抽象方法</li>
+<li>抽象类：
+<ol>
+<li>不能创建new抽象类对象，要用一个子类来继承抽象父类</li>
+<li>子类必须覆盖重写抽象父类中的<strong>所有</strong>的抽象方法 （除非子类也抽象）<br>
+去掉抽象方法的abstract关键字，然后补上方法体</li>
+</ol>
+</li>
 </ul>
-<pre><code class="language-js">&lt;!-- 右下角live2d效果 --&gt;
-&lt;script src=&quot;https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;script&gt;
-    L2Dwidget.init({
-        &quot;model&quot;: {
-            jsonPath: &quot;https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json&quot;,
-            &quot;scale&quot;: 1
-        },
-        &quot;display&quot;: {
-            &quot;position&quot;: &quot;left&quot;,
-            &quot;width&quot;: 150,
-            &quot;height&quot;: 300,
-            &quot;hOffset&quot;: 0,
-            &quot;vOffset&quot;: -20
-        },
-        &quot;mobile&quot;: {
-            &quot;show&quot;: true,
-            &quot;scale&quot;: 0.5
-        },
-        &quot;react&quot;: {
-            &quot;opacityDefault&quot;: 0.7,
-            &quot;opacityOnHover&quot;: 0.2
-        }
-    });
-&lt;/script&gt;
-
-&lt;!--
-其他可选的模型：
-黑猫：https://unpkg.com/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json
-萌娘：https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json
-白猫：https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json
-狗狗：https://unpkg.com/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json
-小可爱：https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json
-小可爱：https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json
---&gt;
-</code></pre>
+<blockquote>
+<p>光标放在子类class的extends上 —&gt; Alt + Enter —&gt; Implement methods + Enter —&gt; Enter —&gt; 生成所有需要覆盖重写的方法</p>
+</blockquote>
+<hr>
+<h2 id="接口">接口</h2>
+<ul>
+<li>接口为多个类的公共规范，为一种引用数据类型<br>
+<code>public interface 接口名称 { //接口内容 }</code><br>
+换成关键字interface后，依然是 .java —&gt; .class</li>
+<li>Java 8 的接口可包含：<br>
+1.常量 2.抽象方法 3.默认方法 4.静态方法 5.私有方法(Java 9)</li>
+</ul>
+<blockquote>
+<p>在package中New —&gt; Java Class —&gt; Kind —&gt; 选择Interface (向下箭头)</p>
+</blockquote>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://chtholist.gitee.io/post/hello-gridea/</id>
-        <link href="https://chtholist.gitee.io/post/hello-gridea/">
+        <title type="html"><![CDATA[Windows快捷键]]></title>
+        <id>https://chtholist.gitee.io/post/windows-kuai-jie-jian/</id>
+        <link href="https://chtholist.gitee.io/post/windows-kuai-jie-jian/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2020-03-22T03:18:04.000Z</updated>
+        <content type="html"><![CDATA[<p>Win键 +E  		打开资源管理器<br>
+Win键 + Shift + S 		截屏<br>
+Win键 + L			锁屏<br>
+windows键+R，输入psr.exe回车	屏幕录制<br>
+Win键 + D		返回桌面<br>
+Win键 +Ctrl+D		添加虚拟桌面<br>
+Win键 +Ctrl+F4		删除虚拟桌面<br>
+Win键 + ←/→	                左右分屏<br>
+Windows+R，输入osk	虚拟键盘</p>
+<p>C:\Users\你的名字		windows的管理员账号文件夹</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Windows快捷键]]></title>
+        <id>https://chtholist.gitee.io/post/windows/</id>
+        <link href="https://chtholist.gitee.io/post/windows/">
+        </link>
+        <updated>2020-03-22T03:18:04.000Z</updated>
+        <content type="html"><![CDATA[<p>Win键 +E  		打开资源管理器<br>
+Win键 + Shift + S 		截屏<br>
+Win键 + L			锁屏<br>
+windows键+R，输入psr.exe回车	屏幕录制<br>
+Win键 + D		返回桌面<br>
+Win键 +Ctrl+D		添加虚拟桌面<br>
+Win键 +Ctrl+F4		删除虚拟桌面<br>
+Win键 + ←/→	                左右分屏<br>
+Windows+R，输入osk	虚拟键盘</p>
+<p>C:\Users\你的名字		windows的管理员账号文件夹</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Markdown学习笔记]]></title>
+        <id>https://chtholist.gitee.io/post/markdown/</id>
+        <link href="https://chtholist.gitee.io/post/markdown/">
+        </link>
+        <updated>2020-03-22T03:17:09.000Z</updated>
+        <content type="html"><![CDATA[<hr>
+<h2 id="title-markdown-笔记date-2020-02-26-174147tags-学习published-truehideinlist-falsefeature-post-imagesmarkdownlearningjpgistop-false">title: 'Markdown 笔记'<br>
+date: 2020-02-26 17:41:47<br>
+tags: [学习]<br>
+published: true<br>
+hideInList: false<br>
+feature: /post-images/MARKDOWNlearning.jpg<br>
+isTop: false</h2>
+<h1 id="一级标题">一级标题</h1>
+<h2 id="二级标题">二级标题</h2>
+<h1 id="一级标题-2">一级标题</h1>
+<h2 id="二级标题-2">二级标题</h2>
+<h3 id="三级标题">三级标题</h3>
+<h4 id="四级标题">四级标题</h4>
+<h5 id="五级标题">五级标题</h5>
+<h6 id="六级标题">六级标题</h6>
+<p>（没有七级标题，#后面要有一个空格）</p>
+<h1 id="文本形式">文本形式</h1>
+<p><em>斜体文本</em><br>
+<em>斜体文本</em><br>
+<strong>粗体文本</strong><br>
+<strong>粗体文本</strong><br>
+<em><strong>粗斜体文本</strong></em><br>
+<em><strong>粗斜体文本</strong></em><br>
+（空两格再回车 = 换行）</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<p>（三个以上星号/减号/底线建立分割线，行内不能有其他东西）</p>
+<p><s>删除线</s></p>
+<p><u>下划线</u> (HTML文本)</p>
+<p>创建[^脚注]<br>
+[^脚注]：这里写着脚注<br>
+（存疑）</p>
+<h1 id="列表">列表</h1>
+<p>无序列表</p>
+<ul>
+<li>第一项 （星号*</li>
+<li>第二项</li>
+</ul>
+<ul>
+<li>第三项 （加号+</li>
+<li>第四项</li>
+</ul>
+<ul>
+<li>第五项 （减号-</li>
+<li>第六项<br>
+（注意空格）</li>
+</ul>
+<p>有序列表</p>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+<li>第三项<br>
+（注意空格</li>
+</ol>
+<p>列表嵌套</p>
+<ol>
+<li>第一项
+<ul>
+<li>第一项中的第一个嵌套</li>
+</ul>
+</li>
+<li>第二项
+<ul>
+<li>第二项中的第一个嵌套<br>
+（在嵌套项前加<strong>四个空格</strong>）</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>区块引用<br>
+注意空格</p>
+<blockquote>
+<p>第一层嵌套</p>
+<blockquote>
+<p>第二层嵌套</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>区块中使用列表</p>
+<ol>
+<li>第一项</li>
+<li>第二项</li>
+</ol>
+<ul>
+<li>第三项</li>
+</ul>
+<ul>
+<li>第四项</li>
+</ul>
+<ul>
+<li>第五项</li>
+</ul>
+</blockquote>
+<ul>
+<li>列表中使用区块
+<blockquote>
+<p>添加四个空格的缩进</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="代码块">代码块</h1>
+<ol>
+<li>
+<p>行内代码片段——键盘左上方反引号<br>
+<code>int main()</code></p>
+</li>
+<li>
+<p>自定义语法</p>
+</li>
+</ol>
+<pre><code class="language-c++">int main()
+{
+    printf(&quot;sojf&quot;);
+}
+</code></pre>
+<h1 id="链接">链接</h1>
+<blockquote>
+<ul>
+<li>
+<p>[链接名称]（链接地址）<br>
+这是菜鸟教程的链接<a href="https://www.runoob.com/markdown/md-link.html">Markdown链接</a></p>
+</li>
+<li>
+<p>直接使用链接网址   &lt; xxx &gt;<br>
+<a href="https://www.runoob.com/markdown/md-link.html">https://www.runoob.com/markdown/md-link.html</a></p>
+</li>
+<li>
+<p>高级链接，用变量代替，文档末尾附带变量地址<br>
+菜鸟教程<a href="https://www.runoob.com/markdown/md-link.html">RunooB</a></p>
+</li>
+</ul>
+</blockquote>
+<h1 id="图片">图片</h1>
+<p><img src="%E5%9B%BE%E7%89%87%E7%BD%91%E5%9D%80" alt="属性文本/图片替代文字" title="图片标题" loading="lazy"><br>
+<img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标" title="RUNOOB" loading="lazy"><br>
+（无法指定图片的高度和宽度）</p>
+<h1 id="表格">表格</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:right">右对齐</th>
+<th style="text-align:center">居中对齐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">单元格1</td>
+<td style="text-align:right">单元格2</td>
+<td style="text-align:center">单元格3</td>
+</tr>
+<tr>
+<td style="text-align:left">单元格4</td>
+<td style="text-align:right">单元格5</td>
+<td style="text-align:center">单元格6</td>
+</tr>
+</tbody>
+</table>
+<h1 id="任务列表">任务列表</h1>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-772026"><label class="task-list-item-label" for="task-item-772026"> 选项一</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2092175"> 选项二<br>
+(方框中间要有x或<strong>空格</strong><label class="task-list-item-label" for="task-item-2092175"> 选项二  
+(方框中间要有x或**空格**)</label></li>
+</ul>
+<h1 id="空格">空格</h1>
+<p>在HTML中，如果你用空格键产生此空格，空格是不会累加的（只算1个）。要使用html实体表示才可累加<br>
+<u><strong>注意分号</strong></u></p>
+<ul>
+<li>不换行空格     &amp;nbsp;</li>
+<li>半角空格         &amp;ensp;</li>
+<li>全角空格       &amp;emsp;</li>
+</ul>
+<h1 id="其他">其他</h1>
+<ul>
+<li>
+<p>支持HTML元素<br>
+添加<kbd>方框</kbd></p>
+</li>
+<li>
+<p>转义</p>
+<ul>
+<li>
+<ul>
+<li>三级序号<br>
+<strong>加粗文本</strong><br>
+**正常显示星号**</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>公式<br>
+（使用$$包裹TeX或LaTeX格式数学公式）</p>
+</li>
+<li>
+<p>x<sup>上标</sup></p>
+</li>
+<li>
+<p>x<sub>下标</sub></p>
+</li>
+</ul>
+<h1 id="快捷键">快捷键</h1>
+<ul>
+<li>右键Markdown Preview Enhanced 查看pdf预览</li>
+</ul>
+<p>https://chtholist.github.io/</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++学习笔记 —— 运算&表达式]]></title>
+        <id>https://chtholist.gitee.io/post/Cstudy4/</id>
+        <link href="https://chtholist.gitee.io/post/Cstudy4/">
+        </link>
+        <updated>2020-03-22T03:15:30.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="数学公式">数学公式</h2>
+<p>#include<cmath></p>
+<h4 id="开平方-sqrta">开平方 sqrt（a）</h4>
+<h4 id="求绝对值-fbsa">求绝对值 fbs（a）</h4>
+<h4 id="朝上取整-ceil">朝上取整 ceil（）</h4>
+<p>ceil(-3.14) = -3;<br>
+ceil(4.56) = 5;</p>
+<h4 id="朝下取整-floor">朝下取整 floor（）</h4>
+<p>floor(-3.14) = -4;<br>
+floor(4.56) = 4;</p>
+<h4 id="朝0取整-fix">朝0取整 fix（）</h4>
+<p>fix(-3.14) = -3;<br>
+fix(4.56) = 4;</p>
+<h4 id="四舍五入-round">四舍五入 round（）</h4>
+<p>round(-3.14) = -3;<br>
+round(4.56) = 5;<br>
+round(11.5) = 12;<br>
+round(-11.5) = -11;</p>
+<h2 id="条件运算符-三元运算符">条件运算符 / 三元运算符</h2>
+<ul>
+<li>variable x = (expression) ? value if true : value if false<br>
+需要判断布尔表达式的值。该运算符的主要是决定哪个值应该赋值给变量</li>
+<li>利用<strong>条件运算符的嵌套</strong>来完成此题：学习成绩&gt;=90分的同学用A表示，60-89分之间的用B表示，60分以下的用C表示。(Java)</li>
+</ul>
+<pre><code class="language-java">public static void main(String[] args) {
+      System.out.println(&quot;请输入你的分数：&quot;);   
+      Scanner scanner=new Scanner(System.in);
+      int input=scanner.nextInt();//获取输入
+      String belong=  input &gt;= 90 ? &quot;A&quot; : (input&gt;=60?&quot;B&quot;:&quot;c&quot;);     //！！！ (a&gt;b)?a:b  等级判断
+      System.out.println(input+&quot;分属于：&quot;+belong);
+      scanner.close();    
+}
+</code></pre>
+<h2 id="逗号表达式">逗号表达式</h2>
+<p>表达式1，表达式2，表达式3……表达式n<br>
+它的值为表达式n的值。<br>
+先求解表达式1，再求解表达式2……整个逗号表达式的值是表达式n的值。<br>
+逗号运算符是所有运算符中级别最低的。</p>
+<pre><code>x=i=4,j=16,k=32;            x=4
+y=(i=4,j=16),k=32;          y=16
+z=(i=4,j=16,k=32);          z=32
+a=(a=3*5,a*4)               a=60
+</code></pre>
+<h2 id="运算符">运算符</h2>
+<ol>
+<li>逗号运算符 (，)</li>
+<li>指针运算符 (*)</li>
+<li>引用运算符和地址运算符 (＆)</li>
+<li>求字节数运算符（sizeof）</li>
+<li>强制类型转换运算符（ (类型) 或类型( )）</li>
+<li>成员运算符 （.）</li>
+<li>指向成员的运算符 （-&gt;）</li>
+<li>下标运算符 （［ ］）</li>
+<li>其他 （  如函数调用运算符（）  ）</li>
+</ol>
+<h2 id="混合运算">混合运算</h2>
+<ul>
+<li>进行运算时，不同类型的数据要先转换成同一类型，然后进行运算</li>
+<li>横向箭头表示必定的转换</li>
+<li>纵向的箭头表示运算对象为不同类型时转换的方向<br>
+<a href="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1583169776198&amp;di=ceac46f8aa24f1b64185a1b5e0dc47db&amp;imgtype=0&amp;src=http%3A%2F%2Fp.ananas.chaoxing.com%2Fstar3%2Forigin%2F5476f0aaa310e0448134b8f2.png">类型转换</a></li>
+</ul>
+<h2 id="if语句">if语句</h2>
+<ul>
+<li><strong>在嵌套使用if语句时，C语言规定else总是和之前与其最近的且不带else的if配对</strong></li>
+</ul>
+<pre><code class="language-c++">int  a = 2, b = -1, c = 2;
+    if(a &lt; b)
+        if(b &lt; 0)  
+            c = 0;
+        else  c++;
+    printf(&quot;%d\n&quot;,c);	//2
+//——————————————————————————
+int y = 0;		
+    if(x &gt;= 0);	
+        if(x &gt; 0) 
+            y = 1;	
+        else y = -1;
+//——————————————————————————
+if (x &lt; 2)
+   if (x &lt; 1)
+        y = x + 1; 
+   else;
+else
+   y = x + 2;
+</code></pre>
+<h2 id="switch">switch</h2>
+<ul>
+<li>允许测试一个变量等于多个值时的情况。</li>
+<li>default在上面所有case都不为真时执行一个任务。</li>
+<li>default中的 break 语句不是必需的</li>
+<li>case后各常量表达式的值不能相同</li>
+<li>多个case可以共用一组执行语句</li>
+</ul>
+<pre><code class="language-c++">switch(op){
+       case a: printf(&quot;%d&quot;, 1); 
+       default: printf(&quot;x&quot;); 
+       case b: printf(&quot;%d&quot;, 2); 
+}
+输入a  //1x2
+输入b  //2
+
+int  a;
+scanf(&quot;%d&quot;, &amp;a);
+    if(a &gt; 50)  printf(&quot;%d&quot;, a);      //输入52，输出525252
+    if(a &gt; 40)  printf(&quot;%d&quot;, a);      //输入43，输出4343
+    if(a &gt; 30)  printf(&quot;%d&quot;, a);
+</code></pre>
+<h2 id="判断字符类型-include-ctypeh">判断字符类型   #include &lt;ctype.h&gt;</h2>
+<ol>
+<li>字母和数字      <code>int isalnum(int c);</code></li>
+<li>字母            <code>int isalpha(int c);</code></li>
+<li>控制字符        <code>int iscntrl(int c);</code></li>
+<li>十进制数字字符   <code>int isdigit(int c);</code></li>
+<li>小写字母        <code>int islower(int c);</code></li>
+<li>大写字母。      <code>int isupper(int c)</code></li>
+<li>标点符号字符    <code>int ispunct(int c)</code></li>
+</ol>
+<h2 id="循环">循环</h2>
+<ol>
+<li><strong>break</strong> ——&gt; 结束循环，跳出循环体,进行后面的程序；</li>
+<li><strong>continue</strong> ——&gt; 结束本次循环(不执行本循环内的其他语句)，直接进行下次循环；</li>
+<li><strong>return</strong> ——&gt; 跳出循环体所在的方法，相当于结束该方法。</li>
+<li><strong>goto</strong> ——&gt; 直接goto到某个地方继续执行</li>
+</ol>
+<h3 id="有多层for循环">有多层for循环</h3>
+<ol>
+<li>break会跳出当前这一层,去执行外一层循环(而不是退出所有层循环);</li>
+<li>continue则跳过当前循环中的代码，强迫开始下一次循环。<br>
+(注意一层循环和一次循环的区别:一层循环包含若干(i)次循环)</li>
+<li>continue 语句执行后自增语句仍然会执行。</li>
+</ol>
+<h3 id="键盘操作">键盘操作</h3>
+<ol>
+<li><strong>ctrl-c</strong> ——&gt; 发送 SIGINT 信号给前台进程组中的所有进程。常用于终止正在运行的程序。</li>
+<li><strong>ctrl-z</strong> ——&gt; 发送 SIGTSTP 信号给前台进程组中的所有进程，常用于挂起一个进程。
+<ul>
+<li>C/C++程序中，cin为读入标准输入格式，直到遇到文件结束符时结束运行</li>
+<li>而在Windows中CTRL+Z相当于文件结束符EOF，所以你键入CTRL+Z回车后跳出了While循环，才能执行到程序后面的内容。如果缓冲中还有其它内容，ctrl+z不表示输入结束，仅代表当前行输入结束，只在单独一个ctrl+z的时候才表示输入结束。即输入数据后按回车，之后在下一行输入Ctrl+Z继续执行程序。</li>
+<li>只有当Ctrl+Z单独位于一行的行首时，才表示输入的终止！ （即无论何时，都推荐先回车，再Ctrl+Z，再回车结束输入）</li>
+<li>当Ctrl+Z位于行中、行末时，输入都不会结束。(Ctrl+Z表示一个字符，其ASCII码为26.）</li>
+</ul>
+</li>
+<li><strong>ctrl-d</strong> ——&gt; 不是发送信号，而是表示一个特殊的二进制值，表示 EOF。</li>
+</ol>
+<h2 id="eof">EOF</h2>
+<p>EOF为定义在头文件&lt;stdio.h&gt;的常量，为-1<br>
+函数读入文件数据时，函数会返回一个状态，标识符为EOF<br>
+EOF为文件操作函数，在文件结尾操作时返回<br>
+EOF在UNIX中为ctrl+d，在win中为ctrl+z</p>
+<h2 id="排序函数sort">排序函数Sort（ ）</h2>
+<ul>
+<li>时间复杂度为n*log2(n)，执行效率较高</li>
+<li>头文件为#include<algorithm><br>
+三个参数：</li>
+</ul>
+<ol>
+<li>第一个是要排序的数组的起始地址。</li>
+<li>第二个是结束的地址（最后一位要排序的地址）</li>
+<li>第三个参数是排序的方法，不写第三个参数，此时默认的排序方法是从小到大排序。Sort(start,end,排序方法)</li>
+</ol>
+<ul>
+<li>加入一个比较函数 complare()</li>
+</ul>
+<pre><code class="language-c">bool complare(int a,int b)
+{ return a&gt;b;} 
+sort(a,a+10,complare);      //在这里就不需要对complare函数传入参数了
+</code></pre>
+<ul>
+<li>从小到大排序less&lt;数据类型&gt;( )     <code>sort(a,a+10,less&lt;int&gt;( ));</code></li>
+<li>从大到小排序greater&lt;数据类型&gt;( )  <code>sort(a,a+10,greater&lt;int&gt;( ));</code></li>
+<li>对字符的排序<br>
+sort(a,a+10,greater<char>( ));<br>
+sort(str.begin(),str.end( ));</li>
+</ul>
+<hr>
+<ul>
+<li>程序中的循环不会无限循环<br>
+任何一个数据类型是有位数限制，好似int在C语言里就固定为32位带符号的整数类型，范围是-2147483648～2147483647，当不断增加一时，超过了就会溢出，返回到负的尽头</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++学习笔记 —— 数组]]></title>
+        <id>https://chtholist.gitee.io/post/Cstudy_array/</id>
+        <link href="https://chtholist.gitee.io/post/Cstudy_array/">
+        </link>
+        <updated>2020-03-22T03:14:40.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="数组">数组</h1>
+<h2 id="基本概念">基本概念</h2>
+<ul>
+<li>在内存中占一片连续的存储单元，系统会根据数据总个数分配存储空间</li>
+<li>不允许对数组的大小作动态定义，即数组的大小不依赖于程序中变量的值</li>
+<li>只能逐个引用数组元素的值而不能一次引用整个数组中的全部元素的值。</li>
+</ul>
+<ol>
+<li>可以只给部分元素赋值，当 { } 中值的个数少于元素个数时，只给前面部分元素赋值。<br>
+当赋值的元素少于数组总体元素的时候，不同类型剩余的元素自动初始化值不同：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">short、int、long</td>
+<td style="text-align:center">整数 0</td>
+</tr>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">字符 '\0'</td>
+</tr>
+<tr>
+<td style="text-align:center">float、double</td>
+<td style="text-align:center">小数 0.0</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>只能给元素逐个赋值，不能给数组整体赋值。<br>
+所有的数组都是以 0 作为它们第一个元素的索引，也被称为基索引</li>
+<li>如果对全部元素都赋初值，则定义数组时第一维的长度可以不指定，但第二维的长度不能省。<br>
+int a[ ][4]={1，2，3，4，5，6，7，8，9，10，11，12};</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数组长度</th>
+<th style="text-align:center">(64位系统中)</th>
+<th style="text-align:center">数组长度</th>
+<th style="text-align:center">(64位系统中)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">1个字节</td>
+<td style="text-align:center"><strong>*</strong> (指针变量/地址)</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">short int</td>
+<td style="text-align:center">2个字节</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">4个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">4个字节</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">8个字节</td>
+<td style="text-align:center">long long</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+</tbody>
+</table>
+<h2 id="整型数组">整型数组</h2>
+<p><strong>int a[ ] = {1,2,3,4};</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sizeof(a)</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">单独一个数组名表示整个数组，4*4</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(*&amp;a)</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">/&amp;a为整个数组地址，再指针为整个数组</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">&amp;a为整个数组地址，是地址就是8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(a+0)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">（a+0）表示第一个元素地址，地址的大小为8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a[0])</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">第一个元素地址</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(*a)</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">*a表示数组第一个元素,一个int型变量4个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">izeof(a[1])</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">第一个元素的大小</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a+1)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">整个数组后的下一个地址，即最后一个元素后下一个元素的地址</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a[0]+1)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>sizeof(a)/sizeof(a[0]) —&gt; 数组单元个数（数组长度）</strong></li>
+<li><strong>sizeof(a) —&gt; 数组a的大小（数组总内存）</strong></li>
+<li><strong>sizeof(a[n]) —&gt; 数组 a 中单个元素占空间的大小		（数组类型占的字节）</strong></li>
+</ul>
+<hr>
+<h2 id="字符数组">字符数组</h2>
+<p>默认为空字符(‘ ’)</p>
+<ul>
+<li>定义后赋值只能逐个赋值</li>
+<li>整体赋值要在定义时赋初值</li>
+</ul>
+<ol>
+<li><code>char str[ ]={″happy″};</code></li>
+<li><code>char str[ ]=″happy″;</code></li>
+<li><code>char str[ ]={′′h′,′a′,′p′,′p′,′y′,′\0′};</code><br>
+字符数组并不要求它的最后一个字符为'＼0′，甚至可以不包含′\0′<br>
+在程序中依靠检测′\0′的位置来判定字符串是否结束</li>
+</ol>
+<pre><code class="language-c++">char x[ ]=&quot;abcd&quot;;   //字符串整体赋值会在结尾自动加上'\0'作为结尾  
+char y[ ]={'a', 'b', 'c', 'd'};         //系统不会加上'\0'  
+cout&lt;&lt;sizeof(x)/sizeof(x[0])&lt;&lt;endl;     //5
+cout&lt;&lt;sizeof(y)/sizeof(y[0])&lt;&lt;endl;     //4  
+cout&lt;&lt;sizeof(x)&lt;&lt;endl;                  //5
+cout&lt;&lt;sizeof(x+0)&lt;&lt;endl ;               //8
+cout&lt;&lt;sizeof(y)&lt;&lt;endl;                  //4
+cout&lt;&lt;sizeof(y+0)&lt;&lt;endl ;               //8
+</code></pre>
+<p>字符数组在最后一位默认有一个\0的空字符作为结束符，字符数+1<br>
+如果数组长度大于字符串实际长度，也只输出到遇′\0′结束。<br>
+如果一个字符数组中包含一个以上′\0′，则遇第一个′\0′时输出就结束。</p>
+<h2 id="字符串处理函数">字符串处理函数</h2>
+<ul>
+<li>头文件：string.h或string</li>
+</ul>
+<h3 id="字符串连接函数-strcat">字符串连接函数 strcat</h3>
+<pre><code class="language-c++">strcat(char[ ],const char[ ]);
+char str1[30]=″People′s Republic of ″;
+char str2[ ]=″China″;
+cout&lt;&lt;strcat(str1，str2);
+</code></pre>
+<h3 id="字符串复制函数strcpy">字符串复制函数strcpy</h3>
+<p>strcpy(char[ ],const char[ ]);</p>
+<ul>
+<li>strcpy()为char *类型，它返回的是第一个参数的地址。</li>
+<li>第一个参数必须是数组名，第二个参数可以是字符数组名，也可以是一个字符串常量。</li>
+<li>第一个参数不需要指向数组的开始。</li>
+</ul>
+<pre><code class="language-c++">char str1[10]，str2[ ]=&quot;China&quot;;
+strcpy(str1，str2);
+strcpy(str1, &quot;China&quot;);
+strncpy(str1,str2,2);   //用strncpy将前n个字符复制
+str1=&quot;China&quot;;    str1=str2;    //错误，不能直接赋值
+</code></pre>
+<h3 id="字符串比较函数strcmp">字符串比较函数strcmp</h3>
+<p>strcmp(const char[ ],const char[ ]);</p>
+<ol>
+<li>字符串1=字符串2，函数值为0。</li>
+<li>字符串1&gt;字符串2，函数值为一正整数。</li>
+<li>字符串1&lt;字符串2，函数值为一负整数。<br>
+两个字符串自左至右逐个字符相比(<em>按ASCII码值大小比较</em>)，直到出现不同的字符或遇到′\0′为止。如全部字符相同，则认为相等；若出现不相同的字符，则以第一个不相同的字符的比较结果为准。</li>
+</ol>
+<h3 id="字符串长度函数strlen">字符串长度函数strlen</h3>
+<p>strlen(const char[ ]);<br>
+测试字符串长度。其函数的值为字符串中的实际长度，<strong>不包括′\0′在内。</strong></p>
+<h2 id="字符串数组">字符串数组</h2>
+<p>可以用string定义字符串数组<br>
+<code>string name[5];</code><br>
+<code>string name[5]={″Zhang″,″Li″,″Fun″,″Wang″,″Tan″};</code></p>
+<ul>
+<li>不要求每个字符串元素具有相同的长度</li>
+<li>每一个字符串元素中只包含字符串本身的字符而<strong>不包括′\0′</strong>。</li>
+</ul>
+<h2 id="数组参数">数组参数</h2>
+<ul>
+<li>实参数组与形参数组类型应一致。</li>
+<li>实参数组和形参数组占同一段内存单元，改变形参数组元素的值即改变实参数组元素的值。</li>
+<li><strong>C++实际上只把实参数组首元素的地址（数组起始地址）传递给形参。形参数组名作为一个指针变量来接收从实参传过来的地址。</strong></li>
+<li>形参一维数组的声明中可以不写元素个数</li>
+</ul>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+void test(int arr[ ])
+{
+	int length = 0;
+	length = sizeof(arr) / sizeof(int);     
+	printf(&quot;test中数组的总字节数为: %d\n&quot;,sizeof(arr));   
+	printf(&quot;test中数组的长度为: %d\n&quot;,length);
+}
+int main()
+{
+	int arr[ ] = {1,2,3,4,5,6,7,8,9};
+	int length = 0;
+	length = sizeof(arr) / sizeof(int);
+    printf(&quot;main中数组的总字节数：%d\n&quot;,sizeof(arr));
+	printf(&quot;main中数组的长度为: %d\n&quot;,length);
+	test(arr);    
+	return 0;
+}
+main中数组的总字节数：36
+main中数组的长度为: 9
+test中数组的总字节数为: 8
+test中数组的长度为: 2
+</code></pre>
+<ul>
+<li><u>  数据个数 = 所有数据的字节数 / 一个数据的字节数  </u></li>
+<li>一个整型数组的长度 = 该数组的总字节数 / int字节数(4)</li>
+<li>在test函数中输出的sizeof(arr)其实得到的是一个整型数组的长度(所占的字节数), 所以结果是8, 再用其除以int所占的字节数(4), 结果就是2 .</li>
+<li>求数组的准确长度： 在定义数组的函数中计算数组的长度, 在以实参的形式传递出去, 这样其他的函数变可以获得数组的长度</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++学习笔记 —— 输入输出]]></title>
+        <id>https://chtholist.gitee.io/post/Cstudy2/</id>
+        <link href="https://chtholist.gitee.io/post/Cstudy2/">
+        </link>
+        <updated>2020-03-22T03:13:49.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="printf输出">printf输出</h2>
+<p>%[标志][最小宽度][.精度][类型长度]类型。<br>
+其中方括号[ ]中的项为可选项。</p>
+<h3 id="1类型">（1）类型</h3>
+<p>类型字符用以表示输出数据的类型，其格式符和意义如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">d\i</td>
+<td style="text-align:center">以十进制形式输出带符号整数(正数不输出符号)</td>
+<td style="text-align:center">int</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td style="text-align:center">以八进制形式输出无符号整数(不输出前缀0)</td>
+<td style="text-align:center">unsigned int</td>
+</tr>
+<tr>
+<td style="text-align:center">x,X</td>
+<td style="text-align:center">以十六进制形式输出无符号整数，x为小写，X为大写(不输出前缀Ox)</td>
+<td style="text-align:center">unsigned int</td>
+</tr>
+<tr>
+<td style="text-align:center">u</td>
+<td style="text-align:center">以十进制形式输出无符号整数</td>
+<td style="text-align:center">unsigned int</td>
+</tr>
+<tr>
+<td style="text-align:center">f\lf</td>
+<td style="text-align:center">以小数形式输出单、双精度实数</td>
+<td style="text-align:center">float\double</td>
+</tr>
+<tr>
+<td style="text-align:center">e,E</td>
+<td style="text-align:center">以指数形式输出单、双精度实数</td>
+<td style="text-align:center">float\double</td>
+</tr>
+<tr>
+<td style="text-align:center">g,G</td>
+<td style="text-align:center">以%f或%e中最短的输出宽度输出单、双精度实数</td>
+<td style="text-align:center">float\double</td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center">输出单个字符</td>
+<td style="text-align:center">char</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">输出字符串</td>
+<td style="text-align:center">string</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">十六进制方式输出指针</td>
+<td style="text-align:center">void*</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2标志对c-s-d-u类无影响">（2）标志（对c、s、d、u类无影响；）</h3>
+<p>标志字符为 -、+、# 和空格四种，其意义下表所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">结果左对齐，右边填空格</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">输出符号(正号或负号)</td>
+</tr>
+<tr>
+<td style="text-align:center">空格</td>
+<td style="text-align:center">输出值为正时冠以空格，为负时冠以负号</td>
+</tr>
+<tr>
+<td style="text-align:center">#</td>
+<td style="text-align:center">type是o、x、X时，增加前缀0、0x、0X。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3输出最小宽度">（3）输出最小宽度</h3>
+<p>用十进制整数来表示输出的最少位数。若实际位数多于定义的宽度，则按实际位数输出，若实际位数少于定义的宽度则补以空格或0。</p>
+<h3 id="4精度">（4）精度</h3>
+<p>以“.”开头，</p>
+<ol>
+<li>如果输出数字，为小数的位数；如果输出的是字符，为输出字符的个数；若实际位数大于所定义的精度数，则截去超过的部分。</li>
+<li><code>printf(&quot;%.*f&quot;, x, a);</code> x是位数控制</li>
+</ol>
+<h3 id="5长度">（5）长度</h3>
+<p>长度格式符为h、l两种，h表示按短整型量输出，l表示按长整型量输出。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">% 2d</td>
+<td style="text-align:center">将数字按宽度为2，采用右对齐方式输出，如果位数不到2位，左边补空格。</td>
+</tr>
+<tr>
+<td style="text-align:center">%02d</td>
+<td style="text-align:center">表示数据宽度不足时用0填补。</td>
+</tr>
+<tr>
+<td style="text-align:center">%d</td>
+<td style="text-align:center">普通的输出十进制整型。</td>
+</tr>
+<tr>
+<td style="text-align:center">%.2d</td>
+<td style="text-align:center">输出最低两位有效数字，比如1 输出01。</td>
+</tr>
+<tr>
+<td style="text-align:center">%2d</td>
+<td style="text-align:center">输出宽度为最低为2的十进制整型，比如1，会输出 1，默认右对齐。</td>
+</tr>
+<tr>
+<td style="text-align:center">%02d</td>
+<td style="text-align:center">输出宽度为2的十进制整型，宽度不够0来凑，比如1，会输出01。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>printf(&quot;%6.4d\n&quot;,312)；</code>输出0312，宽度为6，有效数字为4位。</p>
+</blockquote>
+<ul>
+<li>float 、double都是%f输出，但 float 是32位的，double 是64位的，所以在参数传递的时候C语言统一将 float 类型数值传换为 double 类型再传入 printf 函数。如果是32位整型则输出格式为%lld。</li>
+</ul>
+<hr>
+<p>在可变长参数函数（例如printf函数）或者不带原型声明函数中，在调用该函数时C自动进行<strong>类型提升</strong>（在调用函数时如果声明这个函数那么则不会提升），提升如下：</p>
+<ol>
+<li>float类型的实际参数将提升到double</li>
+<li>char、short和相应的signed、unsigned类型的实际参数提升到int</li>
+<li>如果int不能存储原值，则提升到unsigned int<br>
+然后，调用者将提升后的参数传递给被调用者。C标准对默认实际参数提升规则有明确规定。也就是说，带有可变长参数列表的函数，绝对不会接受到char类型的实际参数。</li>
+</ol>
+<pre><code class="language-c">float a=1.2;
+printf(&quot;%d\n&quot;,1.2);     	//858993459
+printf(&quot;%d&quot;,a);             //1073741824
+</code></pre>
+<ul>
+<li>1.2在内存中是以double类型存储的，具有64位的长度，为0x3ff3333333333333。所以printf(&quot;%d&quot;,a)先向上转型为double，截取低32位为0x33333333，打印出来为858993459</li>
+<li>常数1.2在内存中的存储为……，所以%d截得是低32位0x40000000，打印为1073741824。但是a提升为double时和1.2在内存中默认存储不一样，导致了最后结果的不一样。</li>
+</ul>
+<pre><code class="language-c">float a=7.5 ; 
+printf(&quot;%d&quot;,a);    			//0
+</code></pre>
+<ul>
+<li>%d只输出低32位的数据，并将这些32位二进制以十进制数输出</li>
+<li>编译器首先将 7.5从float类型转换为double类型，7.5在内存中的存放方式是0x40f00000，转换成double类型在内存中的数据就是0x401e000000000000，这个内存数据可以很明显看出低32位全是0，而%d则只能截取到低32位，所以这个以%d输出7.5的数值为0</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++学习笔记 —— 函数]]></title>
+        <id>https://chtholist.gitee.io/post/Cstudy/</id>
+        <link href="https://chtholist.gitee.io/post/Cstudy/">
+        </link>
+        <updated>2020-03-22T03:13:03.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="函数">函数</h1>
+<p>分类：系统函数、自定义函数、有参函数、无参函数</p>
+<h2 id="返回值">返回值</h2>
+<ul>
+<li>C++要求在定义函数时必须指定函数的类型，如无返回值需指定void</li>
+<li><strong>一个函数中可以有多个return语句</strong></li>
+<li>return后面的括号可以省略，即return z;与return(z)等价</li>
+<li>return的类型要和函数的类型一致</li>
+<li>void表示函数没有返回值或没有参数</li>
+<li>在C语言的函数定义中，如果省略了return语句，函数也可以返回主调函数（void）</li>
+<li>不能返回自动变量的指针</li>
+</ul>
+<pre><code class="language-c++">    int *f(void)				//f是一个无参数的函数，返回的是一个指向整型数据的指针
+    { int i;
+    return &amp;i;}				//函数结束时局部变量i被释放空间
+</code></pre>
+<blockquote>
+<p>被调函数运行结束后系统为被调函数中的局部变量分配的内存空间就会被释放。<br>
+在执行 return 语句时系统是在内部自动创建了一个临时变量，然后将 return 要返回的那个值赋给这个临时变量。所以当被调函数运行结束后 return 后面的返回值就被释放掉了，最后是通过这个临时变量将值返回给主调函数的。而且定义函数时指定的返回值类型实际上指定的就是这个临时变量的类型。<br>
+这也是为什么当 return 语句中表达式的类型和函数返回值类型不一致时，将 return 的类型转换成函数返回值类型的原因。return 语句实际上就是将其后的值赋给临时变量，所以它要以临时变量的类型为准，即函数返回值的类型。</p>
+</blockquote>
+<h2 id="函数调用">函数调用</h2>
+<ul>
+<li>main函数由系统调用</li>
+<li>所有函数是平行的，不能嵌套定义</li>
+<li>各函数之间可以互相调用，但不能调用main函数</li>
+<li>如果main函数在其他函数前进行定义，在调用该函数时需进行声明</li>
+<li>调用函数时，要给出参数。在主调函数和被调函数之间有数据传递。即主调函数将数据传给被调函数使用。被调函数可以带回或者不带回（此时函数类型为void）函数值。</li>
+</ul>
+<h3 id="形参-实参">形参 &amp; 实参</h3>
+<ul>
+<li><strong>形式参数</strong>：在定义函数时函数名后面括号中的变量名称</li>
+<li><strong>实际参数</strong>：在调用一个函数时，函数名后面括号中的参数，可以是常量、变量或表达式</li>
+</ul>
+<ol>
+<li><em>实参变量对形参变量的数据传递是“值传递”</em>，即单向传递，只由实参传给形参</li>
+<li>实参与形参的类型可以不相同（发生强制转换）</li>
+<li><em>形参只有在函数调用时才被分配内存单元</em>，以便接收从实参传来的数据。在调用结束后，形参所占的内存单元也被释放。因此，在执行一个被调用函数时，形参的值如果发生改变，并不会改变主调函数中实参的值。</li>
+<li><em>实参单元与形参单元是不同的单元，实参形参占用不同的空间。</em></li>
+</ol>
+<h2 id="内置函数-内联函数">内置函数 / 内联函数</h2>
+<p>C++提供一种提高效率的方法，即在编译时将所调用函数的代码直接嵌入到主调函数中，编译系统在遇到该函数调用时，就用该函数体的代码进行代替，同时将实参代替形参。</p>
+<ul>
+<li>可以在声明函数和定义函数时同时写inline，也可以只在函数声明时加inline，效果相同。</li>
+<li>使用内置函数可以节省运行时间，但增加了目标程序的长度。因此一般只将规模很小而使用频繁的函数声明为内置函数。</li>
+<li>inline声明只是建议性的，而不是指令性的。<br>
+函数调用时需要一定的时间和空间的开销：保护现场、恢复现场<br>
+一般的程序调用函数时的过程：</li>
+</ul>
+<ol>
+<li>执行函数中调用前的语句；</li>
+<li>转移到被调用函数的入口处，同时进行参数传递；</li>
+<li>执行被调用的函数；</li>
+<li>带回被调用函数的返回值；</li>
+<li>接着执行主调函数中未执行的语句。</li>
+</ol>
+<h2 id="函数的重载运算符重载">函数的重载（运算符重载）</h2>
+<p>C++允许用同一函数名定义多个函数</p>
+<ul>
+<li><strong>重载函数的参数个数、参数类型或参数顺序三者中必须至少有一种不同</strong></li>
+<li>函数的返回值类型可以相同也可以不同，不要求函数体相同</li>
+</ul>
+<h2 id="函数模板">函数模板</h2>
+<p>建立一个通用函数，其函数类型和形参类型不具体指定，用一个虚拟的类型来代表。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">template &lt; typename T&gt;</td>
+<td style="text-align:center">template <class T></td>
+</tr>
+<tr>
+<td style="text-align:center">通用函数定义</td>
+<td style="text-align:center">通用类定义</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>函数体相同的函数都可以用这个模板来代替，不必定义多个函数，只需在模板中定义一次</li>
+<li>在调用函数时系统会根据实参的类型来取代模板中的虚拟类型</li>
+<li>类型参数可以不只一个，可以根据需要确定个数。</li>
+<li><strong>只适用于函数的参数个数相同而类型不同，且函数体相同的情况</strong><br>
+<br/><br>
+编译器由模板自动生成函数时，会用具体的类型名对模板中所有的类型参数进行替换，其他部分原封不动地保留。同一个类型参数只能替换为同一种类型。编译器在编译到调用函数模板的语句时，会根据实参的类型判断如何替换模板中的类型参数。T 是类型参数，代表类型</li>
+</ul>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+template&lt;class T&gt;
+void Swap(T &amp; x, T &amp; y)
+{
+    T tmp = x;
+    x = y;
+    y = tmp;
+}
+int main( )
+{
+    int n = 1, m = 2;
+    Swap(n, m);     //编译器自动生成void Swap(int &amp;,int &amp;)函数
+    double f = 1.2, g = 2.3;
+    Swap(f, g);     //编译器自动生成void Swap(double &amp;,double &amp;)函数
+    return 0;
+}
+</code></pre>
+<h2 id="有默认参数的函数">有默认参数的函数</h2>
+<ul>
+<li>实参与形参结合顺序为从左至右，因此，<strong>指定默认值的参数必须放在形参表列中的最右端</strong></li>
+<li>如果函数的定义在函数调用之前，则应在函数定义中给出默认值。</li>
+<li><em>一个函数不能既作为重载函数，又作为有默认参数的函数。</em></li>
+</ul>
+<hr>
+<h2 id="作用域">作用域</h2>
+<p>每一个变量都有其有效作用范围，称为变量的作用域。<br>
+在作用域以外是不能访问这些变量的。</p>
+<h3 id="局部变量-内部变量">局部变量 / 内部变量</h3>
+<p><em><strong>保存在栈中，所在函数被调用时才由系统动态在栈中分配临时性的存储单元。</strong></em></p>
+<ul>
+<li>在复合语句中定义的变量只在本复合语句范围内有效</li>
+<li><em>主函数中定义的变量也只在主函数中有效</em></li>
+<li>不同函数中可以使用同名的变量,它们代表不同的对象,互不干扰。</li>
+<li>形式参数也是局部变量。</li>
+<li>在函数<em>声明</em>中出现的参数名，其作用范围只在本行的括号内。</li>
+</ul>
+<h3 id="全局变量-外部变量">全局变量 / 外部变量</h3>
+<p><em><strong>在函数之外定义的变量。保存在内存的全局存储区中，占用静态的存储单元。</strong></em><br>
+有效范围为从定义变量的位置开始到本源文件结束。</p>
+<ul>
+<li>全局变量在程序的全部执行过程中都占用存储单元，而不是仅在需要时才开辟单元。</li>
+<li>它使函数的通用性降低了，因为在执行函数时要受到外部变量的影响。</li>
+<li>使用全局变量过多，会降低程序的清晰性。<br>
+如果在同一个源文件中，全局变量与局部变量同名，则在局部变量的作用范围内，全局变量被屏蔽，即不起作用。要用this指定为全局变量。</li>
+</ul>
+<h2 id="c语言内存区">C语言内存区</h2>
+<h3 id="栈stack">栈（stack）</h3>
+<p>由编译器进行管理，自动分配和释放，存放函数调用过程中的各种参数、局部变量、返回值以及函数返回地址。</p>
+<ol>
+<li>申请后，只要栈的剩余空间足够，系统将为程序提供内存，否则异常提示栈溢<br>
+出overflow。</li>
+<li>栈是向低地址扩展的数据结构，是一块连续的内存区域(栈顶的地址和栈的最大容量是系统预先规定好的)，大小是2MB。 —&gt; 栈获得的空间较小</li>
+<li>堆获得的空间比较灵活，也比较大</li>
+<li>在函数调用时，第一个进栈的是主函数中后的下一条指令（函数调用语句的下一条可<br>
+执行语句）的地址，然后是函数的各个参数，在大多数的C编译器中，参数是由右往左入栈<br>
+的，然后是函数中的局部变量。注意静态变量是不入栈的。<br>
+当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地<br>
+址，也就是主函数中的下一条指令，程序由该点继续运行。</li>
+<li>操作方式类似数据结构中的栈。</li>
+</ol>
+<h3 id="堆heap">堆（heap）</h3>
+<p>用于程序动态申请分配和释放空间。在C中用malloc，C++中用new。需要程序员自己申请，并指明大小，申请的空间在使用结束后应该释放，若程序员没有释放空间，则程序结束时系统自动回收。</p>
+<ol>
+<li>申请后，操作系统会 1.遍历一个记录空闲内存地址的链表，寻找第一个空间大于所申请空间的堆结点，2.然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，3.同时在这块内存空间中的首地址处记录本次分配的大小，这样，代码中的delete语句才能正确的释放本内存空间。4.另外，由于找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。</li>
+<li>堆是向高地址扩展的数据结构，是不连续的内存区域(系统是用链表来存储<br>
+的空闲内存地址的)，堆的大小受限于计算机的虚拟内存。—&gt; 堆获得的空间比较灵活，也比较大</li>
+<li>堆是由new分配的内存，一般速度比较慢，而且容易产生内存碎片，但是方便</li>
+<li>一般是在堆的头部用一个字节存放堆的大小。堆中的具体内容由程序员安排。</li>
+<li>注意：这里的“堆”并不是数据结构中的“堆”。</li>
+</ol>
+<pre><code class="language-c++">void main()
+{
+    char a = 1;
+    char c[] = &quot;1234567890&quot;;    //栈上数组：在运行时刻赋值
+    //在读取时直接就把字符串中的元素读到寄存器cl中
+    char *p =&quot;1234567890&quot;;      //指针所指向的字符串(例如堆)：在编译时就确定
+    //要先把指针值读到edx中，再根据edx读取字符，更慢
+    a = c[1];
+    a = p[1];
+return;
+}
+</code></pre>
+<h3 id="全局静态存储区">全局（静态）存储区</h3>
+<h4 id="全局初始化区data段">全局初始化区（DATA段）</h4>
+<p>存放已经初始化的全局变量和静态局部变量(static修饰的已经初始化的变量)<br>
+这些变量需要占用存储器的空间，在程序执行时它们需要位于可读写的内存区域内，并且有初值，以供程序运行时读写。</p>
+<h4 id="未初始化段bss段">未初始化段（BSS段）</h4>
+<p>存放未初始化的全局变量和静态变量。（在程序中声明，但未初始化，在程序运行前不占用存储器空间）<br>
+可读写，在程序运行结束时自动释放。BBS段在程序执行之前会被自动清0，所以未初始化的全局变量和静态变量在程序执行之前已经为0。</p>
+<h3 id="文字常量区">文字常量区</h3>
+<p>存放常量字符串。程序结束后由系统释放。<br>
+<code>char *name = &quot;fengke&quot;;</code>      保存在文字常量区<br>
+<code>char name1[] = &quot;fengke&quot;</code>      保存在栈区</p>
+<pre><code class="language-c++">char *name = &quot;fengke&quot;;
+name 0x004156b8 —&gt; unsigned char *  //name的值是保存在文字常量区&quot;fengke&quot;的地址
+&amp;name 0x0013ff5c —&gt; unsigned char * *    //name自身的地址则被编译器分配在栈区
+name[0] 102 —&gt; unsigned char      //name的第一个字符值为'f'
+&amp;name[0] 0x004156b8 —&gt; unsigned char *   //它保存在文字常量区
+</code></pre>
+<ul>
+<li>&amp;name与name的地址不同 / 字符串常量的指针指向的内容和指针自身的地址不同<br>
+因为name是个字符型变量，该变量的空间分配在栈区，name指向的字符串在文字常量区，而name又是个字符型指针变量，它里面所保存的值即为字符串在文字常量区的地址</li>
+</ul>
+<h3 id="程序代码区存放程序的二进制代码">程序代码区：存放程序的二进制代码。</h3>
+<hr>
+<h2 id="存储空间">存储空间</h2>
+<p>可以分为三部分：程序区、静态存储区、动态存储区</p>
+<h3 id="动态存储区-栈-堆">动态存储区 （ 栈 / 堆 ）</h3>
+<p>形参、自动变量（未加static声明的局部变量）、函数调用的现场保护和返回地址<br>
+在函数调用开始时分配动态存储空间，函数结束时释放这些空间。<br>
+这种分配和释放是动态的在程序运行期间，系统对变量动态地分配存储空间</p>
+<h3 id="静态存储区">静态存储区</h3>
+<p>静态变量、全局变量<br>
+在程序开始执行时给变量分配存储单元，程序执行完毕就释放这些空间。<br>
+在程序执行过程中它们占据固定的存储单元，而不是动态地进行分配和释放。</p>
+<hr>
+<h2 id="存储类别">存储类别</h2>
+<h3 id="自动的auto">自动的(auto)</h3>
+<ul>
+<li>数据存储在<strong>动态存储区</strong>中，在函数调用结束时就自动释放这些空间</li>
+<li>关键字auto可以省略，如果不写auto，则系统把它默认为自动存储类别。</li>
+<li>在函数调用时赋初值，每调用一次函数重新给一次初值。<br>
+<strong>如果不赋初值，则它的值是一个不确定的值。</strong></li>
+</ul>
+<h3 id="静态的static">静态的(static)</h3>
+<ul>
+<li>在<strong>静态存储区</strong>内分配存储单元。在程序整个运行期间都不释放。</li>
+<li><strong>赋初值是在编译时进行的，即只赋初值一次。以后每次调用函数时不再重新赋初值而只是保留上次函数调用结束时的值。</strong><br>
+<strong>如果在定义时不赋初值的话，编译时自动赋初值0(对数值型变量)或空字符(对字符型变量)。</strong></li>
+<li>静态存储要多占内存，而且降低了程序的可读性</li>
+<li>虽然静态局部变量在程序生成时，在函数调用结束后仍然存在，但其他函数是不能引用它的。</li>
+</ul>
+<pre><code class="language-c++">int f(int n) {
+    static int k, s;
+    n--;
+    for(k=n; k&gt;0; k--)
+		s += k;  
+    return s;
+}
+int main(void)
+{  	int k;
+    k=f(3);
+    printf(&quot;(%d,%d)&quot;, k, f(k));        //输出(3,6)
+}
+</code></pre>
+<h3 id="寄存器的register">寄存器的(register)</h3>
+<ul>
+<li>将局部变量的值放在CPU中的寄存器中，需要用时直接从寄存器取出参加运算，不必再到内存中去存取。</li>
+<li>只是建议性(而不是强制性)的</li>
+</ul>
+<h3 id="外部的extern">外部的(extern)</h3>
+<p>在一个文件内声明全局变量</p>
+<ul>
+<li>提前引用声明<br>
+如果在定义点之前的函数想引用该全局变量，则应该在引用之前用关键字extern对该变量作外部变量声明，表示该变量是一个将在下面定义的全局变量。有了此声明，就可以从声明处起，合法地引用该全局变量</li>
+<li>在任一个文件中定义外部变量，而在另一文件中用extern对其作外部变量声明：<br>
+<br/></li>
+<li>静态外部变量(static)<br>
+<strong>加上static声明，只能用于本文件的外部变量（全局变量）</strong></li>
+</ul>
+<hr>
+<h2 id="变量属性">变量属性</h2>
+<p>存储类型、作用域、数据类型、存储期</p>
+<h3 id="从作用域角度分">从作用域角度分</h3>
+<ul>
+<li>局部变量：
+<ol>
+<li>自动变量,即动态局部变量(离开函数,值就消失)</li>
+<li>静态局部变量(离开函数,值仍保留)</li>
+<li>寄存器变量(离开函数,值就消失)</li>
+<li>形式参数(可以定义为自动变量或寄存器变量)</li>
+</ol>
+</li>
+<li>全局变量
+<ol>
+<li>静态外部变量(只限本文件引用)</li>
+<li>外部变量(即非静态的外部变量,允许其他文件引用)</li>
+</ol>
+</li>
+</ul>
+<h3 id="从变量存储期存在的时间来区分">从变量存储期(存在的时间)来区分</h3>
+<ul>
+<li>动态存储
+<ol>
+<li>自动变量(本函数内有效)</li>
+<li>寄存器变量(本函数内有效)</li>
+<li>形式参数</li>
+</ol>
+</li>
+<li>静态存储
+<ol>
+<li>静态局部变量(函数内有效)</li>
+<li>静态外部变量(本文件内有效)</li>
+<li>外部变量(其他文件可引用)</li>
+</ol>
+</li>
+</ul>
+<h3 id="从变量值存放的位置来区分">从变量值存放的位置来区分</h3>
+<ul>
+<li>内存中静态存储区
+<ol>
+<li>静态局部变量</li>
+<li>静态外部变量(函数外部静态变量)</li>
+<li>外部变量(可为其他文件引用)</li>
+</ol>
+</li>
+<li>内存中动态存储区：  自动变量和形式参数</li>
+<li>CPU 中的寄存器：    寄存器变量</li>
+</ul>
+<hr>
+<h2 id="声明定义">声明&amp;定义</h2>
+<p><strong>函数：函数的原型是声明，函数功能的确立是定义</strong><br>
+<strong>变量：建立存储空间的是定义，不需要建立存储空间的是声明</strong><br>
+在一个程序中，变量只能定义一次，却可以声明多次。</p>
+<ul>
+<li>定义分配存储空间，而声明不会。<br>
+extern 是声明不是定义,除非有extern关键字，否则都是变量的定义。<br>
+通过使用extern关键字声明变量名而不定义它。</li>
+</ul>
+<blockquote>
+<p>例如：extern int a 其中变量 a 可以在别的文件中定义的。<br>
+当你要引用一个全局变量的时候，你就要声明 extern int a   , 省略了，就变成 int a 这是一个定义，不是声明。<br>
+（在函数外int定义变量后，在函数内extern int 声明为外部变量）</p>
+</blockquote>
+<pre><code class="language-c++">extern int i;       //声明，不是定义
+int i;              //声明，也是定义
+extern int a;       // 声明一个全局变量 a
+int a;              // 定义一个全局变量 a
+extern int a =0;    // 定义一个全局变量 a 并给初值。
+                    //一旦给予赋值，一定是定义，定义才会分配存储空间
+int a =0;           //定义一个全局变量 a，并给初值，等于第三个，都是定义一个可以被外部使用的全局变量，并给初值。
+</code></pre>
+<h2 id="函数原型-函数声明-function-prototype">函数原型 / 函数声明  (function prototype)</h2>
+<p>一般形式为</p>
+<ol>
+<li>函数类型 函数名(参数类型1，参数类型2…)；</li>
+<li>函数类型 函数名(参数类型1  参数名1，参数类型2  参数名2…)；<br>
+根据函数原型在程序编译阶段对调用函数的合法性进行全面检查。如果发现与函数原型不匹配的函数调用就报告编译出错。它属于语法错误。</li>
+</ol>
+<h2 id="内部函数静态函数">内部函数（静态函数）</h2>
+<p>只能被本文件中其他函数所调用的函数，使函数只局限于所在文件<br>
+static int fun(int a,int b)</p>
+<h2 id="外部函数">外部函数</h2>
+<p>在函数首部的最左端冠以关键字extern，可供其他文件调用<br>
+extern int fun (int a, int b)<br>
+如果在定义函数时省略extern,则默认为外部函数<br>
+在需要调用此函数的文件中,用extern声明所用的函数是外部函数。</p>
 ]]></content>
     </entry>
 </feed>

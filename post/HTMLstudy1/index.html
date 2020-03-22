@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>HTML学习笔记 1 | Chtholist</title>
+<meta name="description" content="&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
+&lt;b&gt; 末红褪去春意来 &lt;/b&gt;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://chtholist.gitee.io/favicon.ico?v=1584848943381">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://chtholist.gitee.io/styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  
+  <div class="nav-brand">
+    <h3><a href="https://chtholist.gitee.io">Chtholist</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                Who am I
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="http://chtholist.gitee.io/wallpaper/" class="menu">
+                墨鱼壁纸
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://libnet.chtholly.moe:2333/" class="menu">
+                中珂院图库
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>HTML学习笔记 1</h1>
+            <p class="article-meta">
+              2020-03-22
+              
+                <a href="https://chtholist.gitee.io/tag/sT3HnA4VM/" class="badge ">
+                  html
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge warning">
+                  学习
+                </a>
+              
+                <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge secondary">
+                  编程
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h1 id="html">HTML</h1>
+<h2 id="html简介">HTML简介</h2>
+<ol>
+<li>HTML 指的是超文本标记语言 (Hyper Text Markup Language)</li>
+<li>HTML 不是一种编程语言，而是一种标记语言</li>
+<li>标记语言是一套标记标签</li>
+<li>HTML文档(网页) = 标记标签 + 纯文本  (使用标记标签来描述网页)</li>
+</ol>
+<h4 id="html-标签">HTML 标签</h4>
+<p>由尖括号包围的关键词</p>
+<ul>
+<li>通常是成对出现的，比如 &lt;b&gt; 和 &lt;/b&gt;</li>
+<li>标签对中的第一个标签是开始标签(开放标签)，第二个标签是结束标签(闭合标签)</li>
+</ul>
+<h4 id="html元素">HTML元素</h4>
+<ul>
+<li>元素内容 = 开始标签到结束标签间的内容</li>
+<li>空元素在开始标签中关闭 （以开始标签的结束而结束）<br>
+&lt;br&gt; 为没有关闭标签的空元素（定义换行）<br>
+在开始标签中添加斜杠 —&gt; 关闭空元素   （如&lt;br/&gt;）</li>
+</ul>
+<h4 id="html属性">HTML属性</h4>
+<ul>
+<li>属性为 <code>名称 = &quot;值&quot;</code></li>
+<li>属性在开始标签中规定</li>
+</ul>
+<h4 id="html输出">HTML输出</h4>
+<ul>
+<li>无法确定 HTML 被显示的确切效果。屏幕的大小，以及对窗口的调整都可能导致不同的结果。</li>
+<li>无法通过在 HTML 代码中添加额外的空格或换行来改变输出的效果。</li>
+<li>当显示页面时，浏览器会移除源代码中多余的空格和空行。所有连续的空格或空行都会被算作一个空格。需要注意的是，HTML 代码中的所有连续的空行（换行）也被显示为一个空格。</li>
+</ul>
+<hr>
+<hr>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;             
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt; &lt;!-- 让网页可以显示中文 --&gt;
+        &lt;title&gt; 网页名称 &lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        正文……
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;!DOCTYPE html&gt;</td>
+<td style="text-align:center">声明为 HTML5 文档(不分大小写)</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;html&gt;</td>
+<td style="text-align:center">HTML 页面的根元素，之间的文本描述网页</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;head&gt;</td>
+<td style="text-align:center">包含了文档的元（meta）数据，如 &lt;meta charset=&quot;utf-8&quot;&gt; 定义网页编码格式为 utf-8。</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;title&gt;</td>
+<td style="text-align:center">描述了文档的标题</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;body&gt;</td>
+<td style="text-align:center">之间的文本可见的页面内容</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;h1&gt;</td>
+<td style="text-align:center">定义一个标题 ( h1-h6 )</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;p&gt;</td>
+<td style="text-align:center">定义一个段落</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;hr/&gt;</td>
+<td style="text-align:center">创建水平线</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;!-- xxx --&gt;</td>
+<td style="text-align:center">注释</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;br/&gt;</td>
+<td style="text-align:center">换行</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;hr/&gt;</td>
+<td style="text-align:center">划分线</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">文本设置</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;b&gt; or &lt;strong&gt;</td>
+<td style="text-align:center">加粗文本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;em&gt;  or &lt;i&gt;</td>
+<td style="text-align:center">斜体文本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;big&gt;</td>
+<td style="text-align:center">放大文本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;small&gt;</td>
+<td style="text-align:center">缩小文本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;sub&gt;</td>
+<td style="text-align:center">下标</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;sup&gt;</td>
+<td style="text-align:center">上标</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;del&gt;</td>
+<td style="text-align:center">删除线</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;ins&gt;</td>
+<td style="text-align:center">下划线</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">计算机输出</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;code&gt;</td>
+<td style="text-align:center">定义计算机代码</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;kbd&gt;</td>
+<td style="text-align:center">定义键盘码</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;samp&gt;</td>
+<td style="text-align:center">定义计算机代码样本</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;tt&gt;</td>
+<td style="text-align:center">定义打字机代码</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;var&gt;</td>
+<td style="text-align:center">定义变量</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;pre&gt;</td>
+<td style="text-align:center">定义预格式文本</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>code 元素不保留多余的空格和折行</li>
+</ul>
+<pre>
+    使用pre显示预格式文本
+        可以保留
+            空格和换行
+                适合显示代码
+</pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">引用 &amp; 术语定义</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&lt;address&gt;</td>
+<td style="text-align:center">定义地址</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;bdo dir=&quot;rtl&quot;&gt;</td>
+<td style="text-align:center">定义文字方向(逆序)</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;blockquote&gt;</td>
+<td style="text-align:center">定义长的引用 (浏览器会插入换行和外边距)</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;q&gt;</td>
+<td style="text-align:center">定义短的引用语(仅添加引号)</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;cite&gt;</td>
+<td style="text-align:center">定义引用、引证</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;dfn&gt;</td>
+<td style="text-align:center">定义一个定义项目</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><bdo dir="rtl"> 使用 bdo dir=&quot;rtl&quot; 更改文字方向</bdo><br>
+<code>&lt;bdo dir=&quot;rtl&quot;&gt; 使用 bdo dir=&quot;rtl&quot; 更改文字方向&lt;/bdo&gt;</code></li>
+</ul>
+<hr>
+<hr>
+<h2 id="链接">链接</h2>
+<p>用标签&lt;a&gt;&lt;/a&gt; (在href这个属性中指定链接的地址url)<br>
+<a href="https://chtholist.github.io" target="_blank" > 这是一个链接 </a><br>
+<code>&lt;a href=&quot;url&quot; target=&quot;_blank&quot; &gt; 链接的替代文字 &lt;/a&gt;</code></p>
+<ul>
+<li>target=&quot;_blank&quot; —&gt; 让链接在新窗口打开</li>
+</ul>
+<h4 id="命名锚">命名锚</h4>
+<p>命名锚：HTML页面中的书签 （同页面内跳转），这样浏览者就不用滚动页面<br>
+<code>&lt; a href=&quot;#tip&quot; &gt; 命名锚从这里跳转 &lt;/a&gt;</code><br>
+<code>&lt;a name=&quot;tip&quot;&gt; 命名锚跳转到这里 &lt;/a&gt;</code></p>
+<ul>
+<li>命名锚跳转的地方，用 #+锚名 来链接，可添加到URL的末端</li>
+</ul>
+<h4 id="跳出框架">跳出框架</h4>
+<p><code>&lt;a href=&quot;这个网页的url&quot; target=&quot;_top&quot;&gt; 替代文字 &lt;/a&gt;</code></p>
+<hr>
+<hr>
+<h2 id="图像">图像</h2>
+<p>用标签&lt;img src=&quot; &quot;&gt;<br>
+<code>&lt;img src=&quot;url&quot; width=&quot;x&quot; height=&quot;y&quot; alt=&quot;图片显示不出来时替换的文本&quot; align=&quot; bottom / middle / top / left / right (对齐方式)&quot; /&gt;</code></p>
+<ul>
+<li>图像作为链接：</li>
+</ul>
+<pre><code class="language-html">    &lt;a href=&quot;要跳转到的url&quot; &gt;
+        &lt;img border=&quot;0&quot; src=&quot;图片的url&quot; &gt;
+    &lt;/a&gt;
+</code></pre>
+<h4 id="图片映射">图片映射</h4>
+<pre><code class="language-html">&lt;img src=&quot;url&quot; usemap=&quot;#PhotoName&quot;&gt;
+&lt;map name=&quot;PhotoName&quot;&gt;
+  &lt;area shape=&quot;rect&quot; coords=&quot;x1,y1,x2,y2&quot;  href=&quot;url1&quot;&gt;
+  &lt;area shape=&quot;circle&quot; coords=&quot;x1,y1,r&quot;  href=&quot;url2&quot;&gt;
+&lt;/map&gt;
+</code></pre>
+<ul>
+<li>shape指点击区域的形状，coords指链接区域在图中的坐标（像素为单位）
+<ul>
+<li>矩形rect：左上角顶点坐标为(x1,y1)，右下角顶点坐标为(x2,y2)</li>
+<li>圆形circle：圆心坐标为(X1,y1)，半径为r</li>
+<li>多边形：各顶点坐标依次为(x1,y1)、(x2,y2)、(x3,y3) ......</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="字体">字体</h2>
+<ul>
+<li>用 style=&quot; xxx : xxx ;&quot; 设置</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">字体</td>
+<td style="text-align:center">font-family</td>
+</tr>
+<tr>
+<td style="text-align:center">字体大小</td>
+<td style="text-align:center">font-size</td>
+</tr>
+<tr>
+<td style="text-align:center">背景颜色</td>
+<td style="text-align:center">background-color</td>
+</tr>
+<tr>
+<td style="text-align:center">文本对齐方式</td>
+<td style="text-align:center">text-align</td>
+</tr>
+</tbody>
+</table>
+<h4 id="缩写文本">缩写文本</h4>
+<p>把鼠标移至缩略词语上时，可展示完整版本<br>
+<abbr title="使用abbr显示缩写"> 缩 </abbr><br>
+<code>&lt;abbr title=&quot;使用abbr显示缩写&quot;&gt; 缩 &lt;/abbr&gt;</code><br>
+<acronym title="World Wide Web"> WWW </acronym><br>
+<code>&lt;acronym title=&quot;使用acronym显示首字母缩写&quot;&gt; 首缩 &lt;/acronym&gt;</code></p>
+<hr>
+<hr>
+<h2 id="样式表">样式表</h2>
+<p>所有的格式化代码均可移出 HTML 文档，然后移入一个独立的样式表<br>
+当浏览器读到一个样式表，它就会按照这个样式表来对文档进行格式化。</p>
+<ul>
+<li>将CSS添加到HTML中：
+<ul>
+<li><strong>内联样式</strong>：在HTML元素中使用 style <em>属性</em></li>
+<li><strong>内部样式表</strong>：在HTML文档头部 head 区域中用 style <em>元素</em>来包含CSS</li>
+<li><strong>外部引用</strong>：使用外部CSS文件</li>
+</ul>
+</li>
+</ul>
+<h4 id="内联样式h3">内联样式</h3></h4>
+<ul>
+<li>当特殊的样式需要应用到<strong>个别元素</strong>时，就可以使用内联样式。</li>
+<li>使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何CSS 属性。<br>
+<code>&lt;p style=&quot;color:blue;&quot;&gt; 使用内联样式 &lt;/p&gt;</code></li>
+</ul>
+<h4 id="内部样式表">内部样式表</h4>
+<ul>
+<li>当<strong>单个文件</strong>需要特别样式时，就可以使用内部样式表。</li>
+<li>可以在 head 部分通过 style 标签定义内部样式表。</li>
+</ul>
+<h4 id="外部样式表-推荐">外部样式表 （推荐）</h4>
+<ul>
+<li>当样式需要被应用到<strong>很多页面</strong>的时候，外部样式表将是理想的选择。</li>
+<li>可以通过更改一个文件来改变整个站点的外观。</li>
+</ul>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://chtholist.gitee.io/post/JAVAstudy0/">
+                <h3 class="post-title">
+                  Java&amp;后端 学习路径
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    
+    <img src="https://chtholist.gitee.io/images/avatar.png?v=1584848943381" class="no-responsive avatar">
+    <div class="text-muted"><b> 终焉虽至曲未尽 </b> <br/>
+<b> 末红褪去春意来 </b></div>
+    <div class="social-container">
+      
+        
+          <a href="https://github.com/chtholist" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/HTMLstudy1/">HTML学习笔记 1</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/JAVAstudy0/">Java&amp;后端 学习路径</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/JAVAstudy1/">Java —— 最基础</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/windows-kuai-jie-jian/">Windows快捷键</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/windows/">Windows快捷键</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/markdown/">Markdown学习笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy4/">C++学习笔记 —— 运算&amp;表达式</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy_array/">C++学习笔记 —— 数组</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy2/">C++学习笔记 —— 输入输出</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://chtholist.gitee.io/post/Cstudy/">C++学习笔记 —— 函数</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://chtholist.gitee.io/tag/sT3HnA4VM/" class="badge ">
+          html
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/XmZZX3L8Ac/" class="badge ">
+          学习
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/Umxj3r3IOc/" class="badge secondary">
+          编程
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/hEb5vfxiu/" class="badge warning">
+          java
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/tkA5MIQSf/" class="badge ">
+          git
+        </a>
+      
+        <a href="https://chtholist.gitee.io/tag/Pp8YQ7qrL/" class="badge success">
+          c
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Producted by <b><a href="https://gitee.com/chtholist"> TIAT'S DREAMS </a><b/> | <a class="rss" href="https://chtholist.gitee.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+
+    <!-- 右下角live2d效果 -->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 120,
+            "height": 280,
+            "hOffset": 0,
+            "vOffset": -10
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.8,
+            "opacityOnHover": 0.4
+        }
+    });
+</script>
+
+<!-- 返回顶部  -->
+<a href="#top"><div data-v-3682a700 data-v-4e808e30 class="back-top" style="left: 0px; "></div></a>
+
+    
+    <!-- 页尾的走马灯-->
+    <div id="i1" style="color:rgb(10, 8, 8);font-size:20px;padding:50px;text-align:center;">
+      What&nbsp;do&nbsp;you&nbsp;do&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;world? 
+      Are&nbsp;you&nbsp;busy?&nbsp;Will&nbsp;you&nbsp;save&nbsp;us?&nbsp;&nbsp;&nbsp;
+      </div>
+  <script>
+     function func(){
+         var tag = document.getElementById('i1');
+         var content = tag.innerText;
+         var f = content.charAt(0);
+         var l = content.substring(1,content.length);
+         var new_content = l + f;
+         tag.innerText = new_content;
+     }
+     setInterval('func()',500);
+  </script>
+
+
+        <!-- 爱心点击特效-->
+        <script type="text/javascript">
+
+          (function(window,document,undefined){
+                  var hearts = [];
+                  window.requestAnimationFrame = (function(){
+                          return window.requestAnimationFrame || 
+                                     window.webkitRequestAnimationFrame ||
+                                     window.mozRequestAnimationFrame ||
+                                     window.oRequestAnimationFrame ||
+                                     window.msRequestAnimationFrame ||
+                                     function (callback){
+                                             setTimeout(callback,1000/60);
+                                     }
+                  })();
+                  init();
+                  function init(){
+                          css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+                          attachEvent();
+                          gameloop();
+                  }
+                  function gameloop(){
+                          for(var i=0;i<hearts.length;i++){
+                              if(hearts[i].alpha <=0){
+                                      document.body.removeChild(hearts[i].el);
+                                      hearts.splice(i,1);
+                                      continue;
+                              }
+                              hearts[i].y--;
+                              hearts[i].scale += 0.004;
+                              hearts[i].alpha -= 0.013;
+                              hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+                      }
+                      requestAnimationFrame(gameloop);
+                  }
+                  function attachEvent(){
+                          var old = typeof window.onclick==="function" && window.onclick;
+                          window.onclick = function(event){
+                                  old && old();
+                                  createHeart(event);
+                          }
+                  }
+                  function createHeart(event){
+                      var d = document.createElement("div");
+                      d.className = "heart";
+                      hearts.push({
+                              el : d,
+                              x : event.clientX - 5,
+                              y : event.clientY - 5,
+                              scale : 1,
+                              alpha : 1,
+                              color : randomColor()
+                      });
+                      document.body.appendChild(d);
+              }
+              function css(css){
+                      var style = document.createElement("style");
+                          style.type="text/css";
+                          try{
+                              style.appendChild(document.createTextNode(css));
+                          }catch(ex){
+                              style.styleSheet.cssText = css;
+                          }
+                          document.getElementsByTagName('head')[0].appendChild(style);
+              }
+                  function randomColor(){
+                          return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+                  }
+          })(window,document);
+          
+          </script>
+  </body>
+</html>
