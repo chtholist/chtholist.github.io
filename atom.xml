@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://chtholist.gitee.io</id>
+    <id>https://chtholist.gitee.io/blog1</id>
     <title>Chtholist</title>
-    <updated>2020-03-27T03:16:00.255Z</updated>
+    <updated>2020-03-27T12:05:02.200Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://chtholist.gitee.io"/>
-    <link rel="self" href="https://chtholist.gitee.io/atom.xml"/>
-    <subtitle>&lt;b&gt; 终焉虽至曲未尽 &lt;/b&gt; &lt;br/&gt;
-&lt;b&gt; 末红褪去春意来 &lt;/b&gt;</subtitle>
-    <logo>https://chtholist.gitee.io/images/avatar.png</logo>
-    <icon>https://chtholist.gitee.io/favicon.ico</icon>
+    <link rel="alternate" href="https://chtholist.gitee.io/blog1"/>
+    <link rel="self" href="https://chtholist.gitee.io/blog1/atom.xml"/>
+    <subtitle>终焉虽至曲未尽
+末红褪去春意来 </subtitle>
+    <logo>https://chtholist.gitee.io/blog1/images/avatar.png</logo>
+    <icon>https://chtholist.gitee.io/blog1/favicon.ico</icon>
     <rights>All rights reserved 2020, Chtholist</rights>
     <entry>
         <title type="html"><![CDATA[Who am I]]></title>
-        <id>https://chtholist.gitee.io/post/about/</id>
-        <link href="https://chtholist.gitee.io/post/about/">
+        <id>https://chtholist.gitee.io/blog1/post/about/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/about/">
         </link>
         <updated>2029-02-21T11:09:48.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://chtholist.gitee.io/post-images/1584847823831.jpg" alt="" loading="lazy"></figure>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://chtholist.gitee.io/blog1/post-images/1584847823831.jpg" alt="" loading="lazy"></figure>
 <blockquote>
 <ul>
 <li>某二本技校ee方向蒟蒻</li>
@@ -51,8 +51,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[珂研随记]]></title>
-        <id>https://chtholist.gitee.io/post/worldend_articles/</id>
-        <link href="https://chtholist.gitee.io/post/worldend_articles/">
+        <id>https://chtholist.gitee.io/blog1/post/worldend_articles/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/worldend_articles/">
         </link>
         <updated>2020-03-27T02:22:22.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -287,8 +287,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[末日三问网易云评论拾取]]></title>
-        <id>https://chtholist.gitee.io/post/worldend_comment/</id>
-        <link href="https://chtholist.gitee.io/post/worldend_comment/">
+        <id>https://chtholist.gitee.io/blog1/post/worldend_comment/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/worldend_comment/">
         </link>
         <updated>2020-03-27T02:16:35.000Z</updated>
         <content type="html"><![CDATA[<ul>
@@ -724,8 +724,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[HTML学习笔记 1]]></title>
-        <id>https://chtholist.gitee.io/post/HTMLstudy1/</id>
-        <link href="https://chtholist.gitee.io/post/HTMLstudy1/">
+        <id>https://chtholist.gitee.io/blog1/post/HTMLstudy1/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/HTMLstudy1/">
         </link>
         <updated>2020-03-22T03:21:49.000Z</updated>
         <content type="html"><![CDATA[<h1 id="html">HTML</h1>
@@ -1079,8 +1079,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Java&后端 学习路径]]></title>
-        <id>https://chtholist.gitee.io/post/JAVAstudy0/</id>
-        <link href="https://chtholist.gitee.io/post/JAVAstudy0/">
+        <id>https://chtholist.gitee.io/blog1/post/JAVAstudy0/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/JAVAstudy0/">
         </link>
         <updated>2020-03-22T03:20:02.000Z</updated>
         <content type="html"><![CDATA[<h1 id="后端学习">后端学习</h1>
@@ -1182,8 +1182,8 @@ https://www.runoob.com/maven/maven-tutorial.html</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Java —— 最基础]]></title>
-        <id>https://chtholist.gitee.io/post/JAVAstudy1/</id>
-        <link href="https://chtholist.gitee.io/post/JAVAstudy1/">
+        <id>https://chtholist.gitee.io/blog1/post/JAVAstudy1/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/JAVAstudy1/">
         </link>
         <updated>2020-03-22T03:19:10.000Z</updated>
         <content type="html"><![CDATA[<ol>
@@ -2200,26 +2200,8 @@ Java语言可以<strong>多级继承</strong>： 最高级父类为java.lang.Obj
     </entry>
     <entry>
         <title type="html"><![CDATA[Windows快捷键]]></title>
-        <id>https://chtholist.gitee.io/post/windows-kuai-jie-jian/</id>
-        <link href="https://chtholist.gitee.io/post/windows-kuai-jie-jian/">
-        </link>
-        <updated>2020-03-22T03:18:04.000Z</updated>
-        <content type="html"><![CDATA[<p>Win键 +E  		打开资源管理器<br>
-Win键 + Shift + S 		截屏<br>
-Win键 + L			锁屏<br>
-windows键+R，输入psr.exe回车	屏幕录制<br>
-Win键 + D		返回桌面<br>
-Win键 +Ctrl+D		添加虚拟桌面<br>
-Win键 +Ctrl+F4		删除虚拟桌面<br>
-Win键 + ←/→	                左右分屏<br>
-Windows+R，输入osk	虚拟键盘</p>
-<p>C:\Users\你的名字		windows的管理员账号文件夹</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Windows快捷键]]></title>
-        <id>https://chtholist.gitee.io/post/windows/</id>
-        <link href="https://chtholist.gitee.io/post/windows/">
+        <id>https://chtholist.gitee.io/blog1/post/windows-kuai-jie-jian/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/windows-kuai-jie-jian/">
         </link>
         <updated>2020-03-22T03:18:04.000Z</updated>
         <content type="html"><![CDATA[<p>Win键 +E  		打开资源管理器<br>
@@ -2236,8 +2218,8 @@ Windows+R，输入osk	虚拟键盘</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Markdown学习笔记]]></title>
-        <id>https://chtholist.gitee.io/post/markdown/</id>
-        <link href="https://chtholist.gitee.io/post/markdown/">
+        <id>https://chtholist.gitee.io/blog1/post/markdown/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/markdown/">
         </link>
         <updated>2020-03-22T03:17:09.000Z</updated>
         <content type="html"><![CDATA[<hr>
@@ -2404,9 +2386,9 @@ isTop: false</h2>
 </table>
 <h1 id="任务列表">任务列表</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-109870"><label class="task-list-item-label" for="task-item-109870"> 选项一</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2803846"> 选项二<br>
-(方框中间要有x或<strong>空格</strong><label class="task-list-item-label" for="task-item-2803846"> 选项二  
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7923899"><label class="task-list-item-label" for="task-item-7923899"> 选项一</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4029678"> 选项二<br>
+(方框中间要有x或<strong>空格</strong><label class="task-list-item-label" for="task-item-4029678"> 选项二  
 (方框中间要有x或**空格**)</label></li>
 </ul>
 <h1 id="空格">空格</h1>
@@ -2455,8 +2437,8 @@ isTop: false</h2>
     </entry>
     <entry>
         <title type="html"><![CDATA[C++学习笔记 —— 运算&表达式]]></title>
-        <id>https://chtholist.gitee.io/post/Cstudy4/</id>
-        <link href="https://chtholist.gitee.io/post/Cstudy4/">
+        <id>https://chtholist.gitee.io/blog1/post/Cstudy4/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/Cstudy4/">
         </link>
         <updated>2020-03-22T03:15:30.000Z</updated>
         <content type="html"><![CDATA[<h2 id="数学公式">数学公式</h2>
@@ -2638,6 +2620,256 @@ sort(str.begin(),str.end( ));</li>
 <ul>
 <li>程序中的循环不会无限循环<br>
 任何一个数据类型是有位数限制，好似int在C语言里就固定为32位带符号的整数类型，范围是-2147483648～2147483647，当不断增加一时，超过了就会溢出，返回到负的尽头</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C++学习笔记 —— 数组]]></title>
+        <id>https://chtholist.gitee.io/blog1/post/Cstudy_array/</id>
+        <link href="https://chtholist.gitee.io/blog1/post/Cstudy_array/">
+        </link>
+        <updated>2020-03-22T03:14:40.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="数组">数组</h1>
+<h2 id="基本概念">基本概念</h2>
+<ul>
+<li>在内存中占一片连续的存储单元，系统会根据数据总个数分配存储空间</li>
+<li>不允许对数组的大小作动态定义，即数组的大小不依赖于程序中变量的值</li>
+<li>只能逐个引用数组元素的值而不能一次引用整个数组中的全部元素的值。</li>
+</ul>
+<ol>
+<li>可以只给部分元素赋值，当 { } 中值的个数少于元素个数时，只给前面部分元素赋值。<br>
+当赋值的元素少于数组总体元素的时候，不同类型剩余的元素自动初始化值不同：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">short、int、long</td>
+<td style="text-align:center">整数 0</td>
+</tr>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">字符 '\0'</td>
+</tr>
+<tr>
+<td style="text-align:center">float、double</td>
+<td style="text-align:center">小数 0.0</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>只能给元素逐个赋值，不能给数组整体赋值。<br>
+所有的数组都是以 0 作为它们第一个元素的索引，也被称为基索引</li>
+<li>如果对全部元素都赋初值，则定义数组时第一维的长度可以不指定，但第二维的长度不能省。<br>
+int a[ ][4]={1，2，3，4，5，6，7，8，9，10，11，12};</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数组长度</th>
+<th style="text-align:center">(64位系统中)</th>
+<th style="text-align:center">数组长度</th>
+<th style="text-align:center">(64位系统中)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">char</td>
+<td style="text-align:center">1个字节</td>
+<td style="text-align:center"><strong>*</strong> (指针变量/地址)</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">short int</td>
+<td style="text-align:center">2个字节</td>
+<td style="text-align:center">int</td>
+<td style="text-align:center">4个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">float</td>
+<td style="text-align:center">4个字节</td>
+<td style="text-align:center">double</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">long</td>
+<td style="text-align:center">8个字节</td>
+<td style="text-align:center">long long</td>
+<td style="text-align:center">8个字节</td>
+</tr>
+</tbody>
+</table>
+<h2 id="整型数组">整型数组</h2>
+<p><strong>int a[ ] = {1,2,3,4};</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sizeof(a)</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">单独一个数组名表示整个数组，4*4</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(*&amp;a)</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">/&amp;a为整个数组地址，再指针为整个数组</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">&amp;a为整个数组地址，是地址就是8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(a+0)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">（a+0）表示第一个元素地址，地址的大小为8个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a[0])</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">第一个元素地址</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(*a)</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">*a表示数组第一个元素,一个int型变量4个字节</td>
+</tr>
+<tr>
+<td style="text-align:center">izeof(a[1])</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">第一个元素的大小</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a+1)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">整个数组后的下一个地址，即最后一个元素后下一个元素的地址</td>
+</tr>
+<tr>
+<td style="text-align:center">sizeof(&amp;a[0]+1)</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>sizeof(a)/sizeof(a[0]) —&gt; 数组单元个数（数组长度）</strong></li>
+<li><strong>sizeof(a) —&gt; 数组a的大小（数组总内存）</strong></li>
+<li><strong>sizeof(a[n]) —&gt; 数组 a 中单个元素占空间的大小		（数组类型占的字节）</strong></li>
+</ul>
+<hr>
+<h2 id="字符数组">字符数组</h2>
+<p>默认为空字符(‘ ’)</p>
+<ul>
+<li>定义后赋值只能逐个赋值</li>
+<li>整体赋值要在定义时赋初值</li>
+</ul>
+<ol>
+<li><code>char str[ ]={″happy″};</code></li>
+<li><code>char str[ ]=″happy″;</code></li>
+<li><code>char str[ ]={′′h′,′a′,′p′,′p′,′y′,′\0′};</code><br>
+字符数组并不要求它的最后一个字符为'＼0′，甚至可以不包含′\0′<br>
+在程序中依靠检测′\0′的位置来判定字符串是否结束</li>
+</ol>
+<pre><code class="language-c++">char x[ ]=&quot;abcd&quot;;   //字符串整体赋值会在结尾自动加上'\0'作为结尾  
+char y[ ]={'a', 'b', 'c', 'd'};         //系统不会加上'\0'  
+cout&lt;&lt;sizeof(x)/sizeof(x[0])&lt;&lt;endl;     //5
+cout&lt;&lt;sizeof(y)/sizeof(y[0])&lt;&lt;endl;     //4  
+cout&lt;&lt;sizeof(x)&lt;&lt;endl;                  //5
+cout&lt;&lt;sizeof(x+0)&lt;&lt;endl ;               //8
+cout&lt;&lt;sizeof(y)&lt;&lt;endl;                  //4
+cout&lt;&lt;sizeof(y+0)&lt;&lt;endl ;               //8
+</code></pre>
+<p>字符数组在最后一位默认有一个\0的空字符作为结束符，字符数+1<br>
+如果数组长度大于字符串实际长度，也只输出到遇′\0′结束。<br>
+如果一个字符数组中包含一个以上′\0′，则遇第一个′\0′时输出就结束。</p>
+<h2 id="字符串处理函数">字符串处理函数</h2>
+<ul>
+<li>头文件：string.h或string</li>
+</ul>
+<h3 id="字符串连接函数-strcat">字符串连接函数 strcat</h3>
+<pre><code class="language-c++">strcat(char[ ],const char[ ]);
+char str1[30]=″People′s Republic of ″;
+char str2[ ]=″China″;
+cout&lt;&lt;strcat(str1，str2);
+</code></pre>
+<h3 id="字符串复制函数strcpy">字符串复制函数strcpy</h3>
+<p>strcpy(char[ ],const char[ ]);</p>
+<ul>
+<li>strcpy()为char *类型，它返回的是第一个参数的地址。</li>
+<li>第一个参数必须是数组名，第二个参数可以是字符数组名，也可以是一个字符串常量。</li>
+<li>第一个参数不需要指向数组的开始。</li>
+</ul>
+<pre><code class="language-c++">char str1[10]，str2[ ]=&quot;China&quot;;
+strcpy(str1，str2);
+strcpy(str1, &quot;China&quot;);
+strncpy(str1,str2,2);   //用strncpy将前n个字符复制
+str1=&quot;China&quot;;    str1=str2;    //错误，不能直接赋值
+</code></pre>
+<h3 id="字符串比较函数strcmp">字符串比较函数strcmp</h3>
+<p>strcmp(const char[ ],const char[ ]);</p>
+<ol>
+<li>字符串1=字符串2，函数值为0。</li>
+<li>字符串1&gt;字符串2，函数值为一正整数。</li>
+<li>字符串1&lt;字符串2，函数值为一负整数。<br>
+两个字符串自左至右逐个字符相比(<em>按ASCII码值大小比较</em>)，直到出现不同的字符或遇到′\0′为止。如全部字符相同，则认为相等；若出现不相同的字符，则以第一个不相同的字符的比较结果为准。</li>
+</ol>
+<h3 id="字符串长度函数strlen">字符串长度函数strlen</h3>
+<p>strlen(const char[ ]);<br>
+测试字符串长度。其函数的值为字符串中的实际长度，<strong>不包括′\0′在内。</strong></p>
+<h2 id="字符串数组">字符串数组</h2>
+<p>可以用string定义字符串数组<br>
+<code>string name[5];</code><br>
+<code>string name[5]={″Zhang″,″Li″,″Fun″,″Wang″,″Tan″};</code></p>
+<ul>
+<li>不要求每个字符串元素具有相同的长度</li>
+<li>每一个字符串元素中只包含字符串本身的字符而<strong>不包括′\0′</strong>。</li>
+</ul>
+<h2 id="数组参数">数组参数</h2>
+<ul>
+<li>实参数组与形参数组类型应一致。</li>
+<li>实参数组和形参数组占同一段内存单元，改变形参数组元素的值即改变实参数组元素的值。</li>
+<li><strong>C++实际上只把实参数组首元素的地址（数组起始地址）传递给形参。形参数组名作为一个指针变量来接收从实参传过来的地址。</strong></li>
+<li>形参一维数组的声明中可以不写元素个数</li>
+</ul>
+<pre><code class="language-c++">#include&lt;stdio.h&gt;
+void test(int arr[ ])
+{
+	int length = 0;
+	length = sizeof(arr) / sizeof(int);     
+	printf(&quot;test中数组的总字节数为: %d\n&quot;,sizeof(arr));   
+	printf(&quot;test中数组的长度为: %d\n&quot;,length);
+}
+int main()
+{
+	int arr[ ] = {1,2,3,4,5,6,7,8,9};
+	int length = 0;
+	length = sizeof(arr) / sizeof(int);
+    printf(&quot;main中数组的总字节数：%d\n&quot;,sizeof(arr));
+	printf(&quot;main中数组的长度为: %d\n&quot;,length);
+	test(arr);    
+	return 0;
+}
+main中数组的总字节数：36
+main中数组的长度为: 9
+test中数组的总字节数为: 8
+test中数组的长度为: 2
+</code></pre>
+<ul>
+<li><u>  数据个数 = 所有数据的字节数 / 一个数据的字节数  </u></li>
+<li>一个整型数组的长度 = 该数组的总字节数 / int字节数(4)</li>
+<li>在test函数中输出的sizeof(arr)其实得到的是一个整型数组的长度(所占的字节数), 所以结果是8, 再用其除以int所占的字节数(4), 结果就是2 .</li>
+<li>求数组的准确长度： 在定义数组的函数中计算数组的长度, 在以实参的形式传递出去, 这样其他的函数变可以获得数组的长度</li>
 </ul>
 ]]></content>
     </entry>
