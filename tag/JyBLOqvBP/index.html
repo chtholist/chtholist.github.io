@@ -7,21 +7,19 @@
 <title>Chtholist</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="description" content="终焉虽至曲未尽
-末红褪去春意来 "/>
-<meta name="keywords" content="终焉虽至曲未尽
-末红褪去春意来 "/>
+<meta name="description" content="终焉虽至曲未尽 末红褪去春意来                          "/>
+<meta name="keywords" content="终焉虽至曲未尽 末红褪去春意来                          "/>
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" href="https://chtholist.gitee.io/blog1/favicon.ico">
+<link rel="shortcut icon" href="https://chtholist.github.io/favicon.ico">
 
-<link rel="stylesheet" href="https://chtholist.gitee.io/blog1/styles/main.css">
+<link rel="stylesheet" href="https://chtholist.github.io/styles/main.css">
 
 <!-- Modernizr JS -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/modernizr-2.6.2.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/modernizr-2.6.2.min.js"></script>
 <!-- FOR IE9 below -->
 <!--[if lt IE 9]>
-<scripts src="https://chtholist.gitee.io/blog1/media/scripts/respond.min.js"></scripts>
+<scripts src="https://chtholist.github.io/media/scripts/respond.min.js"></scripts>
 <![endif]-->
 
 <!-- Comment -->
@@ -35,21 +33,90 @@
 
 
 
+
+  <!-- 一言部分 -->
+  <script src="http://localhost:4000/media/scripts/jquery.min1.js"></script>
+    
+  <script>
+      $(function () {
+      // 一言  ！！！语句使用了接口
+      // hitokoto：一言正文。编码方式 unicode。使用 utf-8
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', 'https://v1.hitokoto.cn');
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+              var data = JSON.parse(xhr.responseText);
+              var hitokoto = document.getElementById("hitoKoto");
+              var from = document.getElementById("hitoKoto-From");
+              hitokoto.innerText = data.hitokoto;
+              from.innerText = data.from;
+              $("#hito").fadeIn("slow");
+          }
+      }
+      xhr.send();
+  
+      var hitokoto = setInterval(function () {
+      $("#hito").fadeOut("fast", function () {
+      var xhr = new XMLHttpRequest();
+      xhr.open('get', 'https://v1.hitokoto.cn');
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+              var data = JSON.parse(xhr.responseText);
+              var hitokoto = document.getElementById("hitoKoto");
+              var from = document.getElementById("hitoKoto-From");
+              hitokoto.innerText = data.hitokoto;
+              from.innerText = data.from;
+              $("#hito").fadeIn("slow");
+          }
+      }
+      xhr.send();
+      });
+      }, 25000)
+
+      ! function () {  
+          function get_attribute(node, attr, default_value) {
+              return node.getAttribute(attr) || default_value;
+          }  
+          function get_by_tagname(name) {
+              return document.getElementsByTagName(name);
+          }
+          function get_config_option() {
+              var scripts = get_by_tagname("script"),
+                  script_len = scripts.length,
+                  script = scripts[script_len - 1]; 
+              return {
+                  l: script_len, 
+                  z: get_attribute(script, "zIndex", 1), //z-index    
+                  o: get_attribute(script, "opacity", 0.5), //opacity    
+                  c: get_attribute(script, "color", "255,255,255"), //color    
+                  n: get_attribute(script, "count", 100) //count    
+              };
+          }
+  }
+  })
+  </script>
 </head>
 <body>
+<!-- 左侧边栏 -->
 <div id="fh5co-offcanvas">
+    <!-- 右上关闭键 -->
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
     </a>
+    <!-- 主体 -->
     <div class="fh5co-bio">
+        <!-- 头像 -->
         <figure>
-            <img src="https://chtholist.gitee.io/blog1/images/avatar.png" alt="Chtholist"
+            <img src="https://chtholist.github.io/images/avatar.png" alt="Chtholist"
                  class="img-responsive">
         </figure>
-        <a href="https://chtholist.gitee.io/blog1/post/about/"><h3 class="heading">ABOUT ME</h3></a>
+        <!-- 关于 -->
+        <a href="https://chtholist.github.io/post/about/"><h3 class="heading">ABOUT ME</h3></a>
+        <!-- 网站标题 -->
         <h2>Chtholist</h2>
-        <p>终焉虽至曲未尽
-末红褪去春意来 </p>
+        <!-- 网站描述 -->
+        <p>终焉虽至曲未尽 末红褪去春意来                          </p>
+        <!-- 社交 -->
         <ul class="fh5co-social">
             
                 <li>
@@ -75,40 +142,30 @@
         </ul>
     </div>
 
+    <!-- 标签 
     <div class="fh5co-menu">
 
-        <!-- 标签 -->
         <div class="fh5co-box">
-            <a href="https://chtholist.gitee.io/blog1/tags/"><h3 class="heading">👉标签</h3></a>
+            <a href="https://chtholist.github.io/tags/"><h3 class="heading">👉标签</h3></a>
             <ul>
                 
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/JyBLOqvBP/">珂学</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/sT3HnA4VM/">html</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/XmZZX3L8Ac/">学习</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/Umxj3r3IOc/">编程</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/hEb5vfxiu/">java</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/tkA5MIQSf/">git</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/Pp8YQ7qrL/">c</a></li>
+                    <li><a href="https://chtholist.github.io/tag/JyBLOqvBP/">珂学</a></li>
                 
             </ul>
         </div>
     </div>
+    -->
 </div>
 
 <header id="fh5co-header">
+    <!-- 置顶大标题 -->
     <div class="container-fluid">
         <div class="row">
             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
             <ul class="fh5co-social">
                 
                     <li>
-                        <a href="/"
+                        <a href="https://chtholist.gitee.io/blog1"
                         
                         >
                             首页
@@ -116,7 +173,7 @@
                     </li>
                 
                     <li>
-                        <a href="/archives"
+                        <a href="https://chtholist.gitee.io/blog1/archives"
                         
                         >
                             归档
@@ -124,7 +181,7 @@
                     </li>
                 
                     <li>
-                        <a href="/tags"
+                        <a href="https://chtholist.gitee.io/blog1/tags"
                         
                         >
                             标签
@@ -132,7 +189,7 @@
                     </li>
                 
                     <li>
-                        <a href="/post/about"
+                        <a href="https://chtholist.gitee.io/blog1/post/about"
                         
                         >
                             Who am I
@@ -166,7 +223,7 @@
             </ul>
             <div class="col-lg-12 col-md-12 text-center">
                 <h1 id="fh5co-logo">
-                    <a href="https://chtholist.gitee.io/blog1">Chtholist </a>
+                    <a href="https://chtholist.github.io">Chtholist </a>
                 </h1>
             </div>
         </div>
@@ -185,7 +242,9 @@
     
       <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box" style="height: 25em;">
         <figure class="img-box">
-          <a href="https://chtholist.gitee.io/blog1/post/worldend_articles/">
+          <a href="https://chtholist.github.io/post/Poetics/">
+            
+              <img data-original="https://chtholist.github.io/post-images/Poetics.jpg" alt="《诗学》——亚里士多德" class="img-responsive img-rounded lazy">
             
           </a>
         </figure>
@@ -193,20 +252,45 @@
           
             <div class="tag-container">
               
-                <a href="https://chtholist.gitee.io/blog1/tag/JyBLOqvBP/" class="tag">珂学, </a>
+                <a href="https://chtholist.github.io/tag/JyBLOqvBP/" class="tag">珂学, </a>
               
             </div>
           
         </span>
         <h3 class="fh5co-article-title">
-          <a href="https://chtholist.gitee.io/blog1/post/worldend_articles/">珂研随记</a>
+          <a href="https://chtholist.github.io/post/Poetics/">《诗学》——亚里士多德</a>
+        </h3>
+        <span class="fh5co-meta fh5co-date">2020-04-10</span>
+      </article>
+    
+      <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box" style="height: 25em;">
+        <figure class="img-box">
+          <a href="https://chtholist.github.io/post/worldend_articles/">
+            
+              <img data-original="https://chtholist.github.io/post-images/worldend_articles.jpg" alt="珂研随记" class="img-responsive img-rounded lazy">
+            
+          </a>
+        </figure>
+        <span class="fh5co-meta">
+          
+            <div class="tag-container">
+              
+                <a href="https://chtholist.github.io/tag/JyBLOqvBP/" class="tag">珂学, </a>
+              
+            </div>
+          
+        </span>
+        <h3 class="fh5co-article-title">
+          <a href="https://chtholist.github.io/post/worldend_articles/">珂研随记</a>
         </h3>
         <span class="fh5co-meta fh5co-date">2020-03-27</span>
       </article>
     
       <article class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box article-box" style="height: 25em;">
         <figure class="img-box">
-          <a href="https://chtholist.gitee.io/blog1/post/worldend_comment/">
+          <a href="https://chtholist.github.io/post/worldend_comment/">
+            
+              <img data-original="https://chtholist.github.io/post-images/worldend_comment.jpg" alt="末日三问网易云评论拾取" class="img-responsive img-rounded lazy">
             
           </a>
         </figure>
@@ -214,13 +298,13 @@
           
             <div class="tag-container">
               
-                <a href="https://chtholist.gitee.io/blog1/tag/JyBLOqvBP/" class="tag">珂学, </a>
+                <a href="https://chtholist.github.io/tag/JyBLOqvBP/" class="tag">珂学, </a>
               
             </div>
           
         </span>
         <h3 class="fh5co-article-title">
-          <a href="https://chtholist.gitee.io/blog1/post/worldend_comment/">末日三问网易云评论拾取</a>
+          <a href="https://chtholist.github.io/post/worldend_comment/">末日三问网易云评论拾取</a>
         </h3>
         <span class="fh5co-meta fh5co-date">2020-03-27</span>
       </article>
@@ -237,25 +321,25 @@
 
 
 <footer id="fh5co-footer">
-  <p>Producted by <b><a href="https://gitee.com/chtholist"> TIAT'S DREAMS </a></b><br/>
-Copyright © 2017 - 2020 TIAT'S DREAMS. All Rights Reserved.</p>
+  <p><p>Copyright © 2017 - 2020 <b><a href="https://gitee.com/chtholist"> TIAT'S DREAMS</a>. </b>
+<br/>All Rights Reserved.</p>  <br/></p>
 </footer>
 
 
 <!-- jQuery -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/jquery.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/jquery.min.js"></script>
 <!-- img lazy load -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/jquery.lazyload.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/jquery.lazyload.min.js"></script>
 <!-- jQuery Easing -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/jquery.easing.1.3.js"></script>
+<script src="https://chtholist.github.io/media/scripts/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/bootstrap.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/bootstrap.min.js"></script>
 <!-- Waypoints -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/jquery.waypoints.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/jquery.waypoints.min.js"></script>
 <!-- Main JS -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/main.js"></script>
+<script src="https://chtholist.github.io/media/scripts/main.js"></script>
 <!-- Md5 Min JS -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/md5.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/md5.min.js"></script>
 <!-- katex -->
 <!--<script src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>-->
 <!-- highlight -->
@@ -275,7 +359,7 @@ Copyright © 2017 - 2020 TIAT'S DREAMS. All Rights Reserved.</p>
         // tooltip
         $('[data-toggle="tooltip"]').tooltip();
 
-        // 目录
+        // 目录  Markdown侧边栏
         $('#tool-toc').click(function () {
             $('.post-toc').toggle();
         });
@@ -295,6 +379,53 @@ Copyright © 2017 - 2020 TIAT'S DREAMS. All Rights Reserved.</p>
 
 
 
+
+<!--  一言语句部分  -->
+<style>
+  #hito {
+     display: none;
+     margin: auto;
+     text-align: right;
+     width: 90%;
+     position: absolute;
+     top: 10px;
+ }
+
+ #hitoKoto-div {
+     margin-right: 5%;
+ }
+             /* 一言的语句的颜色  */
+ #hitoKoto-div, #hitoKoto, .hitoKoto-span {
+     text-align: right;
+     color: rgb(250, 183, 95);
+     font-family: 'Roboto', sans-serif;
+     font-size: 20px;
+ }
+ #hitoKoto-div-ma {
+       width: 100%;
+   }
+                                   /* 一言的出处的颜色  */
+   #hitoKoto-div-ma, #hitoKoto-From, .hitoKoto-span-ma {
+       text-align: right;
+       color: rgb(255, 176, 58);
+       font-family: 'Roboto', sans-serif;
+       font-size: 18px;
+</style>
+<!--<div id="hito">
+ <div id="hitoKoto-div"><span class="hitoKoto-span">『</span><span id="hitoKoto">一言加载中Loading......</span><span class="hitoKoto-span">』</span><span class="hitoKoto-span-ma">-「</span><span id="hitoKoto-From">一言加载中Loading......</span><span class="hitoKoto-span-ma">」</span></div>
+</div>-->
+<div id="hito">
+ <div id="hitoKoto-div">
+<span class="hitoKoto-span">『</span>
+<span id="hitoKoto">一言加载中Loading......</span>
+<span class="hitoKoto-span">』</span>
+</div>
+ <div id="hitoKoto-div-ma">
+<span class="hitoKoto-span-ma">-「</span>
+<span id="hitoKoto-From">一言加载中Loading......</span>
+<span class="hitoKoto-span-ma">」</span>
+</div>
+</div>
 
  <!-- 右下角live2d效果 -->
  <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
@@ -325,7 +456,7 @@ Copyright © 2017 - 2020 TIAT'S DREAMS. All Rights Reserved.</p>
      
      <!-- 页尾的走马灯-->
      <div id="i1" style="color:rgb(10, 8, 8);font-size:20px;padding:50px;text-align:center;">
-         What&nbsp;do&nbsp;you&nbsp;do&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;world? 
+         What&nbsp;do&nbsp;you&nbsp;do&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;world?&nbsp; 
          Are&nbsp;you&nbsp;busy?&nbsp;Will&nbsp;you&nbsp;save&nbsp;us?&nbsp;&nbsp;&nbsp;
          </div>
      <script>

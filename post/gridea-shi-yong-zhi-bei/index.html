@@ -7,21 +7,19 @@
 <title>Chtholist</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<meta name="description" content="终焉虽至曲未尽
-末红褪去春意来 "/>
-<meta name="keywords" content="终焉虽至曲未尽
-末红褪去春意来 "/>
+<meta name="description" content="终焉虽至曲未尽 末红褪去春意来                          "/>
+<meta name="keywords" content="终焉虽至曲未尽 末红褪去春意来                          "/>
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" href="https://chtholist.gitee.io/blog1/favicon.ico">
+<link rel="shortcut icon" href="https://chtholist.github.io/favicon.ico">
 
-<link rel="stylesheet" href="https://chtholist.gitee.io/blog1/styles/main.css">
+<link rel="stylesheet" href="https://chtholist.github.io/styles/main.css">
 
 <!-- Modernizr JS -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/modernizr-2.6.2.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/modernizr-2.6.2.min.js"></script>
 <!-- FOR IE9 below -->
 <!--[if lt IE 9]>
-<scripts src="https://chtholist.gitee.io/blog1/media/scripts/respond.min.js"></scripts>
+<scripts src="https://chtholist.github.io/media/scripts/respond.min.js"></scripts>
 <![endif]-->
 
 <!-- Comment -->
@@ -35,21 +33,89 @@
 
 
 
+        <!-- 一言部分 -->
+        <script src="http://localhost:4000/media/scripts/jquery.min1.js"></script>
+    
+        <script>
+            $(function () {
+            // 一言  ！！！语句使用了接口
+            // hitokoto：一言正文。编码方式 unicode。使用 utf-8
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'https://v1.hitokoto.cn');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    var data = JSON.parse(xhr.responseText);
+                    var hitokoto = document.getElementById("hitoKoto");
+                    var from = document.getElementById("hitoKoto-From");
+                    hitokoto.innerText = data.hitokoto;
+                    from.innerText = data.from;
+                    $("#hito").fadeIn("slow");
+                }
+            }
+            xhr.send();
+        
+            var hitokoto = setInterval(function () {
+            $("#hito").fadeOut("fast", function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', 'https://v1.hitokoto.cn');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    var data = JSON.parse(xhr.responseText);
+                    var hitokoto = document.getElementById("hitoKoto");
+                    var from = document.getElementById("hitoKoto-From");
+                    hitokoto.innerText = data.hitokoto;
+                    from.innerText = data.from;
+                    $("#hito").fadeIn("slow");
+                }
+            }
+            xhr.send();
+            });
+            }, 25000)
+    
+            ! function () {  
+                function get_attribute(node, attr, default_value) {
+                    return node.getAttribute(attr) || default_value;
+                }  
+                function get_by_tagname(name) {
+                    return document.getElementsByTagName(name);
+                }
+                function get_config_option() {
+                    var scripts = get_by_tagname("script"),
+                        script_len = scripts.length,
+                        script = scripts[script_len - 1]; 
+                    return {
+                        l: script_len, 
+                        z: get_attribute(script, "zIndex", 1), //z-index    
+                        o: get_attribute(script, "opacity", 0.5), //opacity    
+                        c: get_attribute(script, "color", "255,255,255"), //color    
+                        n: get_attribute(script, "count", 100) //count    
+                    };
+                }
+        }
+        })
+        </script>
 </head>
 <body>
-    <div id="fh5co-offcanvas">
+    <!-- 左侧边栏 -->
+<div id="fh5co-offcanvas">
+    <!-- 右上关闭键 -->
     <a href="#!" class="fh5co-close-offcanvas js-fh5co-close-offcanvas">
         <span><i class="icon-cross3"></i> <span>Close</span></span>
     </a>
+    <!-- 主体 -->
     <div class="fh5co-bio">
+        <!-- 头像 -->
         <figure>
-            <img src="https://chtholist.gitee.io/blog1/images/avatar.png" alt="Chtholist"
+            <img src="https://chtholist.github.io/images/avatar.png" alt="Chtholist"
                  class="img-responsive">
         </figure>
-        <a href="https://chtholist.gitee.io/blog1/post/about/"><h3 class="heading">ABOUT ME</h3></a>
+        <!-- 关于 -->
+        <a href="https://chtholist.github.io/post/about/"><h3 class="heading">ABOUT ME</h3></a>
+        <!-- 网站标题 -->
         <h2>Chtholist</h2>
-        <p>终焉虽至曲未尽
-末红褪去春意来 </p>
+        <!-- 网站描述 -->
+        <p>终焉虽至曲未尽 末红褪去春意来                          </p>
+        <!-- 社交 -->
         <ul class="fh5co-social">
             
                 <li>
@@ -75,40 +141,30 @@
         </ul>
     </div>
 
+    <!-- 标签 
     <div class="fh5co-menu">
 
-        <!-- 标签 -->
         <div class="fh5co-box">
-            <a href="https://chtholist.gitee.io/blog1/tags/"><h3 class="heading">👉标签</h3></a>
+            <a href="https://chtholist.github.io/tags/"><h3 class="heading">👉标签</h3></a>
             <ul>
                 
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/JyBLOqvBP/">珂学</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/sT3HnA4VM/">html</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/XmZZX3L8Ac/">学习</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/Umxj3r3IOc/">编程</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/hEb5vfxiu/">java</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/tkA5MIQSf/">git</a></li>
-                
-                    <li><a href="https://chtholist.gitee.io/blog1/tag/Pp8YQ7qrL/">c</a></li>
+                    <li><a href="https://chtholist.github.io/tag/JyBLOqvBP/">珂学</a></li>
                 
             </ul>
         </div>
     </div>
+    -->
 </div>
 
 <header id="fh5co-header">
+    <!-- 置顶大标题 -->
     <div class="container-fluid">
         <div class="row">
             <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
             <ul class="fh5co-social">
                 
                     <li>
-                        <a href="/"
+                        <a href="https://chtholist.gitee.io/blog1"
                         
                         >
                             首页
@@ -116,7 +172,7 @@
                     </li>
                 
                     <li>
-                        <a href="/archives"
+                        <a href="https://chtholist.gitee.io/blog1/archives"
                         
                         >
                             归档
@@ -124,7 +180,7 @@
                     </li>
                 
                     <li>
-                        <a href="/tags"
+                        <a href="https://chtholist.gitee.io/blog1/tags"
                         
                         >
                             标签
@@ -132,7 +188,7 @@
                     </li>
                 
                     <li>
-                        <a href="/post/about"
+                        <a href="https://chtholist.gitee.io/blog1/post/about"
                         
                         >
                             Who am I
@@ -166,7 +222,7 @@
             </ul>
             <div class="col-lg-12 col-md-12 text-center">
                 <h1 id="fh5co-logo">
-                    <a href="https://chtholist.gitee.io/blog1">Chtholist </a>
+                    <a href="https://chtholist.github.io">Chtholist </a>
                 </h1>
             </div>
         </div>
@@ -191,8 +247,8 @@
             <h2 class="fh5co-article-title animate-box"> Gridea使用指北 </h2>
             <ol class="breadcrumb fh5co-meta fh5co-date animate-box" style="margin-bottom:0; background-color:#f8f9fa">
                 <li>2020-03-22</li>
-                <li>644字</li>
-                <li>3 min read</li>
+                <li>844字</li>
+                <li>4 min read</li>
             </ol>
 
             <div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
@@ -257,28 +313,40 @@
 </li>
 </ul>
 <h2 id="后续">后续</h2>
-<h3 id="2020322">20203.22</h3>
+<h3 id="2020322">2020.3.22</h3>
 <ul>
 <li>破案了，就只有用Next主题没法保存，不知道为什么。而且网站兼容性极差（gitee、Github），有几个版面可以正常显示，但是看不出端倪</li>
 <li>之前用Next的时候，推流后网站没法跳转，原来仓库里的链接代码<code>chtholist.gitee.io/xxx</code>，在页面部署后变成<code>gitee.com/chtholist/chtholist.gitee.io/xxx</code>，奇怪的是部署完后过了半天到一天就正常了？</li>
 <li>改用Paper主题，无法显示封面图，<strong>无法显示MD文档的侧边栏导航</strong>（这是坠要命的，以后看看怎么改）</li>
 <li>发现博客园的代码可以挪过来用，于是做了搬运工，小改了主题，增加了 1.鼠标点击特效 2.鼠标图案更改 3.回到顶部 4.Live2D</li>
 </ul>
+<h3 id="针对无法保存的问题">针对无法保存的问题</h3>
+<p>目前有两个主题在自定义配置处无法保存：【NexT】和【fog】，都是基于Hexo的<br>
+解决方法：</p>
+<ul>
+<li>修改目前应用的主题：D:\Documents\Gridea\config\theme.json ， 客户端上显示的就是这些内容，当时重新选择主题就会被重置</li>
+<li>这时候就有修改主题的源配置：D:\Documents\Gridea\config\theme.xxx.json ， 修改后重新选择一遍这个主题</li>
+</ul>
+<h2 id="fog主题配置">fog主题配置</h2>
+<h3 id="颜色">颜色</h3>
+<ol>
+<li>网站名称颜色 ： sitenameColor</li>
+<li>网站描述颜色 ： sitedescribtionColor</li>
+<li>网站菜单按钮颜色  ： sitemenuColor</li>
+<li>有封面图文章标题颜色 ： titleWithImgColor</li>
+<li>无封面图文章标题颜色 ： titleWithoutImgColor</li>
+<li>底部信息颜色 ： footinfoColor</li>
+</ol>
+<h3 id="markdown侧边栏">Markdown侧边栏</h3>
+<p>D:\Documents\Gridea\themes\fog\assets\styles\components\post.less</p>
+<h3 id="社交contact">社交Contact</h3>
+<p>D:\Documents\Gridea\themes\fog\templates\includes\sidemobilepost.ejs</p>
  </p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12 animate-box">
-                        
-                            <div class="next-post">
-                                <div class="next">下一篇</div>
-                                <a href="https://chtholist.gitee.io/blog1/post/hexo-cai-keng-ji-lu/">
-                                    <h3 class="post-title">
-                                        Hexo 踩坑记录
-                                    </h3>
-                                </a>
-                            </div>
                         
                     </div>
                 </div>
@@ -298,12 +366,13 @@
     
 
     <!-- 返回顶部 -->
-    <div class="back-to-top">
+    <!-- 右侧最底下的返回和Markdown侧边栏 -->
+<div class="back-to-top">
     
         <a href="#!" id="tool-toc" class="hidden-xs hidden-sm">
             <i class="fa fa-map"></i>
         </a>
-        <br>
+        <br/>
     
     <a href="#top" class="hidden-xs hidden-sm"><i class="fa fa-paper-plane"></i></a>
 </div>
@@ -322,7 +391,15 @@
 </li>
 <li><a href="#%E5%90%8E%E7%BB%AD">后续</a>
 <ul>
-<li><a href="#2020322">20203.22</a></li>
+<li><a href="#2020322">2020.3.22</a></li>
+<li><a href="#%E9%92%88%E5%AF%B9%E6%97%A0%E6%B3%95%E4%BF%9D%E5%AD%98%E7%9A%84%E9%97%AE%E9%A2%98">针对无法保存的问题</a></li>
+</ul>
+</li>
+<li><a href="#fog%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE">fog主题配置</a>
+<ul>
+<li><a href="#%E9%A2%9C%E8%89%B2">颜色</a></li>
+<li><a href="#markdown%E4%BE%A7%E8%BE%B9%E6%A0%8F">Markdown侧边栏</a></li>
+<li><a href="#%E7%A4%BE%E4%BA%A4contact">社交Contact</a></li>
 </ul>
 </li>
 </ul>
@@ -334,25 +411,25 @@
 
     
 <footer id="fh5co-footer">
-  <p>Producted by <b><a href="https://gitee.com/chtholist"> TIAT'S DREAMS </a></b><br/>
-Copyright © 2017 - 2020 TIAT'S DREAMS. All Rights Reserved.</p>
+  <p><p>Copyright © 2017 - 2020 <b><a href="https://gitee.com/chtholist"> TIAT'S DREAMS</a>. </b>
+<br/>All Rights Reserved.</p>  <br/></p>
 </footer>
 
 
     <!-- jQuery -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/jquery.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/jquery.min.js"></script>
 <!-- img lazy load -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/jquery.lazyload.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/jquery.lazyload.min.js"></script>
 <!-- jQuery Easing -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/jquery.easing.1.3.js"></script>
+<script src="https://chtholist.github.io/media/scripts/jquery.easing.1.3.js"></script>
 <!-- Bootstrap -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/bootstrap.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/bootstrap.min.js"></script>
 <!-- Waypoints -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/jquery.waypoints.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/jquery.waypoints.min.js"></script>
 <!-- Main JS -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/main.js"></script>
+<script src="https://chtholist.github.io/media/scripts/main.js"></script>
 <!-- Md5 Min JS -->
-<script src="https://chtholist.gitee.io/blog1/media/scripts/md5.min.js"></script>
+<script src="https://chtholist.github.io/media/scripts/md5.min.js"></script>
 <!-- katex -->
 <!--<script src="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.js"></script>-->
 <!-- highlight -->
@@ -372,7 +449,7 @@ Copyright © 2017 - 2020 TIAT'S DREAMS. All Rights Reserved.</p>
         // tooltip
         $('[data-toggle="tooltip"]').tooltip();
 
-        // 目录
+        // 目录  Markdown侧边栏
         $('#tool-toc').click(function () {
             $('.post-toc').toggle();
         });
@@ -420,10 +497,59 @@ Copyright © 2017 - 2020 TIAT'S DREAMS. All Rights Reserved.</p>
     });
 </script>
 
+<!--  一言语句部分  -->
+<style>
+    #hito {
+       display: none;
+       margin: auto;
+       text-align: right;
+       width: 90%;
+       position: absolute;
+       top: 10px;
+   }
+
+   #hitoKoto-div {
+       margin-right: 5%;
+   }
+               /* 一言的语句的颜色  */
+   #hitoKoto-div, #hitoKoto, .hitoKoto-span {
+       text-align: right;
+       color: rgb(250, 183, 95);
+       font-family: 'Roboto', sans-serif;
+       font-size: 20px;
+   }
+   #hitoKoto-div-ma {
+         width: 100%;
+     }
+                                     /* 一言的出处的颜色  */
+     #hitoKoto-div-ma, #hitoKoto-From, .hitoKoto-span-ma {
+         text-align: right;
+         color: rgb(255, 176, 58);
+         font-family: 'Roboto', sans-serif;
+         font-size: 18px;
+</style>
+<!--<div id="hito">
+   <div id="hitoKoto-div"><span class="hitoKoto-span">『</span><span id="hitoKoto">一言加载中Loading......</span><span class="hitoKoto-span">』</span><span class="hitoKoto-span-ma">-「</span><span id="hitoKoto-From">一言加载中Loading......</span><span class="hitoKoto-span-ma">」</span></div>
+</div>-->
+<div id="hito">
+   <div id="hitoKoto-div">
+ <span class="hitoKoto-span">『</span>
+ <span id="hitoKoto">一言加载中Loading......</span>
+ <span class="hitoKoto-span">』</span>
+</div>
+   <div id="hitoKoto-div-ma">
+ <span class="hitoKoto-span-ma">-「</span>
+ <span id="hitoKoto-From">一言加载中Loading......</span>
+ <span class="hitoKoto-span-ma">」</span>
+</div>
+</div>
+
+<!-- 返回顶部-->
+<a href="#top"><div data-v-3682a700 data-v-4e808e30 class="back-top" style="right: 150px; "></div></a>
     
     <!-- 页尾的走马灯-->
     <div id="i1" style="color:rgb(10, 8, 8);font-size:20px;padding:50px;text-align:center;">
-        What&nbsp;do&nbsp;you&nbsp;do&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;world? 
+        What&nbsp;do&nbsp;you&nbsp;do&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;world?&nbsp; 
         Are&nbsp;you&nbsp;busy?&nbsp;Will&nbsp;you&nbsp;save&nbsp;us?&nbsp;&nbsp;&nbsp;
         </div>
     <script>
@@ -438,7 +564,10 @@ Copyright © 2017 - 2020 TIAT'S DREAMS. All Rights Reserved.</p>
        setInterval('func()',500);
     </script>
 
-
+<a href="#!" id="tool-toc" class="hidden-xs hidden-sm">
+    <i class="fa fa-map"></i>
+</a>
+<br/>
     
     <script type="text/javascript">
 
