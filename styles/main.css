@@ -525,8 +525,7 @@ figure figcaption {
 }
 /* ————————————侧边栏———————————— */
 #fh5co-offcanvas {
-  background-image: url(https://i0.hdslb.com/bfs/album/7f538c19a03b468353808e68120c7da3528bcec0.jpg);
-  opacity: 0.1;
+  background-image: url(https://i0.hdslb.com/bfs/album/21ee908a4b426379c4e959550a74a231c87a7cef.jpg@518w_1e_1c.jpg);
   position: fixed;
   top: 0;
   left: 0;
@@ -563,7 +562,7 @@ figure figcaption {
 }
 #fh5co-offcanvas .fh5co-close-offcanvas:hover {
   width: 85px;
-  color: #000;
+  color: #a1ddf8;
 }
 #fh5co-offcanvas .fh5co-close-offcanvas > span {
   width: 100px;
@@ -614,9 +613,10 @@ figure figcaption {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
-/* ————网站描述———— */
+/* ——————————网站描述—————————— */
 #fh5co-offcanvas .fh5co-bio p {
   font-size: 20px;
+  color: #1784fb;
 }
 #fh5co-offcanvas .heading {
   font-size: 16px;

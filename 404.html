@@ -4,49 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>404 in warehouse</title>
+  <title>Page Not Found</title>
   <style>
-        html, body {
-            padding: 0;
-            margin: 0;
-            height: 100%;
-            width: 100%;
-        }
-
-        .container {
-            width: 100%;
-            height: 100%;
-            background: url("./sisters.png");
-            -webkit-background-size: cover;
-            background-size: cover;
-        }
-
-        .filter {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+    }
     .box {
       flex: 1;
       display: flex;
       justify-content: center;
       flex-direction: column;
-      text-align: center;
     }
     .number {
       font-size: 80px;
-      color: rgb(255, 92, 92);
+      color: #666;
       font-weight: bold;
-      text-align: center;
     }
     .text {
       font-size: 14px;
       margin: 24px;
-      color: rgb(255, 101, 40);
+      color: #333;
     }
     .btn-container {
       display: flex;
@@ -65,25 +49,38 @@
       display: flex;
       align-items: center;
     }
-
-
+    .footer {
+      padding: 16px;
+      border-top: 1px solid #efefef;
+      color: #777;
+      font-weight: lighter;
+    }
+    .footer a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+    }
   </style>
 </head>
-
 <body>
-
-
-  <div class="container">
-    <div class="box">
-      <div class="number">4 0 4</div>
-      <div class="text">
-        Page not found
-      </div>
+  <div class="box">
+    <div class="number">4 0 4</div>
+    <div class="text">
+      Page not found
+    </div>
+    <div class="btn-container">
+      <a class="btn" id="back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" style="margin-right: 8px;">
+          <path fill="none" d="M0 0h24v24H0z"/>
+          <path d="M5.828 7l2.536 2.536L6.95 10.95 2 6l4.95-4.95 1.414 1.414L5.828 5H13a8 8 0 1 1 0 16H4v-2h9a6 6 0 1 0 0-12H5.828z"/>
+        </svg>
+        Back
+      </a>
     </div>
   </div>
-  <div class="filter"></div>
-  <script src="./index.js"></script>
-
+  <footer class="footer">
+    Powered by <a href="https://gridea.dev" target="_blank">Gridea</a>
+  </footer>
   <script>
     var back = document.getElementById('back')
     back.onclick = function() { console.log('run...'); history.back() }
